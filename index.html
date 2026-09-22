@@ -185,6 +185,14 @@ nav a:hover{color:var(--text)}
 .fields label{display:block;font-weight:700;font-size:.92rem}
 .fields input{display:block;width:100%;margin-top:6px;background:var(--card2);border:2px solid var(--line);border-radius:12px;color:var(--text);font:16px var(--body);padding:.85rem .95rem}
 .fields input:focus{border-color:var(--gold);outline:none}
+.fields label[for=addr]{display:block;font-weight:700;font-size:.92rem}
+.addr{position:relative}
+#addrSug{position:absolute;left:0;right:0;top:calc(100% + 4px);z-index:20;list-style:none;margin:0;padding:.3rem;background:var(--card2);
+  border:1.5px solid var(--line);border-radius:var(--radius-sm);box-shadow:0 20px 40px -10px rgba(0,0,0,.75)}
+#addrSug li{padding:.65rem .7rem;border-radius:8px;cursor:pointer;font-size:.95rem;line-height:1.3}
+#addrSug li small{display:block;color:var(--muted);font-size:.82rem}
+#addrSug li[aria-selected="true"],#addrSug li:hover{background:rgba(255,199,102,.16)}
+.addr-st{min-height:1.2em;margin:.45rem 0 0;font-size:.85rem;color:var(--dim)}
 .sum{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:.4rem 1rem;margin-top:14px}
 .sum div{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;border-bottom:1px solid var(--line);font-size:.93rem}
 .sum div:last-child{border-bottom:0}
@@ -193,6 +201,7 @@ nav a:hover{color:var(--text)}
 .nav{display:flex;gap:.6rem;margin-top:1.3rem}
 .nav .btn{flex:1}
 .nav .back{flex:0 0 auto}
+.nav .btn{white-space:nowrap;padding-left:1.1rem;padding-right:1.1rem}
 .err{color:#FFB4AC;font-weight:700;font-size:.9rem;min-height:1.2em;margin:.7rem 0 0}
 .after{color:var(--muted);font-size:.86rem;text-align:center;margin:.8rem 0 0}
 .copybox{display:none;margin-top:12px}
@@ -370,12 +379,14 @@ footer a{color:var(--muted)}
           <h3>Where's the house?</h3><p class="sub">We measure from your address and text you the exact price.</p>
           <div class="fields">
             <label>Your name<input id="name" autocomplete="name"></label>
-            <label>Home address<input id="addr" autocomplete="street-address" placeholder="Street and town"></label>
+            <div><label for="addr">Home address</label>
+              <div class="addr"><input id="addr" autocomplete="off" placeholder="Start typing your address" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="addrSug"><ul id="addrSug" role="listbox" hidden></ul></div>
+              <p class="addr-st" id="addrSt" aria-live="polite"></p></div>
           </div>
           <div class="sum" id="sum"></div>
         </div>
         <div class="pane" style="padding-top:0">
-          <div class="nav"><button type="button" class="btn btn-ghost back" id="back" hidden>Back</button><button type="button" class="btn btn-main" id="next">Continue</button><a class="btn btn-main" id="send" href="#" hidden>Text me my free quote</a></div>
+          <div class="nav"><button type="button" class="btn btn-ghost back" id="back" hidden>Back</button><button type="button" class="btn btn-main" id="next">Continue</button><a class="btn btn-main" id="send" href="#" hidden>Send my quote request</a></div>
           <p class="err" id="err" role="alert"></p>
           <p class="after" id="after" hidden>Your texting app opens with everything filled in. Just hit send.</p>
           <div class="copybox" id="copybox"><p class="after" style="margin:0 0 8px">On a computer? Copy this and text it to <span class="phone"></span>.</p><textarea id="msg" readonly></textarea><button class="btn btn-ghost" id="copy" type="button" style="margin-top:8px">Copy message</button></div>
@@ -450,11 +461,15 @@ document.querySelectorAll('.phone-link').forEach(function(a){a.href='sms:+1'+PHO
   function picked(n){return [].slice.call(document.querySelectorAll('input[name='+n+']:checked')).map(function(i){return i.value})}
   function v(id){return document.getElementById(id).value.trim()}
   function extras(){var e=[];if(cnt.bush)e.push(cnt.bush+' bush'+(cnt.bush>1?'es':'')+' ($'+cnt.bush*50+')');if(cnt.tree)e.push(cnt.tree+' tree'+(cnt.tree>1?'s':''));return e.join(', ')||'None'}
-  function message(){return "Hi TR Lights! I'd like a Christmas light quote.\n"+
-    'Name: '+v('name')+'\nAddress: '+v('addr')+'\nWhere: '+(picked('where').join(', ')||'Not sure')+
-    '\nColors: '+(picked('color').join(', ')||'Not sure')+'\nExtras: '+extras()+
-    '\nWebsite discount: $'+WEB_OFF+' off'+
-    (EARLY?'\nEarly booking: requested before Oct 31, another $'+EARLY_OFF+' off (deposit within 7 days of quote)\nTotal discount: $'+(WEB_OFF+EARLY_OFF)+' off':'')}
+  function message(){
+    var disc=EARLY?('🎁 $'+(WEB_OFF+EARLY_OFF)+' off\n• $'+WEB_OFF+' website discount\n• $'+EARLY_OFF+' early booking (deposit within 7 days of quote)')
+                  :('🎁 $'+WEB_OFF+' off (website discount)');
+    return '🎄 TR Lights quote request\n\n'+
+      '👤 '+v('name')+'\n'+
+      '📍 '+v('addr')+'\n\n'+
+      'Lights on: '+(picked('where').join(', ')||'Not sure')+'\n'+
+      'Colors: '+(picked('color').join(', ')||'Not sure')+'\n'+
+      'Extras: '+extras()+'\n\n'+disc}
   function summary(){var s=document.getElementById('sum');
     s.innerHTML='<div><span>Where</span><span>'+(picked('where').join(', ')||'Not sure')+'</span></div><div><span>Colors</span><span>'+(picked('color').join(', ')||'Not sure')+'</span></div><div><span>Extras</span><span>'+extras()+'</span></div>'+'<div><span>Website discount</span><span style="color:var(--gold);font-weight:800">$'+WEB_OFF+' off</span></div>'+(EARLY?'<div><span>Early booking</span><span style="color:var(--gold);font-weight:800">$'+EARLY_OFF+' off</span></div><div><span>Total off</span><span style="color:var(--gold);font-weight:800">$'+(WEB_OFF+EARLY_OFF)+'</span></div>':'')}
   function show(n){step=n;panes.forEach(function(p){p.hidden=+p.dataset.p!==n});
@@ -476,6 +491,53 @@ document.querySelectorAll('.phone-link').forEach(function(a){a.href='sms:+1'+PHO
     setTimeout(function(){document.getElementById('msg').value=message();document.getElementById('copybox').style.display='block'},1500)});
   document.getElementById('copy').onclick=function(){var t=document.getElementById('msg');t.select();try{navigator.clipboard.writeText(t.value)}catch(x){document.execCommand('copy')}this.textContent='Copied'};
   show(1);
+})();
+
+/* address suggestions: ArcGIS, then Photon (free, no key). Limited to the Jersey Shore area */
+(function(){
+  var addr=document.getElementById('addr'),sug=document.getElementById('addrSug'),st=document.getElementById('addrSt'),timer=null,items=[],hi=-1,reqId=0,place=null;
+  function status(x){st.textContent=x||''}
+  function close(){sug.hidden=true;addr.setAttribute('aria-expanded','false');hi=-1}
+  function draw(){sug.innerHTML='';
+    items.forEach(function(it,i){var li=document.createElement('li');li.setAttribute('role','option');li.setAttribute('aria-selected',i===hi?'true':'false');
+      li.appendChild(document.createTextNode(it.line||it.town));var sm=document.createElement('small');sm.textContent=it.line?it.town:'';li.appendChild(sm);
+      li.addEventListener('mousedown',function(e){e.preventDefault()});li.addEventListener('click',function(){pick(i)});sug.appendChild(li)});
+    sug.hidden=!items.length;addr.setAttribute('aria-expanded',items.length?'true':'false')}
+  function pick(i){place=items[i];addr.value=place.label;close();status('✓ Got it');addr.dispatchEvent(new Event('input'))}
+  function town(p){return p.city||p.town||p.village||p.locality||p.district||p.county||''}
+  function fromArcGIS(q){
+    return fetch('https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/suggest?f=json&countryCode=USA&maxSuggestions=6&location=-74.15,40.05&searchExtent=-74.9,39.4,-73.85,40.55&text='+encodeURIComponent(q))
+      .then(function(r){if(!r.ok)throw 0;return r.json()})
+      .then(function(j){if(j.error)throw 0;return (j.suggestions||[]).map(function(x){
+        var p=x.text.split(', ').filter(function(v){return v!=='USA'});
+        if(p.length<2||p.indexOf('NJ')<0)return null;
+        var line=p[0],rest=p.slice(1),zip=/^\d{5}$/.test(rest[rest.length-1])?rest.pop():'',stt=rest.pop();
+        var tw=rest.join(', ')+(rest.length?', ':'')+stt+(zip?' '+zip:'');
+        return {line:line,town:tw,label:line+', '+tw}}).filter(Boolean)})}
+  function fromPhoton(q){
+    return fetch('https://photon.komoot.io/api/?limit=8&lang=en&lat=40.05&lon=-74.15&bbox=-74.9,39.4,-73.85,40.55&q='+encodeURIComponent(q))
+      .then(function(r){if(!r.ok)throw 0;return r.json()})
+      .then(function(j){return (j.features||[]).filter(function(f){var p=f.properties||{};return !p.state||/new jersey/i.test(p.state)}).map(function(f){
+        var p=f.properties||{},line=[p.housenumber,p.street].filter(Boolean).join(' ')||p.name||'',tw=[town(p),'NJ',p.postcode].filter(Boolean).join(' ').replace(' NJ',', NJ');
+        return {line:line,town:tw,label:(line?line+', ':'')+tw}})})}
+  function lookup(q){var order=[fromArcGIS,fromPhoton],ok=false;
+    return order.reduce(function(prev,fn){return prev.then(function(l){if(l&&l.length)return l;return fn(q).then(function(x){ok=true;return x}).catch(function(){return null})})},Promise.resolve(null))
+      .then(function(l){if(l&&l.length)return l;if(ok)return [];throw 0})}
+  addr.addEventListener('input',function(){
+    if(place&&addr.value===place.label)return;place=null;clearTimeout(timer);var q=addr.value.trim();
+    if(q.length<3){items=[];draw();status('');return}
+    status('Searching…');
+    timer=setTimeout(function(){var id=++reqId,done=false,guard=setTimeout(function(){if(!done&&id===reqId)status('Suggestions are slow right now. Just type your full address, that works too.')},5000);
+      lookup(q).then(function(list){done=true;clearTimeout(guard);if(id!==reqId)return;var seen={};
+        items=list.filter(function(it){if(!it.label||seen[it.label])return false;return seen[it.label]=true}).slice(0,5);hi=-1;draw();
+        status(items.length?'':'No matches yet. Keep typing, or just type your full address.')})
+      .catch(function(){done=true;clearTimeout(guard);if(id!==reqId)return;items=[];draw();status("Couldn't load suggestions. Just type your full address, that works too.")})},250)});
+  addr.addEventListener('keydown',function(e){if(sug.hidden)return;
+    if(e.key==='ArrowDown'){hi=Math.min(items.length-1,hi+1);draw();e.preventDefault()}
+    else if(e.key==='ArrowUp'){hi=Math.max(0,hi-1);draw();e.preventDefault()}
+    else if(e.key==='Enter'&&hi>-1){pick(hi);e.preventDefault()}
+    else if(e.key==='Escape')close()});
+  addr.addEventListener('blur',function(){setTimeout(close,250)});
 })();
 
 /* service area pins */
