@@ -247,6 +247,56 @@ footer a{color:var(--muted)}
 .stick.away{transform:translateY(120%)}
 @media (min-width:900px){.stick{display:none}}
 @media (max-width:559px){.cta-row .btn{flex:1 1 100%}}
+
+/* ===== phones: straight to the quote ===== */
+.hdr-q{display:none}
+.m-only{display:none!important}
+@media (max-width:899px){.m-only{display:flex!important}p.m-only{display:block!important}.d-only{display:none!important}}
+@media (max-width:899px){
+  section{padding:40px 0}
+  .bar{padding:.5rem 0}
+  .brand svg{width:42px}.brand b{font-size:1.15rem}.brand small{display:none}
+  .hdr-q{display:inline-flex!important;padding:.6rem 1rem!important;font-size:.9rem!important}
+  .bar .btn:not(.hdr-q){display:none!important}
+  .hero{padding:14px 0 28px}
+  .hero::before{display:none}
+  .hero-grid{gap:18px}
+  .hero-media{order:-1;max-width:none}
+  .frame{aspect-ratio:16/10;border-radius:18px}
+  .float{display:none}
+  .loc{display:none}
+  .hero h1{font-size:clamp(2rem,1.4rem + 3vw,2.5rem);margin-bottom:.25em}
+  .hero .lede{font-size:1rem;margin-bottom:1rem}
+  .deal{padding:.75rem .9rem;margin-bottom:1rem;font-size:.92rem}
+  .cta-row .btn-ghost{display:none}
+  .trust{display:none}
+  .book{border:0;background:var(--bg)}
+  .book .wrap{padding:0 12px}
+  .bk{border-radius:20px}
+  .sec-head{margin-bottom:16px}
+  .sec-head h2{font-size:1.9rem}
+  .gal{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;margin:0 calc(var(--gutter) * -1);padding:0 var(--gutter) 6px;scrollbar-width:none}
+  .gal::-webkit-scrollbar{display:none}
+  .gal figure{flex:0 0 78%;height:230px;scroll-snap-align:center}
+  .gal .tall{flex-basis:46%}
+  .swipe-hint{display:block!important}
+  .pack-img{display:none}
+  .pack-body{margin-top:0;padding:18px 20px}
+  .pack h3{font-size:1.35rem}
+  .pack ul{display:none}
+  .eg{margin-bottom:0}
+  .packs{gap:10px}
+  .extras{gap:10px;margin-top:10px}
+  .ex{padding:.9rem 1rem}
+  .ex b{font-size:1.25rem}
+  .how{gap:10px}
+  .how li{padding:1rem 1.1rem;display:grid;grid-template-columns:36px 1fr;column-gap:12px;align-items:start}
+  .how li::before{margin:0;grid-row:span 2}
+  .how h3{font-size:1.15rem}
+  .map,.map-key{display:none}
+  .final{display:none}
+}
+.swipe-hint{display:none;color:var(--dim);font-size:.85rem;margin:10px 0 0}
 </style>
 </head>
 <body>
@@ -259,6 +309,7 @@ footer a{color:var(--muted)}
     </a>
     <nav aria-label="Main"><a href="#work">Our work</a><a href="#pricing">Pricing</a><a href="#how">How it works</a><a href="#area">Service area</a></nav>
     <a class="btn btn-main" href="#quote">Get a free quote</a>
+    <a class="btn btn-main hdr-q" href="#quote">Free quote</a>
   </div>
 </header>
 
@@ -268,8 +319,10 @@ footer a{color:var(--muted)}
     <div>
       <span class="loc"><i></i>Ocean &amp; Monmouth County, NJ</span>
       <h1>Your house, lit up for Christmas. No ladders.</h1>
-      <p class="lede">We design, install and maintain professional Christmas lights on your home, then take them down in January. The lights are ours, so there's nothing to buy or store.</p>
-      <div class="deal"><span class="ico">🎄</span><span><b>$<span class="web-amt">50</span> off</b> when you request your quote on this site.<span class="promo"> <b>First come, first served:</b> request by <b>October 31</b> for another <b>$100 off</b> and first pick of install dates, right after Halloween. That's <b>up to $<span class="both-amt">150</span> off</b>.</span></span></div>
+      <p class="lede d-only">We design, install and maintain professional Christmas lights on your home, then take them down in January. The lights are ours, so there's nothing to buy or store.</p>
+      <p class="lede m-only">Lights, install, repairs and January takedown. Nothing to buy or store.</p>
+      <div class="deal m-only"><span class="ico">🎄</span><span><span class="promo"><b>Up to $150 off</b> when you request by <b>Oct 31</b>. First come, first served.</span><span class="nopromo"><b>$<span class="web-amt">50</span> off</b> when you request your quote here.</span></span></div>
+      <div class="deal d-only"><span class="ico">🎄</span><span><b>$<span class="web-amt">50</span> off</b> when you request your quote on this site.<span class="promo"> <b>First come, first served:</b> request by <b>October 31</b> for another <b>$100 off</b> and first pick of install dates, right after Halloween. That's <b>up to $<span class="both-amt">150</span> off</b>.</span></span></div>
       <div class="cta-row">
         <a class="btn btn-main" href="#quote">Get my free quote</a>
         <a class="btn btn-ghost" href="#pricing">See pricing</a>
@@ -286,55 +339,6 @@ footer a{color:var(--muted)}
       <div class="float f2"><span class="bulb"></span><span><b>Lights included</b><small>Leased for the season</small></span></div>
       <div class="float f1"><span class="bulb" style="background:#E8615A;box-shadow:0 0 14px rgba(232,97,90,.9)"></span><span><b>We take them down</b><small>January, and store them</small></span></div>
     </div>
-  </div>
-</section>
-
-<section class="work" id="work">
-  <div class="wrap">
-    <div class="sec-head"><h2>Our work</h2><p>Rooflines, peaks, windows, garages and more, installed with commercial-grade C9 LEDs.</p></div>
-    <div class="gal">
-      <figure class="tall"><video poster="tr-ranch-pan.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Video of a lit ranch home"><source src="tr-ranch-pan.mp4" type="video/mp4"><source src="tr-ranch-pan.webm" type="video/webm"></video></figure>
-      <figure class="wide"><img src="g-colonial.jpg" alt="Two-story home with a red and white roofline" width="1200" height="675" loading="lazy"><figcaption>Two-story roofline</figcaption></figure>
-      <figure><img src="d-peak.jpg" alt="Cool white lights on a roof peak" width="800" height="616" loading="lazy"><figcaption>Peaks</figcaption></figure>
-      <figure><img src="d-windows.jpg" alt="Red and green lights framing a window" width="800" height="600" loading="lazy"><figcaption>Windows</figcaption></figure>
-      <figure><img src="d-garage.jpg" alt="Red and green lights around a garage door" width="800" height="600" loading="lazy"><figcaption>Garage</figcaption></figure>
-      <figure class="wide"><img src="g-ranch.jpg" alt="Ranch home with a cool white roofline and red and green windows" width="1200" height="675" loading="lazy"><figcaption>One-story roofline + windows</figcaption></figure>
-      <figure><img src="d-shed.jpg" alt="Red and white lights on a shed roofline" width="800" height="606" loading="lazy"><figcaption>Sheds</figcaption></figure>
-      <figure><img src="d-multi.jpg" alt="Multicolor lights on a garage roofline" width="800" height="603" loading="lazy"><figcaption>Multicolor</figcaption></figure>
-      <figure><img src="d-roofline.jpg" alt="Close-up of a red and white C9 roofline" width="800" height="599" loading="lazy"><figcaption>Red &amp; white</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section id="pricing">
-  <div class="wrap">
-    <div class="sec-head"><h2>Simple pricing</h2><p>Priced per foot of lights. Send your address and we'll measure your house and text you the exact price. No need to know your footage.</p></div>
-    <div class="packs">
-      <article class="pack">
-        <div class="pack-img"><img src="p-one.jpg" alt="One-story home with roofline lights" width="900" height="562" loading="lazy"></div>
-        <div class="pack-body">
-          <h3>One-story homes</h3>
-          <div class="price"><b>$8</b><span>per foot</span></div>
-          <p class="eg">Typical ranch, about 120 ft: <b>around $960</b></p>
-          <ul><li>Commercial LED C9 lights, leased for the season</li><li>Custom-cut install, clipped on, no nails</li><li>Automatic timer</li><li>Outages fixed within 48 hours</li><li>January takedown and storage</li></ul>
-        </div>
-      </article>
-      <article class="pack feature">
-        <div class="pack-img"><img src="p-two.jpg" alt="Two-story home with roofline lights" width="900" height="562" loading="lazy"></div>
-        <div class="pack-body">
-          <h3>Two-story or steep roofs</h3>
-          <div class="price"><b>$11</b><span>per foot</span></div>
-          <p class="eg">Typical colonial, about 170 ft: <b>around $1,870</b></p>
-          <ul><li>Everything in one-story</li><li>Taller ladders and extra safety setup</li><li>Upper rooflines, peaks and gables</li><li>Outages fixed within 48 hours</li><li>January takedown and storage</li></ul>
-        </div>
-      </article>
-    </div>
-    <div class="extras">
-      <div class="ex"><b>$50</b><span>per bush, wrapped in mini LED nets</span></div>
-      <div class="ex"><b>$125 / $250</b><span>small (up to 8 ft) / medium (8–15 ft) trees. Large trees priced on site.</span></div>
-      <div class="ex"><b>15% off</b><span>when you come back next year. Your lights are already cut for your house.</span></div>
-    </div>
-    <p class="fine">$<span class="web-amt">50</span> off every quote requested on this site<span class="promo">, plus $100 off if you request by October 31 and pay your deposit within 7 days of your quote</span>. 50% deposit books your install date, the rest is due on install day. Requires a working outdoor outlet.</p>
   </div>
 </section>
 
@@ -396,6 +400,57 @@ footer a{color:var(--muted)}
   </div>
 </section>
 
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="sec-head"><h2>Our work</h2><p>Rooflines, peaks, windows, garages and more, installed with commercial-grade C9 LEDs.</p></div>
+    <div class="gal">
+      <figure class="tall"><video poster="tr-ranch-pan.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Video of a lit ranch home"><source src="tr-ranch-pan.mp4" type="video/mp4"><source src="tr-ranch-pan.webm" type="video/webm"></video></figure>
+      <figure class="wide"><img src="g-colonial.jpg" alt="Two-story home with a red and white roofline" width="1200" height="675" loading="lazy"><figcaption>Two-story roofline</figcaption></figure>
+      <figure><img src="d-peak.jpg" alt="Cool white lights on a roof peak" width="800" height="616" loading="lazy"><figcaption>Peaks</figcaption></figure>
+      <figure><img src="d-windows.jpg" alt="Red and green lights framing a window" width="800" height="600" loading="lazy"><figcaption>Windows</figcaption></figure>
+      <figure><img src="d-garage.jpg" alt="Red and green lights around a garage door" width="800" height="600" loading="lazy"><figcaption>Garage</figcaption></figure>
+      <figure class="wide"><img src="g-ranch.jpg" alt="Ranch home with a cool white roofline and red and green windows" width="1200" height="675" loading="lazy"><figcaption>One-story roofline + windows</figcaption></figure>
+      <figure><img src="d-shed.jpg" alt="Red and white lights on a shed roofline" width="800" height="606" loading="lazy"><figcaption>Sheds</figcaption></figure>
+      <figure><img src="d-multi.jpg" alt="Multicolor lights on a garage roofline" width="800" height="603" loading="lazy"><figcaption>Multicolor</figcaption></figure>
+      <figure><img src="d-roofline.jpg" alt="Close-up of a red and white C9 roofline" width="800" height="599" loading="lazy"><figcaption>Red &amp; white</figcaption></figure>
+    </div>
+    <p class="swipe-hint">Swipe for more →</p>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="sec-head"><h2>Simple pricing</h2><p>Priced per foot of lights. We measure from your address and text you the exact price.</p></div>
+    <div class="packs">
+      <article class="pack">
+        <div class="pack-img"><img src="p-one.jpg" alt="One-story home with roofline lights" width="900" height="562" loading="lazy"></div>
+        <div class="pack-body">
+          <h3>One-story homes</h3>
+          <div class="price"><b>$8</b><span>per foot</span></div>
+          <p class="eg">Typical ranch, about 120 ft: <b>around $960</b></p>
+          <ul><li>Commercial LED C9 lights, leased for the season</li><li>Custom-cut install, clipped on, no nails</li><li>Automatic timer</li><li>Outages fixed within 48 hours</li><li>January takedown and storage</li></ul>
+        </div>
+      </article>
+      <article class="pack feature">
+        <div class="pack-img"><img src="p-two.jpg" alt="Two-story home with roofline lights" width="900" height="562" loading="lazy"></div>
+        <div class="pack-body">
+          <h3>Two-story or steep roofs</h3>
+          <div class="price"><b>$11</b><span>per foot</span></div>
+          <p class="eg">Typical colonial, about 170 ft: <b>around $1,870</b></p>
+          <ul><li>Everything in one-story</li><li>Taller ladders and extra safety setup</li><li>Upper rooflines, peaks and gables</li><li>Outages fixed within 48 hours</li><li>January takedown and storage</li></ul>
+        </div>
+      </article>
+    </div>
+    <div class="extras">
+      <div class="ex"><b>$50</b><span>per bush, wrapped in mini LED nets</span></div>
+      <div class="ex"><b>$125 / $250</b><span>small (up to 8 ft) / medium (8–15 ft) trees. Large trees priced on site.</span></div>
+      <div class="ex"><b>15% off</b><span>when you come back next year. Your lights are already cut for your house.</span></div>
+    </div>
+    <p class="fine">$<span class="web-amt">50</span> off every quote requested on this site<span class="promo">, plus $100 off if you request by October 31 and pay your deposit within 7 days of your quote</span>. 50% deposit books your install date, the rest is due on install day. Requires a working outdoor outlet.</p>
+  </div>
+</section>
+
+
 <section id="how">
   <div class="wrap">
     <div class="sec-head"><h2>How it works</h2><p>You get the lights. We handle everything else.</p></div>
@@ -440,6 +495,7 @@ document.querySelectorAll('.web-amt').forEach(function(e){e.textContent=WEB_OFF}
 document.querySelectorAll('.both-amt').forEach(function(e){e.textContent=WEB_OFF+EARLY_OFF});
 var EARLY=new Date()<new Date('2026-11-01T00:00:00-04:00');
 if(!EARLY)document.querySelectorAll('.promo').forEach(function(e){e.remove()});
+else document.querySelectorAll('.nopromo').forEach(function(e){e.remove()});
 var nice='('+PHONE.slice(0,3)+') '+PHONE.slice(3,6)+'-'+PHONE.slice(6);
 document.querySelectorAll('.phone').forEach(function(e){e.textContent=nice});
 document.querySelectorAll('.phone-link').forEach(function(a){a.href='sms:+1'+PHONE});
