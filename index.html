@@ -311,19 +311,18 @@ footer a{color:var(--muted)}
   .nav{margin-top:1rem}
   .final{display:none}
 }
-
-/* free quote form */
-.quote-form{background:var(--bg2);border-block:1px solid var(--line);scroll-margin-top:84px}
-.quote-form .sec-head{max-width:600px;margin-left:auto;margin-right:auto;text-align:center}
-.qf-embed{max-width:700px;margin:0 auto;background:var(--card);border:1px solid var(--line);
-  border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 40px 80px -40px rgba(0,0,0,.85)}
-.qf-embed iframe{display:block;width:100%;height:1200px;border:0;background:var(--card)}
-.qf-fallback{color:var(--dim);font-size:.9rem;text-align:center;margin:1rem 0 0}
-@media (max-width:899px){
-  .quote-form .wrap{padding:0 12px}
-  .qf-embed{border-radius:20px}
-  .qf-embed iframe{height:1500px}
-}
+/* thank-you screen */
+.opt{color:var(--dim);font-weight:500}
+.done{padding:clamp(26px,4vw,40px) clamp(22px,3.5vw,34px) clamp(30px,4vw,44px);text-align:center;animation:in .28s ease}
+.done[hidden]{display:none}
+@media (prefers-reduced-motion:reduce){.done{animation:none}}
+.done-ico{width:56px;height:56px;margin:0 auto 1rem;border-radius:50%;display:grid;place-items:center;
+  background:rgba(255,199,102,.16);color:var(--gold);font-size:1.7rem;line-height:1}
+.done h3{font-size:clamp(1.4rem,1.2rem + .9vw,1.8rem);margin-bottom:.5rem}
+.done p{color:var(--muted);font-size:.96rem;max-width:44ch;margin:0 auto 1rem}
+.done .btn{margin-top:.2rem}
+.done-note{font-size:.86rem;color:var(--dim);margin:.9rem auto 0}
+.sending{opacity:.6;pointer-events:none}
 .swipe-hint{display:none;color:var(--dim);font-size:.85rem;margin:10px 0 0}
 </style>
 </head>
@@ -369,7 +368,7 @@ footer a{color:var(--muted)}
 
 <section class="book" id="quote-sec">
   <div class="wrap">
-    <div class="bk" id="quote-card">
+    <div class="bk" id="quote">
       <div class="bk-head">
         <h2>Get your free quote</h2>
         <p class="m-only">We measure from your address. <b>$<span class="web-amt">50</span> off</b> here<span class="promo">, <b>$150</b> by Oct 31</span>.</p>
@@ -409,6 +408,8 @@ footer a{color:var(--muted)}
           <h3>Where's the house?</h3><p class="sub">We measure from your address and text you the exact price.</p>
           <div class="fields">
             <label>Your name<input id="name" autocomplete="name"></label>
+            <label>Cell phone<input id="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(732) 555-0123"></label>
+            <label>Email <span class="opt">(optional)</span><input id="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com"></label>
             <div><label for="addr">Home address</label>
               <div class="addr"><input id="addr" autocomplete="off" placeholder="Start typing your address" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="addrSug"><ul id="addrSug" role="listbox" hidden></ul></div>
               <p class="addr-st" id="addrSt" aria-live="polite"></p></div>
@@ -422,6 +423,13 @@ footer a{color:var(--muted)}
           <div class="copybox" id="copybox"><p class="after" style="margin:0 0 8px">On a computer? Copy this and text it to <span class="phone"></span>.</p><textarea id="msg" readonly></textarea><button class="btn btn-ghost" id="copy" type="button" style="margin-top:8px">Copy message</button></div>
         </div>
       </form>
+      <div class="done" id="done" hidden>
+        <div class="done-ico" aria-hidden="true">&#10003;</div>
+        <h3>Got it! We&rsquo;ll text you your exact price within 24 hours.</h3>
+        <p>We measure your house from your address<span class="done-addr"></span> and text the exact number to <b class="done-phone"></b>. No deposit until you say yes.</p>
+        <a class="btn btn-ghost" id="textNow" href="#">Text us now</a>
+        <p class="done-note">Prefer to talk it through? This opens Messages with your details already filled in.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -508,20 +516,6 @@ footer a{color:var(--muted)}
     <a class="btn btn-main" href="#quote">Get my free quote</a>
   </div>
 </section>
-
-<section class="quote-form" id="quote">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2>Get Your Free Quote + $150 Off</h2>
-      <p>We only have so many install dates before Christmas, and they&rsquo;re going quick.</p>
-    </div>
-    <div class="qf-embed">
-      <iframe src="https://docs.google.com/forms/d/1dDDCNVIhURPZU4aj4sO5kJJhl1eaO_m12rKEwc4jE_8/viewform?embedded=true"
-        title="Free quote request form" loading="lazy">Loading&hellip;</iframe>
-    </div>
-    <p class="qf-fallback">Form not loading? Text us at <a class="phone-link" href="#"><span class="phone"></span></a>.</p>
-  </div>
-</section>
 </main>
 
 <footer><div class="wrap">TR Lights · Christmas light installation · Ocean &amp; Monmouth County, NJ · Text <a class="phone-link" href="#"><span class="phone"></span></a></div></footer>
@@ -531,6 +525,11 @@ footer a{color:var(--muted)}
 var PHONE='7329551026';   // number quote requests are texted to
 var WEB_OFF=50;            // $ off for requesting through the website (always on)
 var EARLY_OFF=100;         // $ off for early booking (until Oct 31)
+/* Google Apps Script web app URL that writes quote requests to the Sheet.
+   Deploy > New deployment > Web app > Execute as: Me > Who has access: Anyone,
+   then paste the /exec URL here. See apps-script/README.md.
+   Leave '' and the form falls back to opening Messages, exactly as before. */
+var SHEET_URL='';
 document.querySelectorAll('.web-amt').forEach(function(e){e.textContent=WEB_OFF});
 document.querySelectorAll('.both-amt').forEach(function(e){e.textContent=WEB_OFF+EARLY_OFF});
 var EARLY=new Date()<new Date('2026-11-01T00:00:00-04:00');
@@ -562,6 +561,8 @@ document.querySelectorAll('.phone-link').forEach(function(a){a.href='sms:+1'+PHO
                   :('🎁 $'+WEB_OFF+' off (website discount)');
     return '🎄 TR Lights quote request\n\n'+
       '👤 '+v('name')+'\n'+
+      '📱 '+v('phone')+'\n'+
+      (v('email')?'✉️ '+v('email')+'\n':'')+
       '📍 '+v('addr')+'\n\n'+
       'Lights on: '+(picked('where').join(', ')||'Not sure')+'\n'+
       'Colors: '+(picked('color').join(', ')||'Not sure')+'\n'+
@@ -575,16 +576,69 @@ document.querySelectorAll('.phone-link').forEach(function(a){a.href='sms:+1'+PHO
   function refresh(){send.href='sms:+1'+PHONE+'?&body='+encodeURIComponent(message())}
   next.onclick=function(){
     if(step===1&&!picked('where').length){err.textContent='Pick at least one spot, or choose Roofline.';return}
-    show(step+1);document.getElementById('quote-card').scrollIntoView({block:'start'})};
+    show(step+1);document.getElementById('quote').scrollIntoView({block:'start'})};
   back.onclick=function(){show(step-1)};
   document.querySelectorAll('.stepper button').forEach(function(b){b.onclick=function(){var t=b.dataset.t;cnt[t]=Math.max(0,Math.min(40,cnt[t]+(+b.dataset.d)));document.getElementById(t).textContent=cnt[t]}});
-  ['name','addr'].forEach(function(id){document.getElementById(id).addEventListener('input',refresh)});
+  ['name','phone','email','addr'].forEach(function(id){document.getElementById(id).addEventListener('input',refresh)});
+
+  /* bushes are a firm $50 each; trees start at $125 (medium $250, large on site),
+     so this is a floor for the extras only -- the roofline is priced after we measure. */
+  function extrasEstimate(){return cnt.bush*50+cnt.tree*125}
+  function payload(){return{
+    name:v('name'),phone:v('phone'),email:v('email'),address:v('addr'),
+    where:picked('where').join(', ')||'Not sure',
+    colors:picked('color').join(', ')||'Not sure',
+    bushes:cnt.bush,trees:cnt.tree,
+    extrasEstimate:extrasEstimate(),
+    discount:EARLY?WEB_OFF+EARLY_OFF:WEB_OFF,
+    message:message(),source:location.hostname||'local'}}
+
+  function toMessages(){ /* last resort: never lose the lead */
+    document.getElementById('after').hidden=false;
+    document.getElementById('msg').value=message();
+    document.getElementById('copybox').style.display='block';
+    try{location.href=send.href}catch(x){}}
+
+  function thanks(){
+    var d=document.getElementById('done');
+    document.getElementById('qf').hidden=true;
+    document.querySelector('.steps').hidden=true;
+    document.querySelector('.progress').hidden=true;
+    document.querySelector('.bk-head').hidden=true;
+    d.querySelector('.done-phone').textContent=v('phone');
+    var a=v('addr');d.querySelectorAll('.done-addr').forEach(function(n){n.textContent=a?' ('+a+')':''});
+    document.getElementById('textNow').href=send.href;
+    d.hidden=false;
+    document.getElementById('quote').scrollIntoView({block:'start'})}
+
   send.addEventListener('click',function(e){
-    var miss=[];if(!v('name'))miss.push('name');if(!v('addr'))miss.push('addr');
-    if(miss.length){e.preventDefault();err.textContent='Add your '+(miss.length===2?'name and address':miss[0]==='name'?'name':'address')+' so we know which house to measure.';document.getElementById(miss[0]).focus();return}
-    err.textContent='';refresh();document.getElementById('after').hidden=false;
+    e.preventDefault();
+    var miss=[];if(!v('name'))miss.push('name');if(!v('phone'))miss.push('phone');if(!v('addr'))miss.push('addr');
+    if(miss.length){
+      var label={name:'name',phone:'cell number',addr:'address'};
+      err.textContent='Add your '+miss.map(function(m){return label[m]}).join(', ')+' so we know who to text and which house to measure.';
+      document.getElementById(miss[0]).focus();return}
+    if(v('phone').replace(/\D/g,'').length<10){
+      err.textContent='That phone number looks short -- please include the area code.';
+      document.getElementById('phone').focus();return}
+    err.textContent='';refresh();
     if(window.gtag)gtag('event','generate_lead');
-    setTimeout(function(){document.getElementById('msg').value=message();document.getElementById('copybox').style.display='block'},1500)});
+    if(!SHEET_URL){toMessages();return}
+    send.textContent='Sending\u2026';send.classList.add('sending');
+    var done=false,ctl=('AbortController' in window)?new AbortController():null;
+    var giveUp=setTimeout(function(){if(ctl)try{ctl.abort()}catch(x){}},10000);
+    function finish(ok){
+      if(done)return;done=true;clearTimeout(giveUp);
+      send.textContent='Send my quote request';send.classList.remove('sending');
+      ok?thanks():toMessages()}
+    fetch(SHEET_URL,{method:'POST',
+      /* text/plain keeps this a "simple" request so Apps Script needs no CORS preflight */
+      headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body:JSON.stringify(payload()),redirect:'follow',signal:ctl?ctl.signal:undefined})
+      .then(function(r){return r.ok?r.text():Promise.reject(r.status)})
+      .then(function(t){var j={};try{j=JSON.parse(t)}catch(x){}
+        finish(j.ok!==false)})
+      .catch(function(){finish(false)})});
   document.getElementById('copy').onclick=function(){var t=document.getElementById('msg');t.select();try{navigator.clipboard.writeText(t.value)}catch(x){document.execCommand('copy')}this.textContent='Copied'};
   show(1);
 })();
@@ -653,11 +707,8 @@ document.querySelectorAll('.phone-link').forEach(function(a){a.href='sms:+1'+PHO
 })();
 
 /* hide the sticky button while the quote is on screen */
-(function(){var st=document.querySelector('.stick'),bks=[document.getElementById('quote-sec'),document.getElementById('quote')].filter(Boolean);
-  if(!st||!bks.length||!('IntersectionObserver' in window))return;
-  var seen={},io=new IntersectionObserver(function(es){es.forEach(function(e){seen[e.target.id]=e.isIntersecting});
-    st.classList.toggle('away',Object.keys(seen).some(function(k){return seen[k]}))},{threshold:.08});
-  bks.forEach(function(b){io.observe(b)})})();
+(function(){var st=document.querySelector('.stick'),bk=document.getElementById('quote-sec');if(!st||!('IntersectionObserver' in window))return;
+  new IntersectionObserver(function(e){st.classList.toggle('away',e[0].isIntersecting)},{threshold:.08}).observe(bk)})();
 </script>
 </body>
 </html>
