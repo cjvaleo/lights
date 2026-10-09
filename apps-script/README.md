@@ -1,117 +1,80 @@
-# Sending quote requests to a Google Sheet
+# Lead tracker (both websites)
 
-`Code.gs` receives quote requests from the wizard on trlightsnj.com and writes
-one row per lead into a Google Sheet. Takes about five minutes to set up.
+`LeadTracker.gs` catches every quote request from **trlightsnj.com** and
+**summersaltdetailing.com** in one free Google Sheet, emails you the moment a
+lead comes in, and sends you a morning list of who to text.
+
+The same file lives in both repos. You only deploy it **once**, and both sites
+use the same URL.
 
 ## 1. Make the Sheet
 
-1. Go to <https://sheets.new> and name it something like **TR Lights — Quote Requests**.
-2. Leave it empty. The script creates a `Leads` tab with headers on the first submission.
+Go to <https://sheets.new> and name it **Leads**. Leave it empty.
 
 ## 2. Add the script
 
-1. In that Sheet: **Extensions → Apps Script**.
+1. In the Sheet: **Extensions → Apps Script**.
 2. Delete the placeholder `function myFunction() {}`.
-3. Paste in the entire contents of `Code.gs`.
-4. Optional: to get an email on every new lead, set `NOTIFY_EMAIL` near the top,
-   e.g. `var NOTIFY_EMAIL = 'cjvaleo@gmail.com';`
-5. Click the **save** icon.
+3. Paste in all of `LeadTracker.gs`.
+4. Optional now, needed later: in `CONFIG` near the top, replace
+   `PASTE_SUMMER_SALT_REVIEW_LINK` and `PASTE_TR_LIGHTS_REVIEW_LINK` with your
+   Google review links (Google Business Profile → **Ask for reviews** → copy link).
+5. Click **save**.
 
-Leave `SHEET_ID` as `''`. Because the script lives inside the Sheet, it already
-knows which Sheet to write to.
+## 3. Run setup once
 
-## 3. Deploy it as a web app
+1. In the function dropdown at the top, pick **setup** → **Run**.
+2. Google asks for permission: pick your account → *"Google hasn't verified this
+   app"* → **Advanced** → **Go to (project) (unsafe)** → **Allow**.
+   That warning is normal. It's your own script.
+3. Your Sheet now has columns, and the 8am email is scheduled.
 
-1. Top right: **Deploy → New deployment**.
-2. Click the gear next to "Select type" and choose **Web app**.
-3. Fill in:
-   - **Description:** `quote receiver`
-   - **Execute as:** **Me (your@gmail.com)**
-   - **Who has access:** **Anyone**
-4. Click **Deploy**.
-5. Google asks for authorization the first time:
-   **Authorize access** → pick your account → you'll see
-   *"Google hasn't verified this app"* → **Advanced** →
-   **Go to (project name) (unsafe)** → **Allow**.
-   This warning is expected — it's your own script, and it's unverified only
-   because you haven't submitted it for Google's review process.
-6. Copy the **Web app URL**. It ends in `/exec`.
+## 4. Deploy it as a web app
 
-> **"Who has access" must be "Anyone."**
-> "Anyone with Google account" makes the site's submissions fail, because
-> visitors aren't signed in to Google when they submit.
+1. **Deploy → New deployment**, click the gear, choose **Web app**.
+2. **Execute as:** Me. **Who has access:** **Anyone** (not "Anyone with Google
+   account", or the website can't send to it).
+3. **Deploy**, then copy the **Web app URL** (ends in `/exec`).
+4. Paste it in a browser tab. You should see
+   `{"ok":true,"message":"Lead tracker is live."}`.
 
-## 4. Check the endpoint
+## 5. Put the URL in both websites
 
-Paste the `/exec` URL into a browser tab. You should see:
+In each repo's `index.html`, find `var SHEET_URL='';` and paste the URL between
+the quotes. Commit and push; Vercel redeploys on its own.
 
-```json
-{"ok":true,"message":"TR Lights quote endpoint is live."}
-```
+## 6. Test
 
-If you get a sign-in page instead, "Who has access" isn't set to **Anyone** —
-redo step 3.
-
-## 5. Put the URL into the site
-
-In `index.html`, find this line near the top of the `<script>` block (~line 510):
-
-```js
-var SHEET_URL='';
-```
-
-Paste your URL between the quotes:
-
-```js
-var SHEET_URL='https://script.google.com/macros/s/AKfycb.....................b1c/exec';
-```
-
-Commit and push — Vercel redeploys automatically.
-
-## 6. Test it end to end
-
-Open the live site, run the wizard through with your own name and cell number,
-and submit. You should land on the *"Got it! We'll text you your exact price
-within 24 hours"* screen, and a new row should appear in the `Leads` tab.
+Pick **testLeads** in the dropdown and **Run**. Two fake rows appear (one per
+business) and you get two "New lead" emails. Delete the test rows after. Then
+send yourself a real quote from each website.
 
 ## Updating the script later
 
-After editing `Code.gs`, changes do **not** go live until you redeploy:
-**Deploy → Manage deployments →** pencil icon **→ Version: New version → Deploy**.
-The `/exec` URL stays the same, so there's nothing to change on the site.
+Edits don't go live until you redeploy:
+**Deploy → Manage deployments →** pencil **→ Version: New version → Deploy**.
+The URL stays the same.
 
-## What a row looks like
+## Columns
 
-| Column | Example | Notes |
-| --- | --- | --- |
-| Timestamp | `2026-09-26 11:24:03` | server-side, when the row was written |
-| Name | `Chris Valeo` | required in the form |
-| Phone | `(732) 555-0123` | required in the form |
-| Email | `chris@example.com` | optional — may be blank |
-| Address | `12 Ocean Ave, Toms River, NJ` | required in the form |
-| Where | `Roofline, Peaks, Garage` | comma separated |
-| Colors | `Warm white, Multicolor` | comma separated |
-| Bushes | `3` | count |
-| Trees | `1` | count |
-| Extras est. ($) | `275` | **extras only** — see below |
-| Discount ($) | `150` | `$50` site discount, `$150` before Oct 31 |
-| Source | `www.trlightsnj.com` | hostname the request came from |
-
-### About "Extras est."
-
-This is **not** a whole-job quote. The site deliberately never quotes the
-roofline, because that needs the measured footage — which is the whole point of
-"we measure and text you the exact price."
-
-The number is a floor for the add-ons only: bushes at the firm `$50` each, plus
-trees at the `$125` small-tree rate. A medium tree is `$250` and large trees are
-priced on site, so the real extras figure can be higher — never lower.
+| Column | What it is |
+| --- | --- |
+| Received | When the quote came in |
+| Business | TR Lights or Summer-Salt |
+| Name, Phone, Email, Town / Address | From the form |
+| Details | What they picked (lights: where, colors, extras · detailing: vehicle, package, add-ons, day/time) |
+| Quote $ | Detailing price after discounts. Blank for lights, since you price after measuring |
+| **Status** | **You update this:** New → Quoted → Booked → Done (or Lost) |
+| **Job Date** | **You type this** when you book |
+| Texts OK | Whether they ticked "OK to text me reminders and offers" |
+| Last Follow-up, Review Asked | Filled in by the morning email so nobody gets texted twice |
+| Notes | Discounts, codes, first-time customer, their notes |
+| Source | Where the lead came from: `Facebook ad 3`, `Google search`, `Instagram`, `Direct`, … |
+| Lead ID | Hidden. Stops duplicate rows if someone goes back and changes their quote |
 
 ## If a save ever fails
 
-The site is built so a failed save can't cost you a lead. If the request errors
-out or takes more than 10 seconds, the wizard falls back to the old behavior:
-it opens Messages with the full request pre-filled, and shows the copy-paste box
-for desktop visitors. You'd still get the lead as a text, just not a row.
-
-Failures are logged under **Apps Script → Executions** if you need to look.
+Neither site can lose a lead over this. The lights form falls back to opening
+Messages with the request filled in. The detailing form always opens Messages
+anyway; saving to the Sheet happens alongside it. Failures show under
+**Apps Script → Executions**.

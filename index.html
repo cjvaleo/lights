@@ -9,12 +9,16 @@
 <meta property="og:title" content="TR Lights — Christmas lights, installed for you">
 <meta property="og:description" content="Lights, install, repairs and takedown included. First come, first served: request by Oct 31 for $100 off.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="g-colonial.jpg">
+<meta property="og:image" content="https://www.trlightsnj.com/g-colonial.jpg">
+<meta property="og:url" content="https://www.trlightsnj.com/">
+<link rel="canonical" href="https://www.trlightsnj.com/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="h-colonial.jpg">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"TR Lights","description":"Christmas light installation for homes in Ocean and Monmouth County, New Jersey.","telephone":"+1-732-955-1026","priceRange":"$$","areaServed":["Ocean County, NJ","Monmouth County, NJ"]}
+{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"TR Lights","description":"Christmas light installation for homes in Ocean and Monmouth County, New Jersey.","telephone":"+1-732-955-1026","url":"https://www.trlightsnj.com/","image":"https://www.trlightsnj.com/g-colonial.jpg","priceRange":"$$","areaServed":["Ocean County, NJ","Monmouth County, NJ","Toms River, NJ","Brick, NJ","Point Pleasant, NJ","Lakewood, NJ","Jackson, NJ","Manasquan, NJ","Wall, NJ","Howell, NJ","Freehold, NJ","Middletown, NJ"],
+"makesOffer":[{"@type":"Offer","name":"Christmas light installation, one-story home","description":"Lights leased for the season, install, repairs and January takedown","priceSpecification":{"@type":"UnitPriceSpecification","price":"8","priceCurrency":"USD","unitText":"per foot"}},{"@type":"Offer","name":"Christmas light installation, two-story or steep roof","description":"Lights leased for the season, install, repairs and January takedown","priceSpecification":{"@type":"UnitPriceSpecification","price":"11","priceCurrency":"USD","unitText":"per foot"}}]}
 </script>
 <style>
 :root{
@@ -413,6 +417,7 @@ footer a{color:var(--muted)}
             <div><label for="addr">Home address</label>
               <div class="addr"><input id="addr" autocomplete="off" placeholder="Start typing your address" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="addrSug"><ul id="addrSug" role="listbox" hidden></ul></div>
               <p class="addr-st" id="addrSt" aria-live="polite"></p></div>
+            <div class="tiles" style="grid-template-columns:1fr"><label class="tile"><input type="checkbox" id="textsOk"><span>Text me install reminders and next year's early-bird deal<small>Optional. Reply STOP anytime.</small></span></label></div>
           </div>
           <div class="sum" id="sum"></div>
         </div>
@@ -530,6 +535,21 @@ var EARLY_OFF=100;         // $ off for early booking (until Oct 31)
    then paste the /exec URL here. See apps-script/README.md.
    Leave '' and the form falls back to opening Messages, exactly as before. */
 var SHEET_URL='';
+var LEAD_ID='L'+Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+/* Where did this visitor come from? (the l1-l12 ad links add ?src=fb&ad=N). Saved once per visit. */
+var SOURCE=(function(){
+  try{
+    var saved=sessionStorage.getItem('trSrc');if(saved)return saved;
+    var q=new URLSearchParams(location.search),s='',src=q.get('src')||q.get('utm_source'),ad=q.get('ad'),camp=q.get('utm_campaign');
+    if(q.get('gclid'))s='Google ad';
+    else if(src){s=({fb:'Facebook',facebook:'Facebook',ig:'Instagram',instagram:'Instagram',google:'Google',nd:'Nextdoor',nextdoor:'Nextdoor',flyer:'Flyer',qr:'QR code',card:'Business card',sign:'Yard sign',doorhanger:'Door hanger'})[src.toLowerCase()]||src;
+      if(ad)s+=' ad '+ad;if(camp)s+=' ('+camp+')'}
+    else if(q.get('fbclid'))s='Facebook';
+    else if(document.referrer){var h=new URL(document.referrer).hostname.replace(/^www\./,'');
+      if(h!==location.hostname.replace(/^www\./,''))s=/google\./.test(h)?'Google search':/facebook|^fb\.|^m\.facebook/.test(h)?'Facebook':/instagram/.test(h)?'Instagram':/nextdoor/.test(h)?'Nextdoor':/bing\./.test(h)?'Bing search':h}
+    s=s||'Direct';sessionStorage.setItem('trSrc',s);return s;
+  }catch(e){return ''}
+})();
 document.querySelectorAll('.web-amt').forEach(function(e){e.textContent=WEB_OFF});
 document.querySelectorAll('.both-amt').forEach(function(e){e.textContent=WEB_OFF+EARLY_OFF});
 var EARLY=new Date()<new Date('2026-11-01T00:00:00-04:00');
@@ -591,7 +611,9 @@ document.querySelectorAll('.phone-link').forEach(function(a){a.href='sms:+1'+PHO
     bushes:cnt.bush,trees:cnt.tree,
     extrasEstimate:extrasEstimate(),
     discount:EARLY?WEB_OFF+EARLY_OFF:WEB_OFF,
-    message:message(),source:location.hostname||'local'}}
+    message:message(),source:location.hostname||'local',
+    business:'lights',leadId:LEAD_ID,campaign:SOURCE,
+    textsOk:document.getElementById('textsOk').checked}}
 
   function toMessages(){ /* last resort: never lose the lead */
     document.getElementById('after').hidden=false;
