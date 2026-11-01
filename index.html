@@ -491,8 +491,7 @@ footer a{color:var(--muted)}
 
 <section class="work" id="work">
   <div class="wrap">
-    <div class="sec-head"><h2>Our work</h2><p>Real houses we lit up across Ocean and Monmouth County. Tap any photo to see it bigger.</p></div>
-    <div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-g="x">🎄 Christmas installs</button><button role="tab" class="p" aria-selected="false" data-g="p">✨ Permanent lights</button></div>
+    <div class="sec-head"><h2>Our work</h2><p>Real houses we lit up across Ocean and Monmouth County.</p></div>
     <div class="gal" id="gal"></div>
     <div class="more"><button class="btn btn-ghost" id="showMore" type="button">Show more</button></div>
     <div class="inline-cta">
@@ -622,16 +621,7 @@ document.querySelectorAll('.text-us').forEach(function(a){a.href='sms:+1'+PHONE+
 
 /* gallery */
 (function(){
-  var G={
-    x:[['christmas-video','v','Christmas install','big'],['../g-colonial','i','Two-story Christmas install','wide'],['christmas-photo-2-side','i','Christmas install','tall'],
-       ['../tr-ranch-pan','v','Christmas install','tall'],['christmas-photo-1-front','i','Christmas install',''],['../h-colonial','i','Christmas install','wide'],
-       ['christmas-photo-3-street','i','Christmas install',''],['permanent-still-1','i','Christmas colors on permanent lights','']],
-    p:[['permanent-video','v','Permanent lights','big'],['permanent-still-2','i','Christmas colors',''],['front-blue-video','v','Any color, any night','tall'],
-       ['halloween-photo-1','i','Halloween',''],['front-purple-angle','i','Two-story roofline','tall'],['patio-color-change-video','v','Patio color change','tall'],
-       ['garage-purple','i','Garage',''],['front-blue-orange','i','Blue &amp; orange',''],['patio-warm-white-video','v','Warm white patio','big'],
-       ['pavilion-video-1','v','Pavilion','tall'],['permanent-still-3','i','Red &amp; green',''],['patio-purple','i','Patio, purple',''],
-       ['halloween-video-2','v','Halloween','tall'],['patio-white-1','i','Patio, white',''],['backyard-moon','i','Backyard',''],['patio-orange','i','Patio, orange','']]
-  };
+  var G={x:[['christmas-video','v','TR Lights install','big'],['../tr-ranch-pan','v','TR Lights install',''],['permanent-video','v','TR Lights install',''],['front-blue-video','v','TR Lights install',''],['front-purple-walk-video','v','TR Lights install',''],['halloween-video-1','v','TR Lights install',''],['front-garage-walk-video','v','TR Lights install',''],['patio-color-change-video','v','TR Lights install',''],['patio-warm-white-video','v','TR Lights install',''],['pavilion-video-1','v','TR Lights install',''],['halloween-video-2','v','TR Lights install',''],['backyard-moon-video','v','TR Lights install',''],['patio-lavender-video','v','TR Lights install',''],['patio-purple-video-1','v','TR Lights install',''],['pavilion-video-2','v','TR Lights install',''],['patio-blue-video','v','TR Lights install',''],['backyard-screen-room-video','v','TR Lights install',''],['patio-purple-video-2','v','TR Lights install',''],['backyard-walk-video','v','TR Lights install',''],['patio-purple-video-3','v','TR Lights install','']]};
   var gal=document.getElementById('gal'),more=document.getElementById('showMore'),cur='x',shown=12,io=null;
   if('IntersectionObserver' in window)io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;
     if(e.isIntersecting){if(!v.src)v.src=v.dataset.src;var p=v.play();if(p&&p.catch)p.catch(function(){})}else v.pause()})},{threshold:.35});
@@ -641,12 +631,10 @@ document.querySelectorAll('.text-us').forEach(function(a){a.href='sms:+1'+PHONE+
       if(it[1]==='v'){el=document.createElement('video');el.muted=true;el.loop=true;el.playsInline=true;el.setAttribute('playsinline','');el.setAttribute('muted','');
         el.preload='none';el.poster=src(it[0],'.jpg');el.dataset.src=src(it[0],'.mp4');el.setAttribute('aria-label',it[2].replace('&amp;','&')+' video');
         if(io)io.observe(el);else{el.src=el.dataset.src;el.controls=true}
-        f.appendChild(el);var b=document.createElement('span');b.className='play';b.textContent='▶';f.appendChild(b)}
+        f.appendChild(el)}
       else{el=document.createElement('img');el.src=src(it[0],'.jpg');el.loading='lazy';el.alt=it[2].replace('&amp;','&')+', lit by TR Lights';f.appendChild(el)}
       gal.appendChild(f)});
     more.hidden=shown>=list.length}
-  document.querySelectorAll('.tabs button').forEach(function(b){b.onclick=function(){
-    document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false')});cur=b.dataset.g;shown=12;draw()}});
   var lb=document.getElementById('lb'),lbm=lb.querySelector('.lb-media'),li=0;
   window.openLb=function(i){li=i;var it=G[cur][i];lbm.innerHTML='';var el;
     if(it[1]==='v'){el=document.createElement('video');el.src=src(it[0],'.mp4');el.controls=true;el.autoplay=true;el.loop=true;el.muted=true;el.playsInline=true;el.setAttribute('playsinline','')}
