@@ -621,12 +621,16 @@ document.querySelectorAll('.text-us').forEach(function(a){a.href='sms:+1'+PHONE+
 
 /* gallery */
 (function(){
-  var G={x:[['christmas-video','v','TR Lights install','big'],['../tr-ranch-pan','v','TR Lights install',''],['permanent-video','v','TR Lights install',''],['front-blue-video','v','TR Lights install',''],['front-purple-walk-video','v','TR Lights install',''],['halloween-video-1','v','TR Lights install',''],['front-garage-walk-video','v','TR Lights install',''],['patio-color-change-video','v','TR Lights install',''],['patio-warm-white-video','v','TR Lights install',''],['pavilion-video-1','v','TR Lights install',''],['halloween-video-2','v','TR Lights install',''],['backyard-moon-video','v','TR Lights install',''],['patio-lavender-video','v','TR Lights install',''],['patio-purple-video-1','v','TR Lights install',''],['pavilion-video-2','v','TR Lights install',''],['patio-blue-video','v','TR Lights install',''],['backyard-screen-room-video','v','TR Lights install',''],['patio-purple-video-2','v','TR Lights install',''],['backyard-walk-video','v','TR Lights install',''],['patio-purple-video-3','v','TR Lights install','']]};
+  var G={x:[['christmas-video','v','TR Lights install','big'],['front-blue-video','v','TR Lights install',''],['permanent-video','v','TR Lights install',''],['patio-warm-white-video','v','TR Lights install',''],['halloween-video-1','v','TR Lights install',''],['patio-color-change-video','v','TR Lights install','wide'],['pavilion-video-1','v','TR Lights install','wide']]};
   var gal=document.getElementById('gal'),more=document.getElementById('showMore'),cur='x',shown=12,io=null;
-  if('IntersectionObserver' in window)io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;
-    if(e.isIntersecting){if(!v.src)v.src=v.dataset.src;var p=v.play();if(p&&p.catch)p.catch(function(){})}else v.pause()})},{threshold:.35});
+  /* only one video plays at a time: the one most on screen */
+  var vis=new Map(),playing=null;
+  function pickOne(){var best=null,br=0;vis.forEach(function(r,v){if(r>br&&v.isConnected){br=r;best=v}});
+    if(best===playing)return;if(playing)playing.pause();playing=best;
+    if(best&&br>=.5){if(!best.src)best.src=best.dataset.src;var p=best.play();if(p&&p.catch)p.catch(function(){})}else playing=null}
+  if('IntersectionObserver' in window)io=new IntersectionObserver(function(es){es.forEach(function(e){vis.set(e.target,e.isIntersecting?e.intersectionRatio:0)});pickOne()},{threshold:[0,.25,.5,.75,1]});
   function src(n,ext){return n.indexOf('../')===0?n.slice(3)+ext:'media/'+n+ext}
-  function draw(){gal.innerHTML='';var list=G[cur];
+  function draw(){gal.innerHTML='';vis.clear();playing=null;var list=G[cur];
     list.slice(0,shown).forEach(function(it,idx){var f=document.createElement('figure'),el;if(it[3])f.className=it[3];f.onclick=function(){openLb(idx)};
       if(it[1]==='v'){el=document.createElement('video');el.muted=true;el.loop=true;el.playsInline=true;el.setAttribute('playsinline','');el.setAttribute('muted','');
         el.preload='none';el.poster=src(it[0],'.jpg');el.dataset.src=src(it[0],'.mp4');el.setAttribute('aria-label',it[2].replace('&amp;','&')+' video');
