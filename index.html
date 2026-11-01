@@ -65,7 +65,7 @@ section{padding:clamp(48px,8vw,96px) 0}
 .urgent u{text-underline-offset:3px;white-space:nowrap}
 
 /* header */
-header{position:sticky;top:0;z-index:40;background:rgba(11,24,19,.9);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+header{position:sticky;isolation:isolate;top:0;z-index:40;background:rgba(11,24,19,.9);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
   border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:.6rem;padding-bottom:.6rem}
 .brand{display:flex;align-items:center;text-decoration:none;color:var(--text)}
@@ -112,13 +112,47 @@ nav a:hover{color:var(--text)}
 .float.f1{left:-18px;bottom:28px}
 .float.f2{right:-14px;top:24px}
 
+/* string lights under the header */
+.bulbs{position:absolute;left:0;right:0;bottom:-11px;height:14px;display:flex;justify-content:space-between;padding:0 10px;pointer-events:none;overflow:hidden}
+.bulbs::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:#1c3a2d}
+.bulbs i{width:7px;height:11px;border-radius:3px 3px 5px 5px;margin-top:2px;background:var(--c);box-shadow:0 0 10px var(--c);animation:tw 3s infinite ease-in-out;animation-delay:var(--d)}
+@keyframes tw{0%,100%{opacity:1}50%{opacity:.45}}
+@media (prefers-reduced-motion:reduce){.bulbs i{animation:none}}
+
+/* hero stack */
+.stack{position:relative;width:100%;max-width:500px;justify-self:center;aspect-ratio:5/6}
+.stack .s1,.stack .s2{position:absolute;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#050807;box-shadow:0 40px 80px -30px rgba(0,0,0,.9)}
+.stack .s1{right:0;top:0;width:78%;height:88%}
+.stack .s2{left:0;bottom:0;width:48%;height:46%;border:3px solid var(--bg);box-shadow:0 30px 60px -20px rgba(0,0,0,.9),0 0 0 1px rgba(180,140,255,.4)}
+.stack video,.stack img{width:100%;height:100%;object-fit:cover}
+.stack .lbl{position:absolute;left:12px;bottom:12px;background:rgba(11,24,19,.86);border-radius:999px;font-size:.78rem;font-weight:800;padding:.3rem .7rem;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.stack .s2 .lbl{color:var(--violet)}
+.stack .s1 .lbl{color:var(--gold);left:auto;right:12px;bottom:auto;top:12px}
+.stack .lbl{white-space:nowrap}
+@media (max-width:899px){.stack .lbl{font-size:.7rem;padding:.25rem .55rem;left:8px;bottom:8px}.stack .s1 .lbl{right:8px;top:8px;left:auto;bottom:auto}}
+.stack .glow{position:absolute;inset:10% 0 0 15%;background:radial-gradient(circle,rgba(255,199,102,.25),transparent 65%);filter:blur(20px)}
+.badge{position:absolute;right:-8px;bottom:18%;z-index:2;display:flex;align-items:center;gap:.55rem;background:rgba(11,24,19,.94);border:1px solid var(--line);border-radius:14px;padding:.6rem .85rem;font-size:.82rem;box-shadow:0 14px 30px -12px rgba(0,0,0,.8)}
+.badge b{display:block;font-size:.95rem}.badge small{color:var(--muted)}
+.badge .sh{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:rgba(255,199,102,.16);color:var(--gold);font-size:1rem}
+
+/* trust strip */
+.strip{border-block:1px solid var(--line);background:var(--bg2)}
+.strip ul{display:grid;grid-template-columns:repeat(2,1fr);gap:0;list-style:none;margin:0;padding:0}
+@media (min-width:820px){.strip ul{grid-template-columns:repeat(4,1fr)}}
+.strip li{padding:1.1rem .5rem;text-align:center;border-right:1px solid var(--line)}
+.strip li:last-child{border-right:0}
+@media (max-width:819px){.strip li:nth-child(2){border-right:0}.strip li:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+.strip b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(1.35rem,1.1rem + 1vw,1.8rem);color:var(--gold);line-height:1.1}
+.strip span{color:var(--muted);font-size:.86rem}
+
 /* services */
 .svcs{display:grid;gap:clamp(14px,2.4vw,26px)}
 @media (min-width:860px){.svcs{grid-template-columns:1fr 1fr}}
 .svc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column}
 .svc.perm{border-color:rgba(180,140,255,.45)}
-.svc-img{position:relative;aspect-ratio:16/10;overflow:hidden;background:#050807}
-.svc-img img,.svc-img video{width:100%;height:100%;object-fit:cover}
+.svc-img{position:relative;aspect-ratio:4/3;overflow:hidden;background:#050807}
+.svc-img img,.svc-img video{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.svc:hover .svc-img img{transform:scale(1.04)}
 .svc-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(19,42,33,.97))}
 .tag{position:absolute;z-index:1;left:14px;top:14px;background:var(--gold);color:var(--on-gold);font-weight:800;font-size:.85rem;padding:.35rem .75rem;border-radius:999px}
 .perm .tag{background:var(--violet);color:#160B2E}
@@ -161,7 +195,6 @@ nav a:hover{color:var(--text)}
 .tile input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
 .tile>span{display:flex;flex-direction:column;gap:.3rem;height:100%;background:var(--card2);border:2px solid var(--line);border-radius:14px;padding:.85rem 1rem;font-weight:700;transition:border-color .15s,background .15s}
 .tile small{color:var(--muted);font-weight:500;font-size:.82rem}
-.tiles.three{grid-template-columns:repeat(3,1fr)}
 .tile .em{font-size:1.4rem;line-height:1}
 .tile input:checked+span{border-color:var(--gold);background:rgba(255,199,102,.1)}
 .tile input:focus-visible+span{outline:3px solid var(--gold);outline-offset:2px}
@@ -207,15 +240,26 @@ nav a:hover{color:var(--text)}
 .tabs button{border:0;background:transparent;color:var(--muted);font-weight:800;font-size:.93rem;padding:.65rem 1.1rem;border-radius:999px;cursor:pointer;white-space:nowrap}
 .tabs button[aria-selected="true"]{background:var(--gold);color:var(--on-gold)}
 .tabs button.p[aria-selected="true"]{background:var(--violet);color:#160B2E}
-.gal{display:grid;gap:10px;grid-template-columns:repeat(2,1fr)}
-@media (min-width:700px){.gal{grid-template-columns:repeat(3,1fr)}}
-@media (min-width:1000px){.gal{grid-template-columns:repeat(4,1fr)}}
-.gal figure{position:relative;margin:0;border-radius:var(--radius);overflow:hidden;background:#050807;aspect-ratio:3/4}
-.gal figure.w{aspect-ratio:auto;grid-column:span 2}
-.gal img,.gal video{width:100%;height:100%;object-fit:cover}
+.gal{display:grid;gap:10px;grid-template-columns:repeat(2,1fr);grid-auto-rows:190px;grid-auto-flow:dense}
+@media (min-width:860px){.gal{grid-template-columns:repeat(4,1fr);grid-auto-rows:230px;gap:12px}}
+.gal figure{position:relative;margin:0;border-radius:var(--radius);overflow:hidden;background:#050807;cursor:zoom-in}
+.gal figure.big{grid-column:span 2;grid-row:span 2}
+.gal figure.tall{grid-row:span 2}
+.gal figure.wide{grid-column:span 2}
+.gal figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.55));pointer-events:none}
+.gal img,.gal video{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.gal figure:hover img,.gal figure:hover video{transform:scale(1.05)}
+.gal figcaption{z-index:1}
 .gal figcaption{position:absolute;left:8px;bottom:8px;right:8px;width:fit-content;background:rgba(11,24,19,.86);color:var(--text);font-size:.76rem;font-weight:700;
   padding:.26rem .65rem;border-radius:999px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
-.gal .play{position:absolute;right:8px;top:8px;background:rgba(11,24,19,.8);border-radius:999px;font-size:.7rem;font-weight:800;padding:.2rem .5rem;color:var(--muted)}
+.gal .play{position:absolute;z-index:1;right:10px;top:10px;width:28px;height:28px;display:grid;place-items:center;background:rgba(11,24,19,.75);border-radius:50%;font-size:.7rem;color:var(--text)}
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:90;background:rgba(3,8,6,.94);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:16px}
+.lb-media{max-width:min(92vw,980px);max-height:76vh;display:flex}
+.lb-media img,.lb-media video{max-width:100%;max-height:76vh;border-radius:18px;object-fit:contain}
+.lb-x{position:absolute;right:14px;top:14px;width:42px;height:42px;border-radius:50%;border:0;background:var(--card);color:var(--text);font-size:1.4rem;cursor:pointer}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;background:rgba(19,42,33,.9);color:var(--text);font-size:1.3rem;cursor:pointer}
+.lb-prev{left:12px}.lb-next{right:12px}
 .more{display:flex;justify-content:center;gap:.7rem;flex-wrap:wrap;margin-top:18px}
 .inline-cta{margin-top:clamp(26px,4vw,40px);background:var(--card);border:1px solid rgba(255,199,102,.45);border-radius:var(--radius-lg);padding:clamp(20px,3vw,30px);
   display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between}
@@ -270,15 +314,18 @@ footer a{color:var(--muted)}
 .pop-no{background:none;border:0;color:var(--dim);font-size:.86rem;margin-top:.8rem;cursor:pointer;text-decoration:underline}
 
 .m-only{display:none!important}
+@media (max-width:859px){.gal figure.wide{grid-column:span 2}.gal figure.tall{grid-row:span 2}}
 @media (max-width:899px){
   .m-only{display:block!important}.d-only{display:none!important}
   section{padding:40px 0}
   .brand svg{width:128px}
   .hero{padding:12px 0 28px}
-  .hero::before,.float,.loc{display:none}
+  .hero::before,.loc{display:none}
   .hero-grid{gap:16px}
-  .hero-media{order:-1;max-width:none}
-  .frame{aspect-ratio:4/3.4;border-radius:18px}
+  .stack{order:-1;max-width:none;aspect-ratio:auto;height:min(118vw,520px)}
+  .stack .s1{width:82%;height:86%;border-radius:20px}
+  .stack .s2{width:44%;height:42%;border-radius:18px}
+  .badge{display:none}
   .hero h1{font-size:clamp(2rem,1.3rem + 3.2vw,2.6rem)}
   .hero .lede{font-size:1rem;margin-bottom:1rem}
   .deals{margin-bottom:1rem}
@@ -308,6 +355,7 @@ footer a{color:var(--muted)}
     <nav aria-label="Main"><a href="#services">Christmas lights</a><a href="#services">Permanent lights</a><a href="#work">Our work</a><a href="#faq">FAQ</a><a class="phone-link" href="sms:+17329551026">Text us</a></nav>
     <a class="btn btn-main" href="#quote">Free quote</a>
   </div>
+  <div class="bulbs" aria-hidden="true"><i style="--c:#FFC766;--d:0.71s"></i><i style="--c:#F05A4F;--d:0.31s"></i><i style="--c:#3FBF7F;--d:1.19s"></i><i style="--c:#5AA0FF;--d:0.46s"></i><i style="--c:#FFC766;--d:0.20s"></i><i style="--c:#EAF4FF;--d:1.20s"></i><i style="--c:#FFC766;--d:2.75s"></i><i style="--c:#F05A4F;--d:2.40s"></i><i style="--c:#3FBF7F;--d:2.30s"></i><i style="--c:#5AA0FF;--d:0.67s"></i><i style="--c:#FFC766;--d:1.61s"></i><i style="--c:#EAF4FF;--d:0.83s"></i><i style="--c:#FFC766;--d:0.52s"></i><i style="--c:#F05A4F;--d:0.32s"></i><i style="--c:#3FBF7F;--d:0.64s"></i><i style="--c:#5AA0FF;--d:2.78s"></i><i style="--c:#FFC766;--d:2.49s"></i><i style="--c:#EAF4FF;--d:2.42s"></i><i style="--c:#FFC766;--d:2.40s"></i><i style="--c:#F05A4F;--d:0.58s"></i><i style="--c:#3FBF7F;--d:0.93s"></i><i style="--c:#5AA0FF;--d:1.88s"></i><i style="--c:#FFC766;--d:2.20s"></i><i style="--c:#EAF4FF;--d:2.56s"></i><i style="--c:#FFC766;--d:2.64s"></i><i style="--c:#F05A4F;--d:0.26s"></i><i style="--c:#3FBF7F;--d:1.82s"></i><i style="--c:#5AA0FF;--d:2.02s"></i><i style="--c:#FFC766;--d:1.52s"></i><i style="--c:#EAF4FF;--d:0.53s"></i><i style="--c:#FFC766;--d:1.42s"></i><i style="--c:#F05A4F;--d:0.27s"></i><i style="--c:#3FBF7F;--d:2.80s"></i><i style="--c:#5AA0FF;--d:2.60s"></i><i style="--c:#FFC766;--d:1.64s"></i><i style="--c:#EAF4FF;--d:0.90s"></i><i style="--c:#FFC766;--d:2.73s"></i><i style="--c:#F05A4F;--d:1.72s"></i><i style="--c:#3FBF7F;--d:2.65s"></i><i style="--c:#5AA0FF;--d:2.54s"></i><i style="--c:#FFC766;--d:1.53s"></i><i style="--c:#EAF4FF;--d:1.24s"></i><i style="--c:#FFC766;--d:1.80s"></i><i style="--c:#F05A4F;--d:1.29s"></i><i style="--c:#3FBF7F;--d:0.48s"></i><i style="--c:#5AA0FF;--d:0.92s"></i><i style="--c:#FFC766;--d:2.44s"></i><i style="--c:#EAF4FF;--d:0.13s"></i><i style="--c:#FFC766;--d:0.14s"></i><i style="--c:#F05A4F;--d:1.88s"></i><i style="--c:#3FBF7F;--d:0.84s"></i><i style="--c:#5AA0FF;--d:1.60s"></i><i style="--c:#FFC766;--d:1.41s"></i><i style="--c:#EAF4FF;--d:1.03s"></i><i style="--c:#FFC766;--d:2.99s"></i><i style="--c:#F05A4F;--d:0.59s"></i><i style="--c:#3FBF7F;--d:1.24s"></i><i style="--c:#5AA0FF;--d:0.61s"></i><i style="--c:#FFC766;--d:1.90s"></i><i style="--c:#EAF4FF;--d:0.83s"></i></div>
 </header>
 
 <main id="top">
@@ -327,20 +375,28 @@ footer a{color:var(--muted)}
       </div>
       <ul class="trust"><li>Fully insured</li><li>1, 2 &amp; 3-story homes</li><li>Lights included</li><li>Takedown included</li><li>Price by text</li></ul>
     </div>
-    <div class="hero-media">
-      <div class="frame"><video src="media/christmas-video.mp4" poster="media/christmas-video.jpg" muted loop playsinline autoplay preload="auto" aria-label="Video of a home TR Lights lit up for Christmas"></video></div>
-      <div class="float f2"><span class="bulb"></span><span><b>Cut to fit</b><small>Custom for your roofline</small></span></div>
-      <div class="float f1"><span class="bulb" style="background:#B48CFF;box-shadow:0 0 14px rgba(180,140,255,.9)"></span><span><b>Fully insured</b><small>Local Toms River crew</small></span></div>
+    <div class="stack">
+      <div class="glow"></div>
+      <div class="s1"><video src="media/christmas-video.mp4" poster="media/christmas-video.jpg" muted loop playsinline autoplay preload="auto" aria-label="Video of a home TR Lights lit up for Christmas"></video><span class="lbl">🎄 Christmas install</span></div>
+      <div class="s2"><img src="media/permanent-still-2.jpg" alt="Home with permanent lights glowing red and green" fetchpriority="high"><span class="lbl">✨ Permanent lights</span></div>
+      <div class="badge"><span class="sh">✓</span><span><b>Fully insured</b><small>Local Toms River crew</small></span></div>
     </div>
   </div>
 </section>
 
-<section id="services" style="padding-top:0">
+<div class="strip"><div class="wrap"><ul>
+  <li><b>Fully insured</b><span>Every job, every roof</span></li>
+  <li><b>1, 2 &amp; 3-story</b><span>Ranches to tall colonials</span></li>
+  <li><b>Cut to fit</b><span>Made for your roofline</span></li>
+  <li><b>Price by text</b><span>Usually the same day</span></li>
+</ul></div></div>
+
+<section id="services">
   <div class="wrap">
     <div class="sec-head"><h2>Pick your lights</h2><p>Every job is custom. Tell us about your house and we'll text you a price.</p></div>
     <div class="svcs">
       <article class="svc">
-        <div class="svc-img"><span class="tag x-deal"><span class="x-off">$150</span> off · book by <span class="x-by">Nov 15</span></span><img src="media/christmas-photo-1-front.jpg" alt="Ranch home with a white roofline and red and green windows, installed by TR Lights" loading="lazy"></div>
+        <div class="svc-img"><span class="tag x-deal"><span class="x-off">$150</span> off · book by <span class="x-by">Nov 15</span></span><img src="media/christmas-photo-1-front-lg.jpg" alt="Ranch home with a white roofline and red and green windows, installed by TR Lights" width="1800" height="1350"></div>
         <div class="svc-body">
           <h3>Christmas light installation</h3>
           <p class="lead">Professional lights for the season. We put them up, you enjoy them, we take them down.</p>
@@ -349,7 +405,7 @@ footer a{color:var(--muted)}
         </div>
       </article>
       <article class="svc perm">
-        <div class="svc-img"><span class="tag p-deal"><span class="p-off">$200</span> off · book by <span class="p-by">Nov 30</span></span><img src="media/permanent-still-2.jpg" alt="Two-story home with permanent lights glowing red and green" loading="lazy"></div>
+        <div class="svc-img"><span class="tag p-deal"><span class="p-off">$200</span> off · book by <span class="p-by">Nov 30</span></span><img src="media/permanent-still-1-lg.jpg" alt="Two-story home with permanent lights glowing red and green" width="1358" height="1400" style="object-position:50% 60%"></div>
         <div class="svc-body">
           <h3>Permanent lights</h3>
           <p class="lead">Installed once, used all year. Govee permanent lights sit under the roofline and run from your phone.</p>
@@ -380,7 +436,7 @@ footer a{color:var(--muted)}
             <label class="tile"><input type="radio" name="svc" value="Not sure"><span><span class="em">💬</span>Not sure yet<small>Help me pick</small></span></label>
           </div>
           <h4>How tall is the house?</h4>
-          <div class="tiles three">
+          <div class="tiles">
             <label class="tile"><input type="radio" name="story" value="1-story"><span>1-story<small>Ranch</small></span></label>
             <label class="tile"><input type="radio" name="story" value="2-story"><span>2-story<small>Colonial, split</small></span></label>
             <label class="tile"><input type="radio" name="story" value="3-story"><span>3-story<small>Or very steep</small></span></label>
@@ -445,7 +501,7 @@ footer a{color:var(--muted)}
 
 <section class="work" id="work">
   <div class="wrap">
-    <div class="sec-head"><h2>Our work</h2><p>Real houses we lit up across Ocean and Monmouth County. Tap a video to watch.</p></div>
+    <div class="sec-head"><h2>Our work</h2><p>Real houses we lit up across Ocean and Monmouth County. Tap any photo to see it bigger.</p></div>
     <div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-g="x">🎄 Christmas installs</button><button role="tab" class="p" aria-selected="false" data-g="p">✨ Permanent lights</button></div>
     <div class="gal" id="gal"></div>
     <div class="more"><button class="btn btn-ghost" id="showMore" type="button">Show more</button></div>
@@ -501,10 +557,18 @@ footer a{color:var(--muted)}
 <footer><div class="wrap">TR Lights · Christmas light installation &amp; permanent lights · Fully insured · Ocean &amp; Monmouth County, NJ · Text <a class="phone-link" href="sms:+17329551026">(732) 955-1026</a><br><small>Serving Toms River, Brick, Point Pleasant, Lakewood, Jackson, Seaside, Lavallette, Bayville, Forked River, Barnegat, Manasquan, Wall, Belmar, Howell, Freehold, Red Bank, Middletown and all of Ocean &amp; Monmouth County.</small></div></footer>
 <div class="stick"><a class="btn btn-main" href="#quote">Get my free quote</a><a class="btn btn-ghost text-us" href="sms:+17329551026" aria-label="Text us">Text</a></div>
 
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-x" type="button" aria-label="Close">×</button>
+  <button class="lb-nav lb-prev" type="button" aria-label="Previous">‹</button>
+  <div class="lb-media"></div>
+  <button class="lb-nav lb-next" type="button" aria-label="Next">›</button>
+  <a class="btn btn-main lb-cta" href="#quote">Get this look on my house</a>
+</div>
+
 <div class="pop" id="pop" hidden role="dialog" aria-modal="true" aria-labelledby="popT">
   <div class="pop-card">
     <button class="pop-x" type="button" aria-label="Close">×</button>
-    <img src="media/permanent-still-1.jpg" alt="" loading="lazy">
+    <img src="media/permanent-still-1-lg.jpg" alt="">
     <div class="pop-body">
       <h3 id="popT">Don't miss your deal</h3>
       <p class="pop-text">$150 off Christmas light installation and $200 off permanent lights. Get your price by text in about a minute.</p>
@@ -569,34 +633,42 @@ document.querySelectorAll('.text-us').forEach(function(a){a.href='sms:+1'+PHONE+
 /* gallery */
 (function(){
   var G={
-    x:[['christmas-video','v','Christmas install'],['../g-colonial','i','Two-story roofline'],['christmas-photo-2-side','i','Red &amp; green windows'],['../d-peak','i','Peaks'],
-       ['christmas-photo-1-front','i','Roofline + windows'],['../d-multi','i','Multicolor'],['../tr-ranch-pan','v','One-story roofline'],['../h-colonial','i','Red &amp; white colonial'],['christmas-photo-3-street','i','Ranch, street view'],
-       ['../d-windows','i','Windows'],['../d-garage','i','Garage'],['../d-shed','i','Sheds'],['../d-roofline','i','C9 roofline'],['permanent-still-1','i','Christmas on permanent lights']],
-    p:[['permanent-video','v','Permanent lights'],['permanent-still-2','i','Christmas colors'],['front-blue-video','v','Any color'],['halloween-photo-1','i','Halloween'],
-       ['front-purple-angle','i','Two-story roofline'],['patio-color-change-video','v','Color change'],['garage-purple','i','Garage'],['halloween-video-1','v','Halloween'],
-       ['patio-white-1','i','Patio, white'],['front-garage-walk-video','v','Walkthrough'],['front-blue-orange','i','Blue &amp; orange'],['patio-warm-white-video','v','Warm white patio'],
-       ['permanent-still-3','i','Red &amp; green'],['pavilion-video-1','v','Pavilion'],['patio-purple','i','Patio, purple'],['halloween-photo-2','i','Halloween'],
-       ['front-purple-walk-video','v','Front entry'],['patio-orange','i','Patio, orange'],['backyard-moon-video','v','Backyard'],['patio-blue','i','Patio, blue'],
-       ['halloween-video-2','v','Halloween'],['backyard-string-lights','i','Backyard'],['patio-lavender-video','v','Lavender'],['patio-white-2','i','Patio, white'],
-       ['patio-purple-video-1','v','Patio, purple'],['backyard-moon','i','Backyard'],['pavilion-video-2','v','Pavilion'],['patio-white-3','i','Patio, white'],
-       ['patio-blue-video','v','Patio, blue'],['backyard-screen-room-video','v','Screen room'],['patio-purple-video-2','v','Patio'],['backyard-walk-video','v','Backyard'],['patio-purple-video-3','v','Patio']]
+    x:[['christmas-video','v','Christmas install','big'],['../g-colonial','i','Two-story Christmas install','wide'],['christmas-photo-2-side','i','Christmas install','tall'],
+       ['../tr-ranch-pan','v','Christmas install','tall'],['christmas-photo-1-front','i','Christmas install',''],['../h-colonial','i','Christmas install','wide'],
+       ['christmas-photo-3-street','i','Christmas install',''],['permanent-still-1','i','Christmas colors on permanent lights','']],
+    p:[['permanent-video','v','Permanent lights','big'],['permanent-still-2','i','Christmas colors',''],['front-blue-video','v','Any color, any night','tall'],
+       ['halloween-photo-1','i','Halloween',''],['front-purple-angle','i','Two-story roofline','tall'],['patio-color-change-video','v','Patio color change','tall'],
+       ['garage-purple','i','Garage',''],['front-blue-orange','i','Blue &amp; orange',''],['patio-warm-white-video','v','Warm white patio','big'],
+       ['pavilion-video-1','v','Pavilion','tall'],['permanent-still-3','i','Red &amp; green',''],['patio-purple','i','Patio, purple',''],
+       ['halloween-video-2','v','Halloween','tall'],['patio-white-1','i','Patio, white',''],['backyard-moon','i','Backyard',''],['patio-orange','i','Patio, orange','']]
   };
-  var gal=document.getElementById('gal'),more=document.getElementById('showMore'),cur='x',shown=8,io=null;
+  var gal=document.getElementById('gal'),more=document.getElementById('showMore'),cur='x',shown=12,io=null;
   if('IntersectionObserver' in window)io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;
     if(e.isIntersecting){if(!v.src)v.src=v.dataset.src;var p=v.play();if(p&&p.catch)p.catch(function(){})}else v.pause()})},{threshold:.35});
   function src(n,ext){return n.indexOf('../')===0?n.slice(3)+ext:'media/'+n+ext}
   function draw(){gal.innerHTML='';var list=G[cur];
-    list.slice(0,shown).forEach(function(it){var f=document.createElement('figure'),el;
+    list.slice(0,shown).forEach(function(it,idx){var f=document.createElement('figure'),el;if(it[3])f.className=it[3];f.onclick=function(){openLb(idx)};
       if(it[1]==='v'){el=document.createElement('video');el.muted=true;el.loop=true;el.playsInline=true;el.setAttribute('playsinline','');el.setAttribute('muted','');
         el.preload='none';el.poster=src(it[0],'.jpg');el.dataset.src=src(it[0],'.mp4');el.setAttribute('aria-label',it[2].replace('&amp;','&')+' video');
         if(io)io.observe(el);else{el.src=el.dataset.src;el.controls=true}
-        f.appendChild(el);var b=document.createElement('span');b.className='play';b.textContent='▶ video';f.appendChild(b)}
+        f.appendChild(el);var b=document.createElement('span');b.className='play';b.textContent='▶';f.appendChild(b)}
       else{el=document.createElement('img');el.src=src(it[0],'.jpg');el.loading='lazy';el.alt=it[2].replace('&amp;','&')+', lit by TR Lights';f.appendChild(el)}
-      var c=document.createElement('figcaption');c.innerHTML=it[2];f.appendChild(c);gal.appendChild(f)});
+      gal.appendChild(f)});
     more.hidden=shown>=list.length}
   document.querySelectorAll('.tabs button').forEach(function(b){b.onclick=function(){
-    document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false')});cur=b.dataset.g;shown=8;draw()}});
-  more.onclick=function(){shown+=8;draw()};
+    document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false')});cur=b.dataset.g;shown=12;draw()}});
+  var lb=document.getElementById('lb'),lbm=lb.querySelector('.lb-media'),li=0;
+  window.openLb=function(i){li=i;var it=G[cur][i];lbm.innerHTML='';var el;
+    if(it[1]==='v'){el=document.createElement('video');el.src=src(it[0],'.mp4');el.controls=true;el.autoplay=true;el.loop=true;el.muted=true;el.playsInline=true;el.setAttribute('playsinline','')}
+    else{el=document.createElement('img');el.src=src(it[0],'.jpg');el.alt=it[2].replace('&amp;','&')}
+    lbm.appendChild(el);lb.hidden=false;document.body.style.overflow='hidden'};
+  function closeLb(){lb.hidden=true;lbm.innerHTML='';document.body.style.overflow=''}
+  lb.querySelector('.lb-x').onclick=closeLb;lb.querySelector('.lb-cta').addEventListener('click',closeLb);
+  lb.addEventListener('click',function(e){if(e.target===lb)closeLb()});
+  lb.querySelector('.lb-prev').onclick=function(){openLb((li-1+G[cur].length)%G[cur].length)};
+  lb.querySelector('.lb-next').onclick=function(){openLb((li+1)%G[cur].length)};
+  document.addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')closeLb();if(e.key==='ArrowRight')lb.querySelector('.lb-next').click();if(e.key==='ArrowLeft')lb.querySelector('.lb-prev').click()});
+  more.onclick=function(){shown+=12;draw()};
   draw();
 })();
 
@@ -690,7 +762,7 @@ var pop=document.getElementById('pop');
 function closePop(){if(!pop.hidden){pop.hidden=true}}
 (function(){
   function seen(){try{return sessionStorage.getItem('trPop')||sessionStorage.getItem('trSent')}catch(x){return false}}
-  function open(){if(seen()||window.trStarted||window.trSent||!pop.hidden)return;
+  function open(){if(!document.getElementById('lb').hidden)return;if(seen()||window.trStarted||window.trSent||!pop.hidden)return;
     var q=document.getElementById('quote').getBoundingClientRect();if(q.top<innerHeight&&q.bottom>0)return;
     try{sessionStorage.setItem('trPop','1')}catch(x){}pop.hidden=false}
   setTimeout(open,20000);
