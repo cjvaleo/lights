@@ -360,6 +360,9 @@ footer a{color:var(--muted)}
 .hero .cta-row .btn{padding:1.1rem 1.9rem;font-size:1.08rem}
 .hero::before{inset:auto auto 0 50%;transform:translateX(-50%)}
 @media (max-width:899px){.hero{min-height:0}.hero .deal b{font-size:1.5rem}}
+
+.gal figure.wide{grid-row:span 2}
+@media (max-width:859px){.gal{grid-auto-rows:auto}.gal figure.wide{grid-row:auto;aspect-ratio:4/3}}
 </style>
 </head>
 <body>
@@ -631,7 +634,7 @@ document.querySelectorAll('.text-us').forEach(function(a){a.href='sms:+1'+PHONE+
 
 /* gallery */
 (function(){
-  var G={x:[['colonial-video-1','v','TR Lights install','wide'],['colonial-video-2','v','TR Lights install','wide'],['colonial-video-3','v','TR Lights install',''],['christmas-video','v','TR Lights install',''],['tr-ranch-pan','v','TR Lights install',''],['front-blue-video','v','TR Lights install',''],['halloween-video-1','v','TR Lights install',''],['permanent-video','v','TR Lights install',''],['patio-color-change-video','v','TR Lights install',''],['backyard-moon-video','v','TR Lights install','']]};
+  var G={x:[['colonial-video-2','v','TR Lights install','wide'],['tr-ranch-pan','v','TR Lights install','wide'],['front-blue-video','v','TR Lights install','wide'],['patio-color-change-video','v','TR Lights install','wide']]};
   var gal=document.getElementById('gal'),more=document.getElementById('showMore'),cur='x',shown=12;
   /* videos sit still until hovered (computer) or tapped (phone). One plays at a time. */
   var hover=matchMedia('(hover:hover) and (pointer:fine)').matches,playing=null;
