@@ -3,344 +3,825 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>TR Lights | Christmas Light Installation in Ocean &amp; Monmouth County, NJ</title>
-<meta name="description" content="Christmas light installation and permanent lights for 1, 2 and 3-story homes in Ocean and Monmouth County, NJ. Fully insured. Get your free quote by text.">
-<meta name="theme-color" content="#0C1220">
-<meta property="og:title" content="TR Lights | Christmas lights, installed for you">
-<meta property="og:description" content="$150 off Christmas light installation. Fully insured. Ocean & Monmouth County, NJ.">
+<title>TR Lights | Christmas Light Installation &amp; Permanent Lights in Ocean &amp; Monmouth County, NJ</title>
+<meta name="description" content="Christmas light installation and permanent Govee lights for 1, 2 and 3-story homes in Ocean and Monmouth County, NJ. Lights cut to fit, installed and taken down for you. Fully insured. Free quote by text.">
+<meta name="theme-color" content="#0B1813">
+<meta property="og:title" content="TR Lights | Christmas lights and permanent lights, installed for you">
+<meta property="og:description" content="$150 off Christmas light installation and $200 off permanent lights. Fully insured, Ocean & Monmouth County. Get your free quote.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://www.trlightsnj.com/media/christmas-photo-1-front-lg.jpg">
+<meta property="og:image" content="https://www.trlightsnj.com/media/christmas-photo-1-front.jpg">
 <meta property="og:url" content="https://www.trlightsnj.com/">
 <link rel="canonical" href="https://www.trlightsnj.com/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="media/christmas-photo-1-front-lg.jpg">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="media/christmas-video.jpg">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"TR Lights","description":"Christmas light installation and permanent lights for homes in Ocean and Monmouth County, New Jersey. Fully insured.","telephone":"+1-732-955-1026","url":"https://www.trlightsnj.com/","image":"https://www.trlightsnj.com/media/christmas-photo-1-front-lg.jpg","areaServed":["Ocean County, NJ","Monmouth County, NJ"]}
+{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"TR Lights","description":"Christmas light installation and permanent outdoor lighting for homes in Ocean and Monmouth County, New Jersey. Fully insured.","telephone":"+1-732-955-1026","url":"https://www.trlightsnj.com/","image":"https://www.trlightsnj.com/media/christmas-photo-1-front.jpg","areaServed":["Ocean County, NJ","Monmouth County, NJ","Toms River, NJ","Brick, NJ","Point Pleasant, NJ","Lakewood, NJ","Jackson, NJ","Manasquan, NJ","Wall, NJ","Howell, NJ","Freehold, NJ","Middletown, NJ"],
+"makesOffer":[{"@type":"Offer","name":"Christmas light installation","description":"Lights included, cut to fit, installed and taken down after the season. 1, 2 and 3-story homes."},{"@type":"Offer","name":"Permanent lights","description":"Permanent Govee lights for every holiday, controlled from your phone."}]}
 </script>
 <style>
 :root{
-  --night:#0C1220;   /* sky behind the photos */
-  --panel:#151D2E;   /* form + inputs */
-  --edge:#26324A;
-  --snow:#F4F6FA;
-  --fog:#A3AEC2;
-  --bulb:#FFB547;    /* warm C9 bulb */
-  --holly:#D9483B;
-  --f:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --bg:#0B1813; --bg2:#0F2019; --card:#132A21; --card2:#1A3529; --line:#264536;
+  --text:#FBF3E4; --muted:#BACABF; --dim:#8DA597;
+  --gold:#FFC766; --gold-hi:#FFD68A; --on-gold:#1A1305; --cran:#C0392F;
+  --violet:#B48CFF;
+  --radius-sm:10px; --radius:16px; --radius-lg:26px;
+  --display:"DM Serif Display",Georgia,"Times New Roman",serif;
+  --body:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --maxw:1160px; --gutter:clamp(16px,4vw,44px);
 }
 *,*::before,*::after{box-sizing:border-box}
 [hidden]{display:none!important}
-html{background:var(--night);-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+button,input{-webkit-appearance:none;appearance:none;-webkit-tap-highlight-color:transparent;font:inherit}
+a,button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;background:var(--bg);scroll-padding-top:80px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--night);color:var(--snow);font:400 17px/1.55 var(--f);padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
-@media (min-width:960px){body{padding-bottom:0}}
+body{margin:0;background:var(--bg);color:var(--text);font:400 clamp(1rem,.97rem + .2vw,1.07rem)/1.6 var(--body);
+  padding-bottom:calc(78px + env(safe-area-inset-bottom,0px));overflow-x:hidden}
+@media (min-width:900px){body{padding-bottom:0}}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.05;letter-spacing:-.01em;margin:0}
+p{margin:0 0 1rem}
 img,video{display:block;max-width:100%}
-a{color:var(--bulb)}
-button,input{font:inherit;color:inherit}
-:focus-visible{outline:3px solid var(--bulb);outline-offset:2px}
-.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+a{color:var(--gold)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+section{padding:clamp(48px,8vw,96px) 0}
+.sec-head{margin-bottom:clamp(22px,4vw,40px);max-width:680px}
+.sec-head.c{margin-left:auto;margin-right:auto;text-align:center}
+.sec-head h2{font-size:clamp(2rem,1.4rem + 2.4vw,3rem);margin-bottom:.3em}
+.sec-head p{color:var(--muted);margin:0}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 
-/* top */
-.top{position:absolute;z-index:3;left:0;right:0;top:0}
-.top .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:18px}
-.logo svg{width:150px;height:auto;display:block}
-.top a.call{color:var(--snow);text-decoration:none;font-weight:700;font-size:15px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;text-decoration:none;cursor:pointer;
+  font:800 1.02rem/1 var(--body);border-radius:999px;padding:1rem 1.5rem;border:0;transition:transform .12s,background .15s}
+.btn-main{background:var(--gold);color:var(--on-gold);box-shadow:0 10px 30px -10px rgba(255,199,102,.6)}
+.btn-main:hover{background:var(--gold-hi);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--text);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--muted)}
+.btn-block{width:100%}
 
-/* hero: the photo is the page */
-.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
-.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,18,32,.55) 0%,rgba(12,18,32,.1) 30%,rgba(12,18,32,.75) 62%,var(--night) 100%)}
-.hero-in{position:relative;z-index:2;width:100%;display:grid;gap:28px;padding-top:110px;padding-bottom:48px;align-items:end}
-@media (min-width:960px){.hero-in{grid-template-columns:1fr 430px;gap:56px;padding-bottom:64px}}
-h1{font-weight:850;font-stretch:72%;font-size:clamp(52px,8.6vw,112px);line-height:.88;letter-spacing:-.01em;margin:0 0 18px;text-transform:none}
-.lede{font-size:clamp(17px,1.4vw,20px);color:#DCE2EC;max-width:34em;margin:0 0 20px}
-.deal{display:inline-block;background:var(--holly);color:#fff;font-weight:800;font-size:18px;padding:10px 16px;border-radius:6px}
-.deal small{display:block;font-weight:500;font-size:14px;opacity:.9}
+/* urgency bar */
+.urgent{display:block;background:var(--cran);color:#fff;text-align:center;font-weight:700;font-size:.92rem;line-height:1.35;padding:.6rem var(--gutter);text-decoration:none}
+.urgent u{text-underline-offset:3px;white-space:nowrap}
 
-/* quote form */
-.q{background:var(--panel);border:1px solid var(--edge);border-radius:14px;padding:22px;scroll-margin-top:16px;box-shadow:0 30px 60px -30px #000}
-.q h2{font-weight:850;font-stretch:80%;font-size:30px;line-height:1;margin:0 0 4px}
-.q .sub{color:var(--fog);font-size:15px;margin:0 0 16px}
-.step-n{color:var(--fog);font-size:13px;font-weight:600;margin:0 0 10px}
-.q h3{font-size:16px;font-weight:800;margin:14px 0 8px}
-.q h3:first-of-type{margin-top:0}
-.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
-.chips{display:flex;flex-wrap:wrap;gap:6px}
-.pick{position:relative}
-.pick input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-.pick span{display:block;text-align:center;padding:10px 12px;border:1.5px solid var(--edge);border-radius:8px;font-weight:700;font-size:14.5px;line-height:1.2;background:#0F1626;cursor:pointer}
-.pick input:checked+span{border-color:var(--bulb);background:rgba(255,181,71,.12);color:#fff}
-.pick input:focus-visible+span{outline:3px solid var(--bulb);outline-offset:2px}
-.sw{display:inline-block;width:8px;height:12px;border-radius:3px 3px 4px 4px;margin-right:2px;vertical-align:-1px}
-.count{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--edge)}
-.count:last-of-type{border-bottom:0}
-.count b{font-weight:700}
-.stepper{display:flex;align-items:center;gap:10px}
-.stepper button{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--edge);background:#0F1626;font-size:20px;line-height:1;cursor:pointer}
-.stepper output{min-width:20px;text-align:center;font-weight:800}
-.fld{display:block;margin-bottom:10px;font-size:14px;font-weight:700}
-.fld input{display:block;width:100%;margin-top:5px;background:#0F1626;border:1.5px solid var(--edge);border-radius:8px;padding:12px;font-size:16px}
-.fld input:focus{border-color:var(--bulb);outline:none}
-.fld .opt{color:var(--fog);font-weight:500}
-.btns{display:flex;gap:8px;margin-top:16px}
-.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8px;padding:15px 20px;font-weight:800;font-size:17px;text-decoration:none;cursor:pointer}
-.btn.go{flex:1;background:var(--bulb);color:#1D1300}
-.btn.go:hover{background:#FFC46E}
-.btn.back{background:transparent;border:1.5px solid var(--edge);color:var(--snow)}
-.err{color:#FF9C92;font-weight:700;font-size:14px;margin:10px 0 0;min-height:1em}
-.fine{color:var(--fog);font-size:13px;margin:12px 0 0;text-align:center}
+/* header */
+header{position:sticky;isolation:isolate;top:0;z-index:40;background:rgba(11,24,19,.9);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:.6rem;padding-bottom:.6rem}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--text)}
+.brand svg{width:160px;height:auto;display:block}
+nav{display:none;gap:1.5rem}
+nav a{color:var(--muted);text-decoration:none;font-weight:500;font-size:.95rem}
+nav a:hover{color:var(--text)}
+@media (min-width:980px){nav{display:flex}}
+.bar .btn{padding:.7rem 1.15rem;font-size:.93rem}
+
+/* hero */
+.hero{position:relative;padding:clamp(28px,6vw,72px) 0 clamp(40px,7vw,84px);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:auto -20% 10% auto;width:70vw;max-width:900px;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,199,102,.14),transparent 62%);pointer-events:none}
+.hero-grid{position:relative;display:grid;gap:clamp(22px,5vw,56px);align-items:center}
+@media (min-width:900px){.hero-grid{grid-template-columns:1.1fr .9fr}}
+.loc{display:inline-flex;align-items:center;gap:.45rem;background:var(--card);border:1px solid var(--line);
+  border-radius:999px;padding:.4rem .9rem;font-size:.86rem;color:var(--muted);margin-bottom:1.2rem}
+.loc i{width:8px;height:8px;border-radius:50%;background:var(--cran);box-shadow:0 0 0 4px rgba(192,57,47,.25)}
+.hero h1{font-size:clamp(2.3rem,1.4rem + 4.2vw,4.3rem);margin-bottom:.3em}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .lede{font-size:1.1em;color:var(--muted);max-width:46ch;margin-bottom:1.3rem}
+.deals{display:grid;gap:10px;margin-bottom:1.3rem;max-width:560px}
+@media (min-width:560px){.deals{grid-template-columns:1fr 1fr}}
+.deal{display:flex;gap:.7rem;align-items:flex-start;background:linear-gradient(90deg,rgba(255,199,102,.16),rgba(255,199,102,.05));
+  border:1px solid rgba(255,199,102,.5);border-radius:var(--radius);padding:.8rem .95rem;font-size:.93rem;line-height:1.35;text-decoration:none;color:var(--text)}
+.deal.perm{background:linear-gradient(90deg,rgba(180,140,255,.18),rgba(180,140,255,.05));border-color:rgba(180,140,255,.55)}
+.deal .ico{font-size:1.35rem;line-height:1}
+.deal b{display:block;color:var(--gold);font-size:1.15rem}
+.deal.perm b{color:var(--violet)}
+.deal small{color:var(--muted)}
+.cta-row{display:flex;flex-wrap:wrap;gap:.7rem}
+.trust{display:flex;flex-wrap:wrap;gap:.45rem 1.2rem;margin:1.4rem 0 0;padding:0;list-style:none;color:var(--muted);font-size:.92rem}
+.trust li{display:flex;align-items:center;gap:.45rem}
+.trust li::before{content:"";width:9px;height:14px;border-radius:5px 5px 6px 6px;background:var(--gold);box-shadow:0 0 10px rgba(255,199,102,.8)}
+.hero-media{position:relative;max-width:460px;justify-self:center;width:100%}
+.frame{border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/5;border:1px solid var(--line);box-shadow:0 40px 80px -30px rgba(0,0,0,.85);background:#050807}
+.frame video{width:100%;height:100%;object-fit:cover}
+.float{position:absolute;display:flex;align-items:center;gap:.6rem;background:rgba(11,24,19,.92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  border:1px solid var(--line);border-radius:14px;padding:.6rem .9rem;font-size:.84rem;box-shadow:0 14px 30px -12px rgba(0,0,0,.7)}
+.float b{display:block;font-size:.95rem}
+.float small{color:var(--muted)}
+.float .bulb{width:14px;height:22px;border-radius:7px 7px 9px 9px;background:var(--gold);box-shadow:0 0 14px rgba(255,199,102,.9)}
+.float.f1{left:-18px;bottom:28px}
+.float.f2{right:-14px;top:24px}
+
+/* string lights under the header */
+.bulbs{position:absolute;left:0;right:0;bottom:-11px;height:14px;display:flex;justify-content:space-between;padding:0 10px;pointer-events:none;overflow:hidden}
+.bulbs::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:#1c3a2d}
+.bulbs i{width:7px;height:11px;border-radius:3px 3px 5px 5px;margin-top:2px;background:var(--c);box-shadow:0 0 10px var(--c);animation:tw 3s infinite ease-in-out;animation-delay:var(--d)}
+@keyframes tw{0%,100%{opacity:1}50%{opacity:.45}}
+@media (prefers-reduced-motion:reduce){.bulbs i{animation:none}}
+
+/* hero stack */
+.stack{position:relative;width:100%;max-width:500px;justify-self:center;aspect-ratio:5/6}
+.stack .s1,.stack .s2{position:absolute;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#050807;box-shadow:0 40px 80px -30px rgba(0,0,0,.9)}
+.stack .s1{right:0;top:0;width:78%;height:88%}
+.stack .s2{left:0;bottom:0;width:48%;height:46%;border:3px solid var(--bg);box-shadow:0 30px 60px -20px rgba(0,0,0,.9),0 0 0 1px rgba(180,140,255,.4)}
+.stack video,.stack img{width:100%;height:100%;object-fit:cover}
+.stack .lbl{position:absolute;left:12px;bottom:12px;background:rgba(11,24,19,.86);border-radius:999px;font-size:.78rem;font-weight:800;padding:.3rem .7rem;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.stack .s2 .lbl{color:var(--violet)}
+.stack .s1 .lbl{color:var(--gold);left:auto;right:12px;bottom:auto;top:12px}
+.stack .lbl{white-space:nowrap}
+@media (max-width:899px){.stack .lbl{font-size:.7rem;padding:.25rem .55rem;left:8px;bottom:8px}.stack .s1 .lbl{right:8px;top:8px;left:auto;bottom:auto}}
+.stack .glow{position:absolute;inset:10% 0 0 15%;background:radial-gradient(circle,rgba(255,199,102,.25),transparent 65%);filter:blur(20px)}
+.badge{position:absolute;right:-8px;bottom:18%;z-index:2;display:flex;align-items:center;gap:.55rem;background:rgba(11,24,19,.94);border:1px solid var(--line);border-radius:14px;padding:.6rem .85rem;font-size:.82rem;box-shadow:0 14px 30px -12px rgba(0,0,0,.8)}
+.badge b{display:block;font-size:.95rem}.badge small{color:var(--muted)}
+.badge .sh{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:rgba(255,199,102,.16);color:var(--gold);font-size:1rem}
+
+/* trust strip */
+.strip{border-block:1px solid var(--line);background:var(--bg2)}
+.strip ul{display:grid;grid-template-columns:repeat(2,1fr);gap:0;list-style:none;margin:0;padding:0}
+@media (min-width:820px){.strip ul{grid-template-columns:repeat(4,1fr)}}
+.strip li{padding:1.1rem .5rem;text-align:center;border-right:1px solid var(--line)}
+.strip li:last-child{border-right:0}
+@media (max-width:819px){.strip li:nth-child(2){border-right:0}.strip li:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+.strip b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(1.35rem,1.1rem + 1vw,1.8rem);color:var(--gold);line-height:1.1}
+.strip span{color:var(--muted);font-size:.86rem}
+
+/* services */
+.svcs{display:grid;gap:clamp(14px,2.4vw,26px)}
+@media (min-width:860px){.svcs{grid-template-columns:1fr 1fr}}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column}
+.svc.perm{border-color:rgba(180,140,255,.45)}
+.svc-img{position:relative;aspect-ratio:4/3;overflow:hidden;background:#050807}
+.svc-img img,.svc-img video{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.svc:hover .svc-img img{transform:scale(1.04)}
+.svc-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(19,42,33,.97))}
+.tag{position:absolute;z-index:1;left:14px;top:14px;background:var(--gold);color:var(--on-gold);font-weight:800;font-size:.85rem;padding:.35rem .75rem;border-radius:999px}
+.perm .tag{background:var(--violet);color:#160B2E}
+.svc-body{padding:0 clamp(20px,3vw,30px) clamp(22px,3vw,30px);margin-top:-2.2rem;position:relative;display:flex;flex-direction:column;flex:1}
+.svc h3{font-size:clamp(1.6rem,1.3rem + .9vw,2.1rem);margin-bottom:.35rem}
+.svc .lead{color:var(--muted);margin-bottom:.9rem}
+.svc ul{list-style:none;margin:0 0 1.3rem;padding:0;flex:1}
+.svc li{padding:.32rem 0 .32rem 1.6rem;position:relative}
+.svc li::before{content:"";position:absolute;left:2px;top:.62rem;width:8px;height:12px;border-radius:4px 4px 5px 5px;background:var(--gold);box-shadow:0 0 8px rgba(255,199,102,.7)}
+.perm li::before{background:var(--violet);box-shadow:0 0 8px rgba(180,140,255,.8)}
+.perm .btn-main{background:var(--violet);color:#160B2E;box-shadow:0 10px 30px -10px rgba(180,140,255,.6)}
+
+/* quote */
+.book{background:var(--bg2);border-block:1px solid var(--line)}
+.bk{max-width:760px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;
+  box-shadow:0 40px 80px -40px rgba(0,0,0,.85);scroll-margin-top:84px}
+.bk-head{padding:clamp(20px,3.5vw,34px) clamp(18px,3.5vw,34px) 0;text-align:center}
+.bk-head h2{font-size:clamp(1.9rem,1.5rem + 1.6vw,2.5rem)}
+.bk-head p{color:var(--muted);margin:.45rem 0 0;font-size:.97rem}
+.bk-head p b{color:var(--gold)}
+.steps{display:flex;gap:.3rem;overflow-x:auto;scrollbar-width:none;list-style:none;margin:1.3rem 0 0;padding:0 clamp(14px,3.5vw,34px) .9rem;border-bottom:1px solid var(--line);justify-content:center}
+.steps::-webkit-scrollbar{display:none}
+.steps li{flex:0 0 auto;display:flex;align-items:center;gap:.45rem;font-size:.82rem;font-weight:700;color:var(--dim);padding:.45rem .75rem;border-radius:999px;white-space:nowrap}
+.steps li i{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:.72rem;border:1.5px solid var(--line)}
+.steps li.done{color:var(--muted)}
+.steps li.done i{background:var(--gold);border-color:var(--gold);color:var(--on-gold)}
+.steps li.cur{background:var(--text);color:var(--bg)}
+.steps li.cur i{border-color:var(--bg)}
+.progress{height:3px;background:var(--line)}
+.progress span{display:block;height:100%;width:0;background:var(--gold);transition:width .3s}
+.pane{padding:clamp(18px,3.5vw,34px);animation:in .28s ease}
+@keyframes in{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.pane{animation:none}}
+.pane h3{font-size:1.5rem;margin-bottom:.2rem}
+.pane h4{font:800 .95rem/1.2 var(--body);margin:1.2rem 0 .6rem}
+.pane .sub{color:var(--muted);margin:0 0 1rem;font-size:.95rem}
+.tiles{display:grid;gap:10px;grid-template-columns:repeat(2,1fr)}
+@media (min-width:560px){.tiles{grid-template-columns:repeat(3,1fr)}.tiles.two{grid-template-columns:repeat(2,1fr)}}
+.tile{position:relative;display:block;cursor:pointer}
+.tile input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.tile>span{display:flex;flex-direction:column;gap:.3rem;height:100%;background:var(--card2);border:2px solid var(--line);border-radius:14px;padding:.85rem 1rem;font-weight:700;transition:border-color .15s,background .15s}
+.tile small{color:var(--muted);font-weight:500;font-size:.82rem}
+.tile .em{font-size:1.4rem;line-height:1}
+.tile input:checked+span{border-color:var(--gold);background:rgba(255,199,102,.1)}
+.tile input:focus-visible+span{outline:3px solid var(--gold);outline-offset:2px}
+.dots{display:flex;gap:5px;align-items:center;min-height:15px}
+.dots i{width:10px;height:15px;border-radius:5px 5px 6px 6px;box-shadow:0 0 8px currentColor}
+.fields{display:grid;gap:12px}
+.fields label{display:block;font-weight:700;font-size:.92rem}
+.fields input{display:block;width:100%;margin-top:6px;background:var(--card2);border:2px solid var(--line);border-radius:12px;color:var(--text);font:16px var(--body);padding:.85rem .95rem}
+.fields input:focus{border-color:var(--gold);outline:none}
+.addr{position:relative}
+#addrSug{position:absolute;left:0;right:0;top:calc(100% + 4px);z-index:20;list-style:none;margin:0;padding:.3rem;background:var(--card2);
+  border:1.5px solid var(--line);border-radius:var(--radius-sm);box-shadow:0 20px 40px -10px rgba(0,0,0,.75)}
+#addrSug li{padding:.65rem .7rem;border-radius:8px;cursor:pointer;font-size:.95rem;line-height:1.3}
+#addrSug li small{display:block;color:var(--muted);font-size:.82rem}
+#addrSug li[aria-selected="true"],#addrSug li:hover{background:rgba(255,199,102,.16)}
+.addr-st{min-height:1.2em;margin:.45rem 0 0;font-size:.85rem;color:var(--dim)}
+.sum{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:.4rem 1rem;margin-top:14px}
+.sum div{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;border-bottom:1px solid var(--line);font-size:.93rem}
+.sum div:last-child{border-bottom:0}
+.sum span:first-child{color:var(--muted)}
+.sum span:last-child{text-align:right}
+.sum .g{color:var(--gold);font-weight:800}
+.nav{display:flex;gap:.6rem;margin-top:1.2rem}
+.nav .btn{flex:1;white-space:nowrap;padding-left:1.1rem;padding-right:1.1rem}
+.nav .back{flex:0 0 auto}
+.err{color:#FFB4AC;font-weight:700;font-size:.9rem;min-height:1.2em;margin:.7rem 0 0}
+.after{color:var(--muted);font-size:.86rem;text-align:center;margin:.8rem 0 0}
 .copybox{display:none;margin-top:12px}
-.copybox textarea{width:100%;min-height:150px;background:#0F1626;border:1px solid var(--edge);border-radius:8px;padding:10px;font:14px/1.45 var(--f);color:var(--snow)}
-.done{text-align:center;padding:10px 0}
-.done h2{margin-bottom:8px}
-.done p{color:var(--fog)}
+.copybox textarea{width:100%;min-height:140px;background:var(--card2);color:var(--text);border:1px solid var(--line);border-radius:10px;font:14px/1.5 var(--body);padding:10px}
+.reass{display:flex;flex-wrap:wrap;justify-content:center;gap:.3rem 1rem;color:var(--dim);font-size:.84rem;margin:.9rem 0 0;padding:0;list-style:none}
+.reass li::before{content:"✓ ";color:var(--gold)}
+.opt{color:var(--dim);font-weight:500}
+.done{padding:clamp(26px,4vw,40px) clamp(22px,3.5vw,34px) clamp(30px,4vw,44px);text-align:center;animation:in .28s ease}
+.done-ico{width:56px;height:56px;margin:0 auto 1rem;border-radius:50%;display:grid;place-items:center;background:rgba(255,199,102,.16);color:var(--gold);font-size:1.7rem;line-height:1}
+.done h3{font-size:clamp(1.4rem,1.2rem + .9vw,1.8rem);margin-bottom:.5rem}
+.done p{color:var(--muted);font-size:.96rem;max-width:44ch;margin:0 auto 1rem}
+.done-note{font-size:.86rem;color:var(--dim);margin:.9rem auto 0}
+.sending{opacity:.6;pointer-events:none}
 
-/* work */
-.work{padding:56px 0 24px}
-.work h2,.perm h2,.last h2{font-weight:850;font-stretch:75%;font-size:clamp(36px,5vw,60px);line-height:.95;margin:0 0 20px}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
-@media (min-width:760px){.grid{grid-template-columns:repeat(4,1fr);gap:8px}}
-.grid>*{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;background:#060a12}
-.grid .wide{grid-column:span 2;aspect-ratio:auto;height:100%}
+/* gallery */
+.work{border-bottom:1px solid var(--line)}
+.tabs{display:inline-flex;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px;margin-bottom:18px;max-width:100%}
+.tabs button{border:0;background:transparent;color:var(--muted);font-weight:800;font-size:.93rem;padding:.65rem 1.1rem;border-radius:999px;cursor:pointer;white-space:nowrap}
+.tabs button[aria-selected="true"]{background:var(--gold);color:var(--on-gold)}
+.tabs button.p[aria-selected="true"]{background:var(--violet);color:#160B2E}
+.gal{display:grid;gap:10px;grid-template-columns:repeat(2,1fr);grid-auto-rows:190px;grid-auto-flow:dense}
+@media (min-width:860px){.gal{grid-template-columns:repeat(4,1fr);grid-auto-rows:230px;gap:12px}}
+.gal figure{position:relative;margin:0;border-radius:var(--radius);overflow:hidden;background:#050807;cursor:zoom-in}
+.gal figure.big{grid-column:span 2;grid-row:span 2}
+.gal figure.tall{grid-row:span 2}
+.gal figure.wide{grid-column:span 2}
+.gal figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.55));pointer-events:none}
+.gal img,.gal video{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.gal figure:hover img,.gal figure:hover video{transform:scale(1.05)}
+.gal figcaption{z-index:1}
+.gal figcaption{position:absolute;left:8px;bottom:8px;right:8px;width:fit-content;background:rgba(11,24,19,.86);color:var(--text);font-size:.76rem;font-weight:700;
+  padding:.26rem .65rem;border-radius:999px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.gal .play{position:absolute;z-index:1;right:10px;top:10px;width:28px;height:28px;display:grid;place-items:center;background:rgba(11,24,19,.75);border-radius:50%;font-size:.7rem;color:var(--text)}
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:90;background:rgba(3,8,6,.94);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:16px}
+.lb-media{max-width:min(92vw,980px);max-height:76vh;display:flex}
+.lb-media img,.lb-media video{max-width:100%;max-height:76vh;border-radius:18px;object-fit:contain}
+.lb-x{position:absolute;right:14px;top:14px;width:42px;height:42px;border-radius:50%;border:0;background:var(--card);color:var(--text);font-size:1.4rem;cursor:pointer}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;background:rgba(19,42,33,.9);color:var(--text);font-size:1.3rem;cursor:pointer}
+.lb-prev{left:12px}.lb-next{right:12px}
+.more{display:flex;justify-content:center;gap:.7rem;flex-wrap:wrap;margin-top:18px}
+.inline-cta{margin-top:clamp(26px,4vw,40px);background:var(--card);border:1px solid rgba(255,199,102,.45);border-radius:var(--radius-lg);padding:clamp(20px,3vw,30px);
+  display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between}
+.inline-cta h3{font-size:clamp(1.4rem,1.1rem + 1vw,1.9rem)}
+.inline-cta p{color:var(--muted);margin:.3rem 0 0}
 
-/* permanent */
-.perm{padding:48px 0}
-.perm .wrap{display:grid;gap:24px;align-items:center}
-@media (min-width:860px){.perm .wrap{grid-template-columns:1fr 1fr;gap:48px}}
-.perm img{width:100%;border-radius:10px;aspect-ratio:1;object-fit:cover}
-.perm p{color:#DCE2EC;max-width:32em}
-.perm .deal{margin:4px 0 18px}
+/* how + faq */
+.how{display:grid;gap:12px;counter-reset:s;list-style:none;margin:0;padding:0}
+@media (min-width:820px){.how{grid-template-columns:repeat(3,1fr)}}
+.how li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.3rem}
+.how li::before{content:counter(s);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:rgba(255,199,102,.16);color:var(--gold);font-family:var(--display);font-size:1.2rem;margin-bottom:.8rem}
+.how h3{font-size:1.3rem;margin-bottom:.3rem}
+.how p{color:var(--muted);margin:0;font-size:.96rem}
+.why{display:grid;gap:10px;grid-template-columns:repeat(2,1fr);margin-top:12px}
+@media (min-width:820px){.why{grid-template-columns:repeat(4,1fr)}}
+.why div{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1rem 1.1rem}
+.why b{display:block;font-size:1rem}
+.why span{color:var(--muted);font-size:.88rem}
+.faq{max-width:780px;margin:0 auto}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:1.05rem 2rem 1.05rem 0;font-weight:800;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:.9rem;color:var(--gold);font-size:1.4rem;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq details p{color:var(--muted);margin:0 0 1.1rem}
 
-/* facts */
-.facts{border-top:1px solid var(--edge);border-bottom:1px solid var(--edge)}
-.facts ul{list-style:none;margin:0 auto;padding:22px 20px;max-width:1180px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px 20px}
-@media (min-width:760px){.facts ul{grid-template-columns:repeat(4,1fr)}}
-.facts b{display:block;font-weight:800;font-size:17px}
-.facts span{color:var(--fog);font-size:14px}
+/* final + footer */
+.final{text-align:center;position:relative;overflow:hidden}
+.final::before{content:"";position:absolute;left:50%;top:50%;width:900px;max-width:200vw;aspect-ratio:1;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,199,102,.13),transparent 60%);pointer-events:none}
+.final .wrap{position:relative}
+.final h2{font-size:clamp(2rem,1.4rem + 2.4vw,3.1rem);margin-bottom:.35em}
+.final p{color:var(--muted);max-width:46ch;margin:0 auto 1.6rem}
+.final .cta-row{justify-content:center}
+footer{border-top:1px solid var(--line);color:var(--dim);font-size:.88rem;padding:1.6rem 0 2rem;text-align:center}
+footer a{color:var(--muted)}
+.stick{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(11,24,19,.95);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border-top:1px solid var(--line);padding:.65rem var(--gutter) calc(.65rem + env(safe-area-inset-bottom,0px));transition:transform .25s ease;display:flex;gap:.5rem}
+.stick .btn-main{flex:1}
+.stick .btn-ghost{flex:0 0 auto;padding-left:1.1rem;padding-right:1.1rem}
+.stick.away{transform:translateY(120%)}
+@media (min-width:900px){.stick{display:none}}
 
-.last{padding:64px 0 72px;text-align:center}
-.last p{color:var(--fog);margin:0 0 22px}
-.last .btns{justify-content:center}
-.last .btn{flex:0 1 auto}
-footer{color:var(--fog);font-size:14px;text-align:center;padding:0 20px 36px}
-footer a{color:var(--snow)}
+/* deal popup */
+.pop{position:fixed;inset:0;z-index:80;display:grid;place-items:center;padding:16px;background:rgba(3,8,6,.72);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.pop-card{position:relative;width:100%;max-width:440px;background:var(--card);border:1px solid rgba(255,199,102,.5);border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 40px 80px -20px rgba(0,0,0,.9);animation:in .25s ease}
+.pop-card img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.pop-body{padding:20px 22px 22px;text-align:center}
+.pop-body h3{font-size:1.75rem;margin-bottom:.4rem}
+.pop-body p{color:var(--muted);margin:0 0 1rem;font-size:.95rem}
+.pop-body .btn{width:100%;margin-top:.5rem}
+.pop-x{position:absolute;right:10px;top:10px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(11,24,19,.85);color:var(--text);font-size:1.2rem;cursor:pointer}
+.pop-no{background:none;border:0;color:var(--dim);font-size:.86rem;margin-top:.8rem;cursor:pointer;text-decoration:underline}
 
-.bar{position:fixed;z-index:20;left:0;right:0;bottom:0;display:flex;gap:8px;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(12,18,32,.96);border-top:1px solid var(--edge);transition:transform .2s}
-.bar.away{transform:translateY(110%)}
-.bar .go{flex:1}
-@media (min-width:960px){.bar{display:none}}
-
-@media (max-width:959px){
-  .hero{min-height:0;display:block}
-  .hero>img{position:relative;height:62vh;min-height:360px}
-  .hero::after{height:62vh;min-height:360px;background:linear-gradient(180deg,rgba(12,18,32,.5) 0%,rgba(12,18,32,0) 35%,rgba(12,18,32,.4) 70%,var(--night) 100%)}
-  .hero-in{margin-top:-130px;padding-top:0;padding-bottom:28px}
-  .q{padding:18px}
+.m-only{display:none!important}
+@media (max-width:859px){.gal figure.wide{grid-column:span 2}.gal figure.tall{grid-row:span 2}}
+@media (max-width:899px){
+  .m-only{display:block!important}.d-only{display:none!important}
+  section{padding:40px 0}
+  .brand svg{width:128px}
+  .hero{padding:12px 0 28px}
+  .hero::before,.loc{display:none}
+  .hero-grid{gap:16px}
+  .stack{order:-1;max-width:none;aspect-ratio:auto;height:min(118vw,520px)}
+  .stack .s1{width:82%;height:86%;border-radius:20px}
+  .stack .s2{width:44%;height:42%;border-radius:18px}
+  .badge{display:none}
+  .hero h1{font-size:clamp(2rem,1.3rem + 3.2vw,2.6rem)}
+  .hero .lede{font-size:1rem;margin-bottom:1rem}
+  .deals{margin-bottom:1rem}
+  .trust{gap:.35rem .9rem;font-size:.85rem;margin-top:1rem}
+  .cta-row .btn{flex:1 1 100%}
+  .book .wrap{padding:0 10px}
+  .bk{border-radius:20px}
+  .steps{justify-content:space-between;gap:.2rem;padding:0 12px .7rem}
+  .steps li{padding:.4rem .55rem;font-size:.8rem}
+  .steps li:not(.cur) .sl{display:none}
+  .pane{padding:18px 14px}
+  .tile>span{padding:.7rem .75rem;font-size:.94rem}
+  .how li{padding:1rem 1.1rem;display:grid;grid-template-columns:36px 1fr;column-gap:12px;align-items:start}
+  .how li::before{margin:0;grid-row:span 2}
+  .how h3{font-size:1.15rem}
+  .tabs{display:flex;width:100%}
+  .tabs button{flex:1;padding:.6rem .5rem;font-size:.88rem}
 }
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap">
-  <a class="logo" href="#" aria-label="TR Lights"><svg viewBox="0 0 188 56" width="188" height="56" aria-hidden="true"><path transform="translate(22.5 34)" d="M5.304 0.0V-0.34L6.698 -0.68Q8.092 -0.9860000000000001 8.092 -2.3800000000000003V-21.76H5.202Q3.9440000000000004 -21.76 3.4000000000000004 -21.097Q2.8560000000000003 -20.434 2.244 -19.278000000000002L1.02 -16.898H0.68L0.8500000000000001 -22.44H20.468L20.604000000000003 -16.898H20.264000000000003L19.040000000000003 -19.278000000000002Q18.462 -20.434 17.918 -21.097Q17.374000000000002 -21.76 16.116 -21.76H13.226V-2.3800000000000003Q13.226 -0.9860000000000001 14.620000000000001 -0.68L16.014000000000003 -0.34V0.0ZM22.066000000000003 0.0V-0.34L22.78 -0.5780000000000001Q23.46 -0.8160000000000001 23.664 -1.207Q23.868000000000002 -1.598 23.868000000000002 -2.3120000000000003V-20.094Q23.868000000000002 -20.774 23.681 -21.165Q23.494 -21.556 22.848000000000003 -21.794L22.066000000000003 -22.1V-22.44H31.790000000000003Q35.80200000000001 -22.44 37.944 -20.927Q40.086 -19.414 40.086 -16.728Q40.086 -15.232000000000001 38.964 -13.736Q37.842 -12.24 35.428000000000004 -11.424000000000001L40.154 -2.04Q40.46000000000001 -1.4620000000000002 40.851000000000006 -1.105Q41.242000000000004 -0.748 41.888000000000005 -0.47600000000000003L42.33 -0.30600000000000005V0.0H36.244L31.212000000000003 -10.71H28.900000000000002V-2.3120000000000003Q28.900000000000002 -1.6660000000000001 29.104 -1.258Q29.308 -0.8500000000000001 29.954 -0.646L30.770000000000003 -0.34V0.0ZM28.900000000000002 -11.39H30.532000000000004Q32.980000000000004 -11.39 34.068000000000005 -12.699000000000002Q35.156000000000006 -14.008000000000001 35.156000000000006 -16.592000000000002Q35.156000000000006 -19.21 34.136 -20.485Q33.116 -21.76 30.702 -21.76H28.900000000000002ZM50.83 0.0V-0.34L51.544000000000004 -0.6120000000000001Q52.258 -0.8840000000000001 52.445 -1.2750000000000001Q52.632 -1.6660000000000001 52.632 -2.346V-20.094Q52.632 -20.774 52.428 -21.182000000000002Q52.224000000000004 -21.59 51.544000000000004 -21.828000000000003L50.83 -22.1V-22.44H59.5V-22.1L58.888000000000005 -21.828000000000003Q58.242000000000004 -21.59 58.004000000000005 -21.165Q57.766 -20.740000000000002 57.766 -20.060000000000002V-0.68H63.002Q64.26 -0.68 64.855 -1.292Q65.45 -1.9040000000000001 65.994 -3.06L67.32 -5.916H67.66L67.354 0.0ZM73.20200000000001 -18.632Q72.046 -18.632 71.24700000000001 -19.363Q70.44800000000001 -20.094 70.44800000000001 -21.216Q70.44800000000001 -22.372 71.24700000000001 -23.086Q72.046 -23.8 73.20200000000001 -23.8Q74.358 -23.8 75.14000000000001 -23.086Q75.92200000000001 -22.372 75.92200000000001 -21.216Q75.92200000000001 -20.094 75.14000000000001 -19.363Q74.358 -18.632 73.20200000000001 -18.632ZM69.19000000000001 0.0V-0.34L69.66600000000001 -0.47600000000000003Q70.346 -0.68 70.601 -1.088Q70.85600000000001 -1.496 70.85600000000001 -2.176V-12.818000000000001Q70.85600000000001 -13.532000000000002 70.601 -13.889000000000001Q70.346 -14.246 69.66600000000001 -14.382000000000001L69.19000000000001 -14.484000000000002V-14.824000000000002L75.412 -16.830000000000002L75.75200000000001 -16.490000000000002L75.65 -11.662V-2.1420000000000003Q75.65 -1.4620000000000002 75.905 -1.054Q76.16000000000001 -0.646 76.80600000000001 -0.44200000000000006L77.14600000000002 -0.34V0.0ZM86.054 -5.882000000000001Q83.708 -5.882000000000001 82.07600000000001 -6.664000000000001V-5.508Q82.07600000000001 -4.454000000000001 83.13000000000001 -4.25L89.522 -3.06Q91.12 -2.754 92.412 -2.261Q93.70400000000001 -1.7680000000000002 94.486 -0.8670000000000001Q95.268 0.034 95.268 1.598Q95.268 3.2640000000000002 94.18 4.675000000000001Q93.092 6.086 90.967 6.953Q88.842 7.82 85.68 7.82Q82.96000000000001 7.82 81.36200000000001 7.259Q79.76400000000001 6.698 79.101 5.814Q78.438 4.930000000000001 78.438 3.9440000000000004Q78.438 2.72 79.271 1.479Q80.104 0.23800000000000002 81.328 -0.51Q80.274 -0.918 79.798 -1.564Q79.322 -2.21 79.322 -2.958Q79.322 -3.6380000000000003 79.679 -4.2330000000000005Q80.036 -4.828 80.546 -5.44L81.668 -6.868Q79.186 -8.296000000000001 79.186 -11.356000000000002Q79.186 -13.804 80.93700000000001 -15.334Q82.688 -16.864 86.08800000000001 -16.864Q87.822 -16.864 89.131 -16.456000000000003Q90.44 -16.048000000000002 91.29 -15.3Q92.378 -15.47 93.34700000000001 -15.861Q94.316 -16.252000000000002 95.09800000000001 -16.932000000000002L95.57400000000001 -16.592000000000002V-14.858H91.732Q92.956 -13.498000000000001 92.956 -11.356000000000002Q92.956 -8.976 91.20500000000001 -7.429Q89.45400000000001 -5.882000000000001 86.054 -5.882000000000001ZM86.02000000000001 -6.562Q87.38000000000001 -6.562 88.00900000000001 -7.684000000000001Q88.638 -8.806000000000001 88.638 -11.424000000000001Q88.638 -14.042000000000002 88.00900000000001 -15.113000000000001Q87.38000000000001 -16.184 86.08800000000001 -16.184Q84.83 -16.184 84.184 -15.079Q83.53800000000001 -13.974 83.53800000000001 -11.356000000000002Q83.53800000000001 -8.738000000000001 84.13300000000001 -7.65Q84.72800000000001 -6.562 86.02000000000001 -6.562ZM80.95400000000001 2.8560000000000003Q80.95400000000001 4.862 82.19500000000001 5.882Q83.436 6.902 86.122 6.902Q88.944 6.902 90.37200000000001 5.984Q91.80000000000001 5.066000000000001 91.80000000000001 3.4000000000000004Q91.80000000000001 2.4480000000000004 91.10300000000001 1.87Q90.406 1.292 88.74000000000001 0.9860000000000001L82.586 -0.17Q82.31400000000001 -0.23800000000000002 82.042 -0.30600000000000005Q81.566 0.374 81.26 1.241Q80.95400000000001 2.108 80.95400000000001 2.8560000000000003ZM96.798 0.0V-0.34L97.206 -0.47600000000000003Q98.43 -0.8840000000000001 98.43 -2.176V-20.332Q98.43 -21.046000000000003 98.19200000000001 -21.386000000000003Q97.95400000000001 -21.726000000000003 97.274 -21.896L96.76400000000001 -22.032V-22.372L102.748 -23.834000000000003L103.292 -23.528000000000002L103.156 -18.734V-14.484000000000002Q104.346 -15.47 105.72300000000001 -16.167Q107.10000000000001 -16.864 108.766 -16.864Q110.976 -16.864 112.285 -15.606000000000002Q113.59400000000001 -14.348 113.59400000000001 -11.73V-2.1420000000000003Q113.59400000000001 -1.4620000000000002 113.86600000000001 -1.054Q114.138 -0.646 114.81800000000001 -0.44200000000000006L115.09 -0.34V0.0H107.134V-0.34L107.542 -0.44200000000000006Q108.766 -0.8500000000000001 108.766 -2.176V-12.852Q108.766 -14.212000000000002 108.30700000000002 -14.722000000000001Q107.84800000000001 -15.232000000000001 106.69200000000001 -15.232000000000001Q105.944 -15.232000000000001 105.06 -14.943000000000001Q104.176 -14.654000000000002 103.25800000000001 -13.940000000000001V-2.108Q103.25800000000001 -0.782 104.482 -0.40800000000000003L104.754 -0.34V0.0ZM122.876 0.51Q120.7 0.51 119.493 -0.5780000000000001Q118.286 -1.6660000000000001 118.286 -4.046V-15.674000000000001H115.94V-16.014000000000003L116.756 -16.150000000000002Q117.81 -16.388 118.575 -16.830000000000002Q119.34 -17.272000000000002 120.08800000000001 -18.02L122.876 -21.114H123.21600000000001L123.114 -16.354000000000003H126.922V-15.674000000000001H123.08V-3.434Q123.08 -2.244 123.607 -1.6320000000000001Q124.134 -1.02 124.95 -1.02Q125.664 -1.02 126.208 -1.3770000000000002Q126.75200000000001 -1.7340000000000002 127.296 -2.346L127.63600000000001 -2.0060000000000002Q126.956 -0.8500000000000001 125.766 -0.17000000000000004Q124.57600000000001 0.51 122.876 0.51ZM134.572 0.51Q132.906 0.51 131.57999999999998 0.119Q130.254 -0.272 129.132 -0.8500000000000001L129.166 -4.896000000000001H129.506L130.66199999999998 -2.8560000000000003Q131.41 -1.496 132.31099999999998 -0.833Q133.212 -0.17 134.606 -0.17Q136.238 -0.17 137.24099999999999 -0.901Q138.244 -1.6320000000000001 138.244 -2.8560000000000003Q138.244 -3.978 137.53 -4.692Q136.816 -5.406000000000001 134.878 -5.984L133.45 -6.426Q131.376 -7.038 130.18599999999998 -8.33Q128.99599999999998 -9.622 128.99599999999998 -11.492Q128.99599999999998 -13.736 130.76399999999998 -15.3Q132.53199999999998 -16.864 135.82999999999998 -16.864Q137.156 -16.864 138.329 -16.575000000000003Q139.50199999999998 -16.286 140.59 -15.708000000000002L140.386 -12.036000000000001H140.046L138.856 -14.144000000000002Q138.20999999999998 -15.266000000000002 137.581 -15.725000000000001Q136.952 -16.184 135.694 -16.184Q134.53799999999998 -16.184 133.51799999999997 -15.538Q132.498 -14.892000000000001 132.498 -13.702000000000002Q132.498 -12.546000000000001 133.365 -11.866Q134.232 -11.186 135.932 -10.608L137.462 -10.166Q139.91 -9.418000000000001 140.964 -8.109000000000002Q142.018 -6.800000000000001 142.018 -4.964Q142.018 -2.482 140.063 -0.9860000000000001Q138.108 0.51 134.572 0.51Z" fill="#FBF3E4"/><rect x="1.0" y="41" width="185.9" height="1" fill="#3A7A5E"/><path transform="translate(1.0 54)" d="M2.9973291015625 0.12Q2.133995849609375 0.12 1.51666357421875 -0.25733349609375Q0.899331298828125 -0.6346669921875 0.5696656494140625 -1.3106669921875Q0.24 -1.9866669921875 0.24 -2.88Q0.24 -3.7733330078125 0.5696656494140625 -4.4493330078125Q0.899331298828125 -5.1253330078125 1.51666357421875 -5.50266650390625Q2.133995849609375 -5.88 2.9973291015625 -5.88Q3.99199609375 -5.88 4.656328247070313 -5.382332641601563Q5.320660400390625 -4.884665283203125 5.5866591796875005 -4.03866455078125L4.6146743164062505 -3.7720024414062503Q4.44934033203125 -4.33600732421875 4.045004028320313 -4.653343994140625Q3.6406677246093753 -4.9706806640625 2.9973291015625 -4.9706806640625Q2.4173251953125 -4.9706806640625 2.030656005859375 -4.710678710937501Q1.64398681640625 -4.4506767578125 1.44931884765625 -3.9803402099609375Q1.25465087890625 -3.510003662109375 1.2533173828125 -2.88Q1.25198388671875 -2.249996337890625 1.4466518554687502 -1.7799931640625002Q1.6413198242187501 -1.309989990234375 2.029322509765625 -1.0496546630859376Q2.4173251953125 -0.7893193359375 2.9973291015625 -0.7893193359375Q3.6406677246093753 -0.7893193359375 4.045004028320313 -1.108656005859375Q4.44934033203125 -1.42799267578125 4.6146743164062505 -1.98799755859375L5.5866591796875005 -1.72133544921875Q5.320660400390625 -0.875334716796875 4.656328247070313 -0.3776673583984375Q3.99199609375 0.12 2.9973291015625 0.12ZM8.568000000000001 0.0V-5.76H9.5306513671875V-3.33465966796875H12.258669921875V-5.76H13.221321289062502V0.0H12.258669921875V-2.4320068359375H9.5306513671875V0.0ZM16.44 0.0V-5.76H18.81999365234375Q18.90399365234375 -5.76 19.036992553710938 -5.754Q19.169991455078126 -5.748 19.281324707031253 -5.728Q19.780656005859377 -5.6506669921875 20.106655517578126 -5.394334106445313Q20.432655029296875 -5.138001220703125 20.590321899414064 -4.7493352050781255Q20.74798876953125 -4.360669189453125 20.74798876953125 -3.8853369140625Q20.74798876953125 -3.179339111328125 20.3919892578125 -2.6736734619140625Q20.03598974609375 -2.1680078125 19.29999365234375 -2.04667431640625L18.889335449218752 -2.010673828125H17.402651367187502V0.0ZM19.74800732421875 0.0 18.61200732421875 -2.344 19.59332373046875 -2.56 20.84132373046875 0.0ZM17.402651367187502 -2.91332666015625H18.779994628906252Q18.86132763671875 -2.91332666015625 18.96032751464844 -2.92132666015625Q19.059327392578126 -2.92932666015625 19.14532763671875 -2.9519931640625Q19.38399658203125 -3.012659912109375 19.52166540527344 -3.164327758789063Q19.659334228515625 -3.3159956054687503 19.71700231933594 -3.5086645507812504Q19.77467041015625 -3.70133349609375 19.77467041015625 -3.8853369140625Q19.77467041015625 -4.06934033203125 19.71700231933594 -4.262009277343751Q19.659334228515625 -4.45467822265625 19.52166540527344 -4.606346069335938Q19.38399658203125 -4.758013916015625 19.14532763671875 -4.8186806640625Q19.059327392578126 -4.842013916015625 18.96032751464844 -4.849680541992187Q18.86132763671875 -4.85734716796875 18.779994628906252 -4.85734716796875H17.402651367187502ZM23.900000000000002 0.0V-5.76H24.862651367187503V0.0ZM30.295994628906254 0.12Q29.665329101562502 0.12 29.159330078125002 -0.099999267578125Q28.653331054687502 -0.31999853515625 28.32733154296875 -0.7296636962890625Q28.00133203125 -1.139328857421875 27.910665039062504 -1.70532666015625L28.913315429687504 -1.8559912109375Q29.03931616210938 -1.3439892578125001 29.437318847656254 -1.063321044921875Q29.83532153320313 -0.78265283203125 30.355993164062504 -0.78265283203125Q30.663331298828126 -0.78265283203125 30.936000488281252 -0.879321044921875Q31.208669677734378 -0.9759892578125 31.378337280273442 -1.1609918212890626Q31.548004882812503 -1.345994384765625 31.548004882812503 -1.6106640625Q31.548004882812503 -1.732668212890625 31.508336547851563 -1.8336705322265625Q31.468668212890627 -1.9346728515625 31.390999389648442 -2.0150072021484373Q31.313330566406254 -2.095341552734375 31.191662475585943 -2.160675048828125Q31.06999438476563 -2.226008544921875 30.906661621093754 -2.27600830078125L29.41999609375 -2.7146748046875Q29.227993164062504 -2.770009033203125 29.005326416015627 -2.86534326171875Q28.78265966796875 -2.960677490234375 28.585327636718752 -3.12534423828125Q28.387995605468753 -3.290010986328125 28.26133032226563 -3.5483428955078127Q28.134665039062504 -3.8066748046875 28.134665039062504 -4.18800439453125Q28.134665039062504 -4.744668212890625 28.41766394042969 -5.121667358398438Q28.700662841796877 -5.49866650390625 29.177994873046877 -5.687666625976563Q29.655326904296878 -5.876666748046875 30.241326171875002 -5.87333349609375Q30.831992187500003 -5.8666669921875005 31.296658447265628 -5.668666748046876Q31.761324707031253 -5.4706665039062505 32.072324096679694 -5.095999755859376Q32.38332348632813 -4.7213330078125 32.51198876953125 -4.1866669921875L31.476005859375004 -4.0093364257812505Q31.413339355468754 -4.3126726074218755 31.23000463867188 -4.525675170898438Q31.046669921875 -4.738677734375 30.785000366210937 -4.851345947265624Q30.523330810546877 -4.96401416015625 30.227993164062504 -4.9706806640625Q29.939322509765628 -4.97734716796875 29.69398681640625 -4.886345581054687Q29.44865112304688 -4.795343994140625 29.298316772460943 -4.62800830078125Q29.147982421875003 -4.460672607421875 29.147982421875003 -4.2360034179687505Q29.147982421875003 -4.022000244140625 29.275650512695314 -3.8893317871093753Q29.40331860351563 -3.756663330078125 29.594653808593755 -3.6776624755859375Q29.785989013671877 -3.59866162109375 29.979990234375002 -3.5466611328125L31.011994140625003 -3.25999267578125Q31.223992675781254 -3.2026596679687502 31.48732495117188 -3.106659912109375Q31.750657226562502 -3.01066015625 31.994656494140628 -2.8389937744140625Q32.23865576171875 -2.667327392578125 32.39732202148438 -2.3869945068359373Q32.55598828125 -2.10666162109375 32.55598828125 -1.6773291015625Q32.55598828125 -1.228664306640625 32.370989379882815 -0.8903319091796875Q32.18599047851563 -0.5519995117187501 31.868658447265627 -0.32833312988281255Q31.551326416015627 -0.10466674804687501 31.14499401855469 0.007666625976562494Q30.738661621093755 0.12 30.295994628906254 0.12ZM36.909339355468745 0.0V-4.85734716796875H35.044V-5.76H39.737330078125V-4.85734716796875H37.87199072265625V0.0ZM42.476 0.0V-5.76H43.34265332031249L45.337331054687496 -1.6813022460937501L47.32800830078125 -5.76H48.19732861328124V-0.00133349609375H47.29467578125V-3.69203076171875L45.527997558593746 0.0H45.145331054687496L43.37865283203125 -3.69203076171875V0.0ZM51.01599999999999 0.0 52.83200683593749 -5.76H54.245314453125L56.06132128906249 0.0H55.06800341796875L53.42132714843749 -5.1680107421875H53.6346611328125L52.00931787109374 0.0ZM52.02932812499999 -1.24933935546875V-2.1493251953125H55.05332617187499V-1.24933935546875ZM61.011994628906244 0.12Q60.38132910156249 0.12 59.87533007812499 -0.099999267578125Q59.36933105468749 -0.31999853515625 59.043331542968744 -0.7296636962890625Q58.717332031249995 -1.139328857421875 58.626665039062495 -1.70532666015625L59.629315429687495 -1.8559912109375Q59.75531616210937 -1.3439892578125001 60.15331884765624 -1.063321044921875Q60.551321533203115 -0.78265283203125 61.07199316406249 -0.78265283203125Q61.37933129882812 -0.78265283203125 61.652000488281246 -0.879321044921875Q61.92466967773437 -0.9759892578125 62.094337280273436 -1.1609918212890626Q62.26400488281249 -1.345994384765625 62.26400488281249 -1.6106640625Q62.26400488281249 -1.732668212890625 62.22433654785156 -1.8336705322265625Q62.18466821289062 -1.9346728515625 62.106999389648436 -2.0150072021484373Q62.029330566406244 -2.095341552734375 61.90766247558593 -2.160675048828125Q61.785994384765615 -2.226008544921875 61.62266162109374 -2.27600830078125L60.135996093749995 -2.7146748046875Q59.94399316406249 -2.770009033203125 59.721326416015614 -2.86534326171875Q59.498659667968745 -2.960677490234375 59.301327636718746 -3.12534423828125Q59.10399560546875 -3.290010986328125 58.977330322265615 -3.5483428955078127Q58.85066503906249 -3.8066748046875 58.85066503906249 -4.18800439453125Q58.85066503906249 -4.744668212890625 59.133663940429685 -5.121667358398438Q59.41666284179687 -5.49866650390625 59.893994873046864 -5.687666625976563Q60.371326904296865 -5.876666748046875 60.957326171874996 -5.87333349609375Q61.54799218749999 -5.8666669921875005 62.01265844726562 -5.668666748046876Q62.477324707031244 -5.4706665039062505 62.78832409667968 -5.095999755859376Q63.09932348632812 -4.7213330078125 63.227988769531244 -4.1866669921875L62.192005859374994 -4.0093364257812505Q62.129339355468744 -4.3126726074218755 61.946004638671866 -4.525675170898438Q61.762669921874995 -4.738677734375 61.50100036621093 -4.851345947265624Q61.23933081054687 -4.96401416015625 60.94399316406249 -4.9706806640625Q60.65532250976562 -4.97734716796875 60.409986816406246 -4.886345581054687Q60.164651123046866 -4.795343994140625 60.01431677246093 -4.62800830078125Q59.863982421874994 -4.460672607421875 59.863982421874994 -4.2360034179687505Q59.863982421874994 -4.022000244140625 59.9916505126953 -3.8893317871093753Q60.119318603515616 -3.756663330078125 60.31065380859374 -3.6776624755859375Q60.50198901367187 -3.59866162109375 60.695990234374996 -3.5466611328125L61.72799414062499 -3.25999267578125Q61.93999267578124 -3.2026596679687502 62.203324951171865 -3.106659912109375Q62.46665722656249 -3.01066015625 62.710656494140615 -2.8389937744140625Q62.95465576171874 -2.667327392578125 63.113322021484365 -2.3869945068359373Q63.271988281249996 -2.10666162109375 63.271988281249996 -1.6773291015625Q63.271988281249996 -1.228664306640625 63.08698937988281 -0.8903319091796875Q62.901990478515614 -0.5519995117187501 62.58465844726562 -0.32833312988281255Q62.26732641601562 -0.10466674804687501 61.86099401855468 0.007666625976562494Q61.45466162109374 0.12 61.011994628906244 0.12ZM70.02 0.0V-5.76H70.9826513671875V-0.90265283203125H73.5266591796875V0.0ZM76.38799999999999 0.0V-5.76H77.3506513671875V0.0ZM83.02933056640623 0.12Q82.46866186523437 0.12 81.97799536132811 -0.0783338623046875Q81.48732885742186 -0.276667724609375 81.11832995605468 -0.66000146484375Q80.74933105468749 -1.043335205078125 80.54066552734373 -1.6016683349609375Q80.33199999999998 -2.16000146484375 80.33199999999998 -2.88Q80.33199999999998 -3.823331787109375 80.68499841308592 -4.49399853515625Q81.03799682617186 -5.164665283203125 81.64866259765623 -5.521665893554688Q82.2593283691406 -5.87866650390625 83.02933056640623 -5.87866650390625Q84.09332470703123 -5.87866650390625 84.71465624999999 -5.384335815429687Q85.33598779296874 -4.890005126953125 85.55465478515623 -4.0013452148437505L84.57333740234374 -3.845345703125Q84.40866967773437 -4.355346435546875 84.03566735839843 -4.66068017578125Q83.66266503906249 -4.966013916015625 83.08932910156248 -4.96934716796875Q82.50932519531248 -4.976013671875 82.12432263183592 -4.716345092773437Q81.73932006835936 -4.456676513671875 81.54631872558593 -3.9833400878906247Q81.35331738281249 -3.510003662109375 81.35198388671873 -2.88Q81.35065039062498 -2.249996337890625 81.54365173339842 -1.7833264160156252Q81.73665307617186 -1.3166564941406251 82.12298913574217 -1.0563211669921877Q82.50932519531248 -0.79598583984375 83.08932910156248 -0.7893193359375Q83.52266992187498 -0.78265283203125 83.85033972167966 -0.9449893798828125Q84.17800952148436 -1.107325927734375 84.3863428955078 -1.437997314453125Q84.59467626953123 -1.7686687011718751 84.66800781249998 -2.2640068359375H83.65199511718748V-3.01999658203125H85.69199121093749Q85.70065795898437 -2.957995361328125 85.70432458496091 -2.83332958984375Q85.70799121093748 -2.708663818359375 85.70799121093748 -2.6826630859375Q85.70799121093748 -1.867331298828125 85.38599291992185 -1.2336654052734375Q85.06399462890623 -0.59999951171875 84.46432946777341 -0.239999755859375Q83.8646643066406 0.12 83.02933056640623 0.12ZM88.60799999999999 0.0V-5.76H89.5706513671875V-3.33465966796875H92.29866992187499V-5.76H93.2613212890625V0.0H92.29866992187499V-2.4320068359375H89.5706513671875V0.0ZM97.86533935546873 0.0V-4.85734716796875H95.99999999999999V-5.76H100.69333007812499V-4.85734716796875H98.82799072265624V0.0ZM107.21199999999999 0.0V-5.76H108.1746513671875V0.0ZM111.47599999999998 0.0V-5.76H112.45198437499998L115.12267138671874 -1.69997314453125V-5.76H116.09865576171873V0.0H115.12267138671874L112.45198437499998 -4.0613603515625005V0.0ZM121.45199462890622 0.12Q120.82132910156248 0.12 120.31533007812499 -0.099999267578125Q119.80933105468748 -0.31999853515625 119.48333154296873 -0.7296636962890625Q119.15733203124998 -1.139328857421875 119.06666503906247 -1.70532666015625L120.06931542968748 -1.8559912109375Q120.19531616210935 -1.3439892578125001 120.59331884765623 -1.063321044921875Q120.9913215332031 -0.78265283203125 121.51199316406247 -0.78265283203125Q121.8193312988281 -0.78265283203125 122.09200048828123 -0.879321044921875Q122.36466967773435 -0.9759892578125 122.53433728027342 -1.1609918212890626Q122.70400488281248 -1.345994384765625 122.70400488281248 -1.6106640625Q122.70400488281248 -1.732668212890625 122.66433654785155 -1.8336705322265625Q122.6246682128906 -1.9346728515625 122.54699938964842 -2.0150072021484373Q122.46933056640623 -2.095341552734375 122.3476624755859 -2.160675048828125Q122.2259943847656 -2.226008544921875 122.06266162109372 -2.27600830078125L120.57599609374998 -2.7146748046875Q120.38399316406247 -2.770009033203125 120.1613264160156 -2.86534326171875Q119.93865966796872 -2.960677490234375 119.74132763671872 -3.12534423828125Q119.54399560546872 -3.290010986328125 119.4173303222656 -3.5483428955078127Q119.29066503906247 -3.8066748046875 119.29066503906247 -4.18800439453125Q119.29066503906247 -4.744668212890625 119.57366394042967 -5.121667358398438Q119.85666284179685 -5.49866650390625 120.33399487304685 -5.687666625976563Q120.81132690429685 -5.876666748046875 121.39732617187498 -5.87333349609375Q121.98799218749997 -5.8666669921875005 122.4526584472656 -5.668666748046876Q122.91732470703123 -5.4706665039062505 123.22832409667967 -5.095999755859376Q123.5393234863281 -4.7213330078125 123.66798876953122 -4.1866669921875L122.63200585937497 -4.0093364257812505Q122.56933935546873 -4.3126726074218755 122.38600463867185 -4.525675170898438Q122.20266992187497 -4.738677734375 121.94100036621091 -4.851345947265624Q121.67933081054686 -4.96401416015625 121.38399316406247 -4.9706806640625Q121.0953225097656 -4.97734716796875 120.84998681640621 -4.886345581054687Q120.60465112304685 -4.795343994140625 120.45431677246091 -4.62800830078125Q120.30398242187498 -4.460672607421875 120.30398242187498 -4.2360034179687505Q120.30398242187498 -4.022000244140625 120.43165051269528 -3.8893317871093753Q120.5593186035156 -3.756663330078125 120.75065380859374 -3.6776624755859375Q120.94198901367186 -3.59866162109375 121.13599023437497 -3.5466611328125L122.16799414062498 -3.25999267578125Q122.37999267578122 -3.2026596679687502 122.64332495117185 -3.106659912109375Q122.90665722656247 -3.01066015625 123.1506564941406 -2.8389937744140625Q123.39465576171872 -2.667327392578125 123.55332202148435 -2.3869945068359373Q123.71198828124997 -2.10666162109375 123.71198828124997 -1.6773291015625Q123.71198828124997 -1.228664306640625 123.52698937988279 -0.8903319091796875Q123.3419904785156 -0.5519995117187501 123.02465844726561 -0.32833312988281255Q122.7073264160156 -0.10466674804687501 122.30099401855466 0.007666625976562494Q121.89466162109373 0.12 121.45199462890622 0.12ZM128.06533935546872 0.0V-4.85734716796875H126.19999999999997V-5.76H130.893330078125V-4.85734716796875H129.02799072265623V0.0ZM133.23199999999997 0.0 135.04800683593749 -5.76H136.46131445312497L138.27732128906248 0.0H137.28400341796873L135.63732714843746 -5.1680107421875H135.85066113281246L134.22531787109372 0.0ZM134.245328125 -1.24933935546875V-2.1493251953125H137.26932617187498V-1.24933935546875ZM141.17599999999996 0.0V-5.76H142.13865136718746V-0.90265283203125H144.68265917968748V0.0ZM147.54399999999995 0.0V-5.76H148.50665136718746V-0.90265283203125H151.05065917968747V0.0ZM153.43199999999996 0.0 155.24800683593747 -5.76H156.66131445312496L158.47732128906247 0.0H157.48400341796872L155.83732714843745 -5.1680107421875H156.05066113281245L154.4253178710937 0.0ZM154.44532812499997 -1.24933935546875V-2.1493251953125H157.46932617187497V-1.24933935546875ZM162.6813393554687 0.0V-4.85734716796875H160.81599999999997V-5.76H165.50933007812498V-4.85734716796875H163.6439907226562V0.0ZM168.32799999999995 0.0V-5.76H169.29065136718745V0.0ZM175.02932910156247 0.12Q174.16599584960932 0.12 173.5486635742187 -0.25733349609375Q172.93133129882807 -0.6346669921875 172.60166564941403 -1.3106669921875Q172.27199999999996 -1.9866669921875 172.27199999999996 -2.88Q172.27199999999996 -3.7733330078125 172.60166564941403 -4.4493330078125Q172.93133129882807 -5.1253330078125 173.5486635742187 -5.50266650390625Q174.16599584960932 -5.88 175.02932910156247 -5.88Q175.8926623535156 -5.88 176.5099946289062 -5.50266650390625Q177.12732690429684 -5.1253330078125 177.4569925537109 -4.4493330078125Q177.78665820312494 -3.7733330078125 177.78665820312494 -2.88Q177.78665820312494 -1.9866669921875 177.4569925537109 -1.3106669921875Q177.12732690429684 -0.6346669921875 176.5099946289062 -0.25733349609375Q175.8926623535156 0.12 175.02932910156247 0.12ZM175.02932910156247 -0.7893193359375Q175.60933300781247 -0.78265283203125 175.9950023193359 -1.0429881591796875Q176.38067163085933 -1.3033234863281251 176.57367297363277 -1.7766599121093751Q176.7666743164062 -2.249996337890625 176.7666743164062 -2.88Q176.7666743164062 -3.510003662109375 176.57367297363277 -3.977006958007813Q176.38067163085933 -4.44401025390625 175.9950023193359 -4.70401220703125Q175.60933300781247 -4.96401416015625 175.02932910156247 -4.9706806640625Q174.44932519531244 -4.97734716796875 174.06432263183586 -4.71734521484375Q173.67932006835932 -4.4573432617187505 173.48631872558587 -3.983673461914063Q173.29331738281246 -3.510003662109375 173.2919838867187 -2.88Q173.29065039062496 -2.249996337890625 173.4836517333984 -1.7833264160156252Q173.67665307617182 -1.3166564941406251 174.06298913574213 -1.0563211669921877Q174.44932519531244 -0.79598583984375 175.02932910156247 -0.7893193359375ZM180.68799999999996 0.0V-5.76H181.66398437499996L184.3346713867187 -1.69997314453125V-5.76H185.31065576171872V0.0H184.3346713867187L181.66398437499996 -4.0613603515625005V0.0Z" fill="#FFC766"/></svg></a>
-  <a class="call" href="sms:+17329551026">(732) 955-1026</a>
-</div></header>
+<a class="urgent" id="urgent" href="#quote">🎄 <b>$150 off</b> Christmas light installs when you book by <b>Nov 15</b> · <span class="x-days">Spots are filling up.</span> <u>Get my quote →</u></a>
 
-<main>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="TR Lights home"><svg viewBox="0 0 188 56" width="188" height="56" aria-hidden="true"><path transform="translate(22.5 34)" d="M5.304 0.0V-0.34L6.698 -0.68Q8.092 -0.9860000000000001 8.092 -2.3800000000000003V-21.76H5.202Q3.9440000000000004 -21.76 3.4000000000000004 -21.097Q2.8560000000000003 -20.434 2.244 -19.278000000000002L1.02 -16.898H0.68L0.8500000000000001 -22.44H20.468L20.604000000000003 -16.898H20.264000000000003L19.040000000000003 -19.278000000000002Q18.462 -20.434 17.918 -21.097Q17.374000000000002 -21.76 16.116 -21.76H13.226V-2.3800000000000003Q13.226 -0.9860000000000001 14.620000000000001 -0.68L16.014000000000003 -0.34V0.0ZM22.066000000000003 0.0V-0.34L22.78 -0.5780000000000001Q23.46 -0.8160000000000001 23.664 -1.207Q23.868000000000002 -1.598 23.868000000000002 -2.3120000000000003V-20.094Q23.868000000000002 -20.774 23.681 -21.165Q23.494 -21.556 22.848000000000003 -21.794L22.066000000000003 -22.1V-22.44H31.790000000000003Q35.80200000000001 -22.44 37.944 -20.927Q40.086 -19.414 40.086 -16.728Q40.086 -15.232000000000001 38.964 -13.736Q37.842 -12.24 35.428000000000004 -11.424000000000001L40.154 -2.04Q40.46000000000001 -1.4620000000000002 40.851000000000006 -1.105Q41.242000000000004 -0.748 41.888000000000005 -0.47600000000000003L42.33 -0.30600000000000005V0.0H36.244L31.212000000000003 -10.71H28.900000000000002V-2.3120000000000003Q28.900000000000002 -1.6660000000000001 29.104 -1.258Q29.308 -0.8500000000000001 29.954 -0.646L30.770000000000003 -0.34V0.0ZM28.900000000000002 -11.39H30.532000000000004Q32.980000000000004 -11.39 34.068000000000005 -12.699000000000002Q35.156000000000006 -14.008000000000001 35.156000000000006 -16.592000000000002Q35.156000000000006 -19.21 34.136 -20.485Q33.116 -21.76 30.702 -21.76H28.900000000000002ZM50.83 0.0V-0.34L51.544000000000004 -0.6120000000000001Q52.258 -0.8840000000000001 52.445 -1.2750000000000001Q52.632 -1.6660000000000001 52.632 -2.346V-20.094Q52.632 -20.774 52.428 -21.182000000000002Q52.224000000000004 -21.59 51.544000000000004 -21.828000000000003L50.83 -22.1V-22.44H59.5V-22.1L58.888000000000005 -21.828000000000003Q58.242000000000004 -21.59 58.004000000000005 -21.165Q57.766 -20.740000000000002 57.766 -20.060000000000002V-0.68H63.002Q64.26 -0.68 64.855 -1.292Q65.45 -1.9040000000000001 65.994 -3.06L67.32 -5.916H67.66L67.354 0.0ZM73.20200000000001 -18.632Q72.046 -18.632 71.24700000000001 -19.363Q70.44800000000001 -20.094 70.44800000000001 -21.216Q70.44800000000001 -22.372 71.24700000000001 -23.086Q72.046 -23.8 73.20200000000001 -23.8Q74.358 -23.8 75.14000000000001 -23.086Q75.92200000000001 -22.372 75.92200000000001 -21.216Q75.92200000000001 -20.094 75.14000000000001 -19.363Q74.358 -18.632 73.20200000000001 -18.632ZM69.19000000000001 0.0V-0.34L69.66600000000001 -0.47600000000000003Q70.346 -0.68 70.601 -1.088Q70.85600000000001 -1.496 70.85600000000001 -2.176V-12.818000000000001Q70.85600000000001 -13.532000000000002 70.601 -13.889000000000001Q70.346 -14.246 69.66600000000001 -14.382000000000001L69.19000000000001 -14.484000000000002V-14.824000000000002L75.412 -16.830000000000002L75.75200000000001 -16.490000000000002L75.65 -11.662V-2.1420000000000003Q75.65 -1.4620000000000002 75.905 -1.054Q76.16000000000001 -0.646 76.80600000000001 -0.44200000000000006L77.14600000000002 -0.34V0.0ZM86.054 -5.882000000000001Q83.708 -5.882000000000001 82.07600000000001 -6.664000000000001V-5.508Q82.07600000000001 -4.454000000000001 83.13000000000001 -4.25L89.522 -3.06Q91.12 -2.754 92.412 -2.261Q93.70400000000001 -1.7680000000000002 94.486 -0.8670000000000001Q95.268 0.034 95.268 1.598Q95.268 3.2640000000000002 94.18 4.675000000000001Q93.092 6.086 90.967 6.953Q88.842 7.82 85.68 7.82Q82.96000000000001 7.82 81.36200000000001 7.259Q79.76400000000001 6.698 79.101 5.814Q78.438 4.930000000000001 78.438 3.9440000000000004Q78.438 2.72 79.271 1.479Q80.104 0.23800000000000002 81.328 -0.51Q80.274 -0.918 79.798 -1.564Q79.322 -2.21 79.322 -2.958Q79.322 -3.6380000000000003 79.679 -4.2330000000000005Q80.036 -4.828 80.546 -5.44L81.668 -6.868Q79.186 -8.296000000000001 79.186 -11.356000000000002Q79.186 -13.804 80.93700000000001 -15.334Q82.688 -16.864 86.08800000000001 -16.864Q87.822 -16.864 89.131 -16.456000000000003Q90.44 -16.048000000000002 91.29 -15.3Q92.378 -15.47 93.34700000000001 -15.861Q94.316 -16.252000000000002 95.09800000000001 -16.932000000000002L95.57400000000001 -16.592000000000002V-14.858H91.732Q92.956 -13.498000000000001 92.956 -11.356000000000002Q92.956 -8.976 91.20500000000001 -7.429Q89.45400000000001 -5.882000000000001 86.054 -5.882000000000001ZM86.02000000000001 -6.562Q87.38000000000001 -6.562 88.00900000000001 -7.684000000000001Q88.638 -8.806000000000001 88.638 -11.424000000000001Q88.638 -14.042000000000002 88.00900000000001 -15.113000000000001Q87.38000000000001 -16.184 86.08800000000001 -16.184Q84.83 -16.184 84.184 -15.079Q83.53800000000001 -13.974 83.53800000000001 -11.356000000000002Q83.53800000000001 -8.738000000000001 84.13300000000001 -7.65Q84.72800000000001 -6.562 86.02000000000001 -6.562ZM80.95400000000001 2.8560000000000003Q80.95400000000001 4.862 82.19500000000001 5.882Q83.436 6.902 86.122 6.902Q88.944 6.902 90.37200000000001 5.984Q91.80000000000001 5.066000000000001 91.80000000000001 3.4000000000000004Q91.80000000000001 2.4480000000000004 91.10300000000001 1.87Q90.406 1.292 88.74000000000001 0.9860000000000001L82.586 -0.17Q82.31400000000001 -0.23800000000000002 82.042 -0.30600000000000005Q81.566 0.374 81.26 1.241Q80.95400000000001 2.108 80.95400000000001 2.8560000000000003ZM96.798 0.0V-0.34L97.206 -0.47600000000000003Q98.43 -0.8840000000000001 98.43 -2.176V-20.332Q98.43 -21.046000000000003 98.19200000000001 -21.386000000000003Q97.95400000000001 -21.726000000000003 97.274 -21.896L96.76400000000001 -22.032V-22.372L102.748 -23.834000000000003L103.292 -23.528000000000002L103.156 -18.734V-14.484000000000002Q104.346 -15.47 105.72300000000001 -16.167Q107.10000000000001 -16.864 108.766 -16.864Q110.976 -16.864 112.285 -15.606000000000002Q113.59400000000001 -14.348 113.59400000000001 -11.73V-2.1420000000000003Q113.59400000000001 -1.4620000000000002 113.86600000000001 -1.054Q114.138 -0.646 114.81800000000001 -0.44200000000000006L115.09 -0.34V0.0H107.134V-0.34L107.542 -0.44200000000000006Q108.766 -0.8500000000000001 108.766 -2.176V-12.852Q108.766 -14.212000000000002 108.30700000000002 -14.722000000000001Q107.84800000000001 -15.232000000000001 106.69200000000001 -15.232000000000001Q105.944 -15.232000000000001 105.06 -14.943000000000001Q104.176 -14.654000000000002 103.25800000000001 -13.940000000000001V-2.108Q103.25800000000001 -0.782 104.482 -0.40800000000000003L104.754 -0.34V0.0ZM122.876 0.51Q120.7 0.51 119.493 -0.5780000000000001Q118.286 -1.6660000000000001 118.286 -4.046V-15.674000000000001H115.94V-16.014000000000003L116.756 -16.150000000000002Q117.81 -16.388 118.575 -16.830000000000002Q119.34 -17.272000000000002 120.08800000000001 -18.02L122.876 -21.114H123.21600000000001L123.114 -16.354000000000003H126.922V-15.674000000000001H123.08V-3.434Q123.08 -2.244 123.607 -1.6320000000000001Q124.134 -1.02 124.95 -1.02Q125.664 -1.02 126.208 -1.3770000000000002Q126.75200000000001 -1.7340000000000002 127.296 -2.346L127.63600000000001 -2.0060000000000002Q126.956 -0.8500000000000001 125.766 -0.17000000000000004Q124.57600000000001 0.51 122.876 0.51ZM134.572 0.51Q132.906 0.51 131.57999999999998 0.119Q130.254 -0.272 129.132 -0.8500000000000001L129.166 -4.896000000000001H129.506L130.66199999999998 -2.8560000000000003Q131.41 -1.496 132.31099999999998 -0.833Q133.212 -0.17 134.606 -0.17Q136.238 -0.17 137.24099999999999 -0.901Q138.244 -1.6320000000000001 138.244 -2.8560000000000003Q138.244 -3.978 137.53 -4.692Q136.816 -5.406000000000001 134.878 -5.984L133.45 -6.426Q131.376 -7.038 130.18599999999998 -8.33Q128.99599999999998 -9.622 128.99599999999998 -11.492Q128.99599999999998 -13.736 130.76399999999998 -15.3Q132.53199999999998 -16.864 135.82999999999998 -16.864Q137.156 -16.864 138.329 -16.575000000000003Q139.50199999999998 -16.286 140.59 -15.708000000000002L140.386 -12.036000000000001H140.046L138.856 -14.144000000000002Q138.20999999999998 -15.266000000000002 137.581 -15.725000000000001Q136.952 -16.184 135.694 -16.184Q134.53799999999998 -16.184 133.51799999999997 -15.538Q132.498 -14.892000000000001 132.498 -13.702000000000002Q132.498 -12.546000000000001 133.365 -11.866Q134.232 -11.186 135.932 -10.608L137.462 -10.166Q139.91 -9.418000000000001 140.964 -8.109000000000002Q142.018 -6.800000000000001 142.018 -4.964Q142.018 -2.482 140.063 -0.9860000000000001Q138.108 0.51 134.572 0.51Z" fill="#FBF3E4"/><rect x="1.0" y="41" width="185.9" height="1" fill="#3A7A5E"/><path transform="translate(1.0 54)" d="M2.9973291015625 0.12Q2.133995849609375 0.12 1.51666357421875 -0.25733349609375Q0.899331298828125 -0.6346669921875 0.5696656494140625 -1.3106669921875Q0.24 -1.9866669921875 0.24 -2.88Q0.24 -3.7733330078125 0.5696656494140625 -4.4493330078125Q0.899331298828125 -5.1253330078125 1.51666357421875 -5.50266650390625Q2.133995849609375 -5.88 2.9973291015625 -5.88Q3.99199609375 -5.88 4.656328247070313 -5.382332641601563Q5.320660400390625 -4.884665283203125 5.5866591796875005 -4.03866455078125L4.6146743164062505 -3.7720024414062503Q4.44934033203125 -4.33600732421875 4.045004028320313 -4.653343994140625Q3.6406677246093753 -4.9706806640625 2.9973291015625 -4.9706806640625Q2.4173251953125 -4.9706806640625 2.030656005859375 -4.710678710937501Q1.64398681640625 -4.4506767578125 1.44931884765625 -3.9803402099609375Q1.25465087890625 -3.510003662109375 1.2533173828125 -2.88Q1.25198388671875 -2.249996337890625 1.4466518554687502 -1.7799931640625002Q1.6413198242187501 -1.309989990234375 2.029322509765625 -1.0496546630859376Q2.4173251953125 -0.7893193359375 2.9973291015625 -0.7893193359375Q3.6406677246093753 -0.7893193359375 4.045004028320313 -1.108656005859375Q4.44934033203125 -1.42799267578125 4.6146743164062505 -1.98799755859375L5.5866591796875005 -1.72133544921875Q5.320660400390625 -0.875334716796875 4.656328247070313 -0.3776673583984375Q3.99199609375 0.12 2.9973291015625 0.12ZM8.568000000000001 0.0V-5.76H9.5306513671875V-3.33465966796875H12.258669921875V-5.76H13.221321289062502V0.0H12.258669921875V-2.4320068359375H9.5306513671875V0.0ZM16.44 0.0V-5.76H18.81999365234375Q18.90399365234375 -5.76 19.036992553710938 -5.754Q19.169991455078126 -5.748 19.281324707031253 -5.728Q19.780656005859377 -5.6506669921875 20.106655517578126 -5.394334106445313Q20.432655029296875 -5.138001220703125 20.590321899414064 -4.7493352050781255Q20.74798876953125 -4.360669189453125 20.74798876953125 -3.8853369140625Q20.74798876953125 -3.179339111328125 20.3919892578125 -2.6736734619140625Q20.03598974609375 -2.1680078125 19.29999365234375 -2.04667431640625L18.889335449218752 -2.010673828125H17.402651367187502V0.0ZM19.74800732421875 0.0 18.61200732421875 -2.344 19.59332373046875 -2.56 20.84132373046875 0.0ZM17.402651367187502 -2.91332666015625H18.779994628906252Q18.86132763671875 -2.91332666015625 18.96032751464844 -2.92132666015625Q19.059327392578126 -2.92932666015625 19.14532763671875 -2.9519931640625Q19.38399658203125 -3.012659912109375 19.52166540527344 -3.164327758789063Q19.659334228515625 -3.3159956054687503 19.71700231933594 -3.5086645507812504Q19.77467041015625 -3.70133349609375 19.77467041015625 -3.8853369140625Q19.77467041015625 -4.06934033203125 19.71700231933594 -4.262009277343751Q19.659334228515625 -4.45467822265625 19.52166540527344 -4.606346069335938Q19.38399658203125 -4.758013916015625 19.14532763671875 -4.8186806640625Q19.059327392578126 -4.842013916015625 18.96032751464844 -4.849680541992187Q18.86132763671875 -4.85734716796875 18.779994628906252 -4.85734716796875H17.402651367187502ZM23.900000000000002 0.0V-5.76H24.862651367187503V0.0ZM30.295994628906254 0.12Q29.665329101562502 0.12 29.159330078125002 -0.099999267578125Q28.653331054687502 -0.31999853515625 28.32733154296875 -0.7296636962890625Q28.00133203125 -1.139328857421875 27.910665039062504 -1.70532666015625L28.913315429687504 -1.8559912109375Q29.03931616210938 -1.3439892578125001 29.437318847656254 -1.063321044921875Q29.83532153320313 -0.78265283203125 30.355993164062504 -0.78265283203125Q30.663331298828126 -0.78265283203125 30.936000488281252 -0.879321044921875Q31.208669677734378 -0.9759892578125 31.378337280273442 -1.1609918212890626Q31.548004882812503 -1.345994384765625 31.548004882812503 -1.6106640625Q31.548004882812503 -1.732668212890625 31.508336547851563 -1.8336705322265625Q31.468668212890627 -1.9346728515625 31.390999389648442 -2.0150072021484373Q31.313330566406254 -2.095341552734375 31.191662475585943 -2.160675048828125Q31.06999438476563 -2.226008544921875 30.906661621093754 -2.27600830078125L29.41999609375 -2.7146748046875Q29.227993164062504 -2.770009033203125 29.005326416015627 -2.86534326171875Q28.78265966796875 -2.960677490234375 28.585327636718752 -3.12534423828125Q28.387995605468753 -3.290010986328125 28.26133032226563 -3.5483428955078127Q28.134665039062504 -3.8066748046875 28.134665039062504 -4.18800439453125Q28.134665039062504 -4.744668212890625 28.41766394042969 -5.121667358398438Q28.700662841796877 -5.49866650390625 29.177994873046877 -5.687666625976563Q29.655326904296878 -5.876666748046875 30.241326171875002 -5.87333349609375Q30.831992187500003 -5.8666669921875005 31.296658447265628 -5.668666748046876Q31.761324707031253 -5.4706665039062505 32.072324096679694 -5.095999755859376Q32.38332348632813 -4.7213330078125 32.51198876953125 -4.1866669921875L31.476005859375004 -4.0093364257812505Q31.413339355468754 -4.3126726074218755 31.23000463867188 -4.525675170898438Q31.046669921875 -4.738677734375 30.785000366210937 -4.851345947265624Q30.523330810546877 -4.96401416015625 30.227993164062504 -4.9706806640625Q29.939322509765628 -4.97734716796875 29.69398681640625 -4.886345581054687Q29.44865112304688 -4.795343994140625 29.298316772460943 -4.62800830078125Q29.147982421875003 -4.460672607421875 29.147982421875003 -4.2360034179687505Q29.147982421875003 -4.022000244140625 29.275650512695314 -3.8893317871093753Q29.40331860351563 -3.756663330078125 29.594653808593755 -3.6776624755859375Q29.785989013671877 -3.59866162109375 29.979990234375002 -3.5466611328125L31.011994140625003 -3.25999267578125Q31.223992675781254 -3.2026596679687502 31.48732495117188 -3.106659912109375Q31.750657226562502 -3.01066015625 31.994656494140628 -2.8389937744140625Q32.23865576171875 -2.667327392578125 32.39732202148438 -2.3869945068359373Q32.55598828125 -2.10666162109375 32.55598828125 -1.6773291015625Q32.55598828125 -1.228664306640625 32.370989379882815 -0.8903319091796875Q32.18599047851563 -0.5519995117187501 31.868658447265627 -0.32833312988281255Q31.551326416015627 -0.10466674804687501 31.14499401855469 0.007666625976562494Q30.738661621093755 0.12 30.295994628906254 0.12ZM36.909339355468745 0.0V-4.85734716796875H35.044V-5.76H39.737330078125V-4.85734716796875H37.87199072265625V0.0ZM42.476 0.0V-5.76H43.34265332031249L45.337331054687496 -1.6813022460937501L47.32800830078125 -5.76H48.19732861328124V-0.00133349609375H47.29467578125V-3.69203076171875L45.527997558593746 0.0H45.145331054687496L43.37865283203125 -3.69203076171875V0.0ZM51.01599999999999 0.0 52.83200683593749 -5.76H54.245314453125L56.06132128906249 0.0H55.06800341796875L53.42132714843749 -5.1680107421875H53.6346611328125L52.00931787109374 0.0ZM52.02932812499999 -1.24933935546875V-2.1493251953125H55.05332617187499V-1.24933935546875ZM61.011994628906244 0.12Q60.38132910156249 0.12 59.87533007812499 -0.099999267578125Q59.36933105468749 -0.31999853515625 59.043331542968744 -0.7296636962890625Q58.717332031249995 -1.139328857421875 58.626665039062495 -1.70532666015625L59.629315429687495 -1.8559912109375Q59.75531616210937 -1.3439892578125001 60.15331884765624 -1.063321044921875Q60.551321533203115 -0.78265283203125 61.07199316406249 -0.78265283203125Q61.37933129882812 -0.78265283203125 61.652000488281246 -0.879321044921875Q61.92466967773437 -0.9759892578125 62.094337280273436 -1.1609918212890626Q62.26400488281249 -1.345994384765625 62.26400488281249 -1.6106640625Q62.26400488281249 -1.732668212890625 62.22433654785156 -1.8336705322265625Q62.18466821289062 -1.9346728515625 62.106999389648436 -2.0150072021484373Q62.029330566406244 -2.095341552734375 61.90766247558593 -2.160675048828125Q61.785994384765615 -2.226008544921875 61.62266162109374 -2.27600830078125L60.135996093749995 -2.7146748046875Q59.94399316406249 -2.770009033203125 59.721326416015614 -2.86534326171875Q59.498659667968745 -2.960677490234375 59.301327636718746 -3.12534423828125Q59.10399560546875 -3.290010986328125 58.977330322265615 -3.5483428955078127Q58.85066503906249 -3.8066748046875 58.85066503906249 -4.18800439453125Q58.85066503906249 -4.744668212890625 59.133663940429685 -5.121667358398438Q59.41666284179687 -5.49866650390625 59.893994873046864 -5.687666625976563Q60.371326904296865 -5.876666748046875 60.957326171874996 -5.87333349609375Q61.54799218749999 -5.8666669921875005 62.01265844726562 -5.668666748046876Q62.477324707031244 -5.4706665039062505 62.78832409667968 -5.095999755859376Q63.09932348632812 -4.7213330078125 63.227988769531244 -4.1866669921875L62.192005859374994 -4.0093364257812505Q62.129339355468744 -4.3126726074218755 61.946004638671866 -4.525675170898438Q61.762669921874995 -4.738677734375 61.50100036621093 -4.851345947265624Q61.23933081054687 -4.96401416015625 60.94399316406249 -4.9706806640625Q60.65532250976562 -4.97734716796875 60.409986816406246 -4.886345581054687Q60.164651123046866 -4.795343994140625 60.01431677246093 -4.62800830078125Q59.863982421874994 -4.460672607421875 59.863982421874994 -4.2360034179687505Q59.863982421874994 -4.022000244140625 59.9916505126953 -3.8893317871093753Q60.119318603515616 -3.756663330078125 60.31065380859374 -3.6776624755859375Q60.50198901367187 -3.59866162109375 60.695990234374996 -3.5466611328125L61.72799414062499 -3.25999267578125Q61.93999267578124 -3.2026596679687502 62.203324951171865 -3.106659912109375Q62.46665722656249 -3.01066015625 62.710656494140615 -2.8389937744140625Q62.95465576171874 -2.667327392578125 63.113322021484365 -2.3869945068359373Q63.271988281249996 -2.10666162109375 63.271988281249996 -1.6773291015625Q63.271988281249996 -1.228664306640625 63.08698937988281 -0.8903319091796875Q62.901990478515614 -0.5519995117187501 62.58465844726562 -0.32833312988281255Q62.26732641601562 -0.10466674804687501 61.86099401855468 0.007666625976562494Q61.45466162109374 0.12 61.011994628906244 0.12ZM70.02 0.0V-5.76H70.9826513671875V-0.90265283203125H73.5266591796875V0.0ZM76.38799999999999 0.0V-5.76H77.3506513671875V0.0ZM83.02933056640623 0.12Q82.46866186523437 0.12 81.97799536132811 -0.0783338623046875Q81.48732885742186 -0.276667724609375 81.11832995605468 -0.66000146484375Q80.74933105468749 -1.043335205078125 80.54066552734373 -1.6016683349609375Q80.33199999999998 -2.16000146484375 80.33199999999998 -2.88Q80.33199999999998 -3.823331787109375 80.68499841308592 -4.49399853515625Q81.03799682617186 -5.164665283203125 81.64866259765623 -5.521665893554688Q82.2593283691406 -5.87866650390625 83.02933056640623 -5.87866650390625Q84.09332470703123 -5.87866650390625 84.71465624999999 -5.384335815429687Q85.33598779296874 -4.890005126953125 85.55465478515623 -4.0013452148437505L84.57333740234374 -3.845345703125Q84.40866967773437 -4.355346435546875 84.03566735839843 -4.66068017578125Q83.66266503906249 -4.966013916015625 83.08932910156248 -4.96934716796875Q82.50932519531248 -4.976013671875 82.12432263183592 -4.716345092773437Q81.73932006835936 -4.456676513671875 81.54631872558593 -3.9833400878906247Q81.35331738281249 -3.510003662109375 81.35198388671873 -2.88Q81.35065039062498 -2.249996337890625 81.54365173339842 -1.7833264160156252Q81.73665307617186 -1.3166564941406251 82.12298913574217 -1.0563211669921877Q82.50932519531248 -0.79598583984375 83.08932910156248 -0.7893193359375Q83.52266992187498 -0.78265283203125 83.85033972167966 -0.9449893798828125Q84.17800952148436 -1.107325927734375 84.3863428955078 -1.437997314453125Q84.59467626953123 -1.7686687011718751 84.66800781249998 -2.2640068359375H83.65199511718748V-3.01999658203125H85.69199121093749Q85.70065795898437 -2.957995361328125 85.70432458496091 -2.83332958984375Q85.70799121093748 -2.708663818359375 85.70799121093748 -2.6826630859375Q85.70799121093748 -1.867331298828125 85.38599291992185 -1.2336654052734375Q85.06399462890623 -0.59999951171875 84.46432946777341 -0.239999755859375Q83.8646643066406 0.12 83.02933056640623 0.12ZM88.60799999999999 0.0V-5.76H89.5706513671875V-3.33465966796875H92.29866992187499V-5.76H93.2613212890625V0.0H92.29866992187499V-2.4320068359375H89.5706513671875V0.0ZM97.86533935546873 0.0V-4.85734716796875H95.99999999999999V-5.76H100.69333007812499V-4.85734716796875H98.82799072265624V0.0ZM107.21199999999999 0.0V-5.76H108.1746513671875V0.0ZM111.47599999999998 0.0V-5.76H112.45198437499998L115.12267138671874 -1.69997314453125V-5.76H116.09865576171873V0.0H115.12267138671874L112.45198437499998 -4.0613603515625005V0.0ZM121.45199462890622 0.12Q120.82132910156248 0.12 120.31533007812499 -0.099999267578125Q119.80933105468748 -0.31999853515625 119.48333154296873 -0.7296636962890625Q119.15733203124998 -1.139328857421875 119.06666503906247 -1.70532666015625L120.06931542968748 -1.8559912109375Q120.19531616210935 -1.3439892578125001 120.59331884765623 -1.063321044921875Q120.9913215332031 -0.78265283203125 121.51199316406247 -0.78265283203125Q121.8193312988281 -0.78265283203125 122.09200048828123 -0.879321044921875Q122.36466967773435 -0.9759892578125 122.53433728027342 -1.1609918212890626Q122.70400488281248 -1.345994384765625 122.70400488281248 -1.6106640625Q122.70400488281248 -1.732668212890625 122.66433654785155 -1.8336705322265625Q122.6246682128906 -1.9346728515625 122.54699938964842 -2.0150072021484373Q122.46933056640623 -2.095341552734375 122.3476624755859 -2.160675048828125Q122.2259943847656 -2.226008544921875 122.06266162109372 -2.27600830078125L120.57599609374998 -2.7146748046875Q120.38399316406247 -2.770009033203125 120.1613264160156 -2.86534326171875Q119.93865966796872 -2.960677490234375 119.74132763671872 -3.12534423828125Q119.54399560546872 -3.290010986328125 119.4173303222656 -3.5483428955078127Q119.29066503906247 -3.8066748046875 119.29066503906247 -4.18800439453125Q119.29066503906247 -4.744668212890625 119.57366394042967 -5.121667358398438Q119.85666284179685 -5.49866650390625 120.33399487304685 -5.687666625976563Q120.81132690429685 -5.876666748046875 121.39732617187498 -5.87333349609375Q121.98799218749997 -5.8666669921875005 122.4526584472656 -5.668666748046876Q122.91732470703123 -5.4706665039062505 123.22832409667967 -5.095999755859376Q123.5393234863281 -4.7213330078125 123.66798876953122 -4.1866669921875L122.63200585937497 -4.0093364257812505Q122.56933935546873 -4.3126726074218755 122.38600463867185 -4.525675170898438Q122.20266992187497 -4.738677734375 121.94100036621091 -4.851345947265624Q121.67933081054686 -4.96401416015625 121.38399316406247 -4.9706806640625Q121.0953225097656 -4.97734716796875 120.84998681640621 -4.886345581054687Q120.60465112304685 -4.795343994140625 120.45431677246091 -4.62800830078125Q120.30398242187498 -4.460672607421875 120.30398242187498 -4.2360034179687505Q120.30398242187498 -4.022000244140625 120.43165051269528 -3.8893317871093753Q120.5593186035156 -3.756663330078125 120.75065380859374 -3.6776624755859375Q120.94198901367186 -3.59866162109375 121.13599023437497 -3.5466611328125L122.16799414062498 -3.25999267578125Q122.37999267578122 -3.2026596679687502 122.64332495117185 -3.106659912109375Q122.90665722656247 -3.01066015625 123.1506564941406 -2.8389937744140625Q123.39465576171872 -2.667327392578125 123.55332202148435 -2.3869945068359373Q123.71198828124997 -2.10666162109375 123.71198828124997 -1.6773291015625Q123.71198828124997 -1.228664306640625 123.52698937988279 -0.8903319091796875Q123.3419904785156 -0.5519995117187501 123.02465844726561 -0.32833312988281255Q122.7073264160156 -0.10466674804687501 122.30099401855466 0.007666625976562494Q121.89466162109373 0.12 121.45199462890622 0.12ZM128.06533935546872 0.0V-4.85734716796875H126.19999999999997V-5.76H130.893330078125V-4.85734716796875H129.02799072265623V0.0ZM133.23199999999997 0.0 135.04800683593749 -5.76H136.46131445312497L138.27732128906248 0.0H137.28400341796873L135.63732714843746 -5.1680107421875H135.85066113281246L134.22531787109372 0.0ZM134.245328125 -1.24933935546875V-2.1493251953125H137.26932617187498V-1.24933935546875ZM141.17599999999996 0.0V-5.76H142.13865136718746V-0.90265283203125H144.68265917968748V0.0ZM147.54399999999995 0.0V-5.76H148.50665136718746V-0.90265283203125H151.05065917968747V0.0ZM153.43199999999996 0.0 155.24800683593747 -5.76H156.66131445312496L158.47732128906247 0.0H157.48400341796872L155.83732714843745 -5.1680107421875H156.05066113281245L154.4253178710937 0.0ZM154.44532812499997 -1.24933935546875V-2.1493251953125H157.46932617187497V-1.24933935546875ZM162.6813393554687 0.0V-4.85734716796875H160.81599999999997V-5.76H165.50933007812498V-4.85734716796875H163.6439907226562V0.0ZM168.32799999999995 0.0V-5.76H169.29065136718745V0.0ZM175.02932910156247 0.12Q174.16599584960932 0.12 173.5486635742187 -0.25733349609375Q172.93133129882807 -0.6346669921875 172.60166564941403 -1.3106669921875Q172.27199999999996 -1.9866669921875 172.27199999999996 -2.88Q172.27199999999996 -3.7733330078125 172.60166564941403 -4.4493330078125Q172.93133129882807 -5.1253330078125 173.5486635742187 -5.50266650390625Q174.16599584960932 -5.88 175.02932910156247 -5.88Q175.8926623535156 -5.88 176.5099946289062 -5.50266650390625Q177.12732690429684 -5.1253330078125 177.4569925537109 -4.4493330078125Q177.78665820312494 -3.7733330078125 177.78665820312494 -2.88Q177.78665820312494 -1.9866669921875 177.4569925537109 -1.3106669921875Q177.12732690429684 -0.6346669921875 176.5099946289062 -0.25733349609375Q175.8926623535156 0.12 175.02932910156247 0.12ZM175.02932910156247 -0.7893193359375Q175.60933300781247 -0.78265283203125 175.9950023193359 -1.0429881591796875Q176.38067163085933 -1.3033234863281251 176.57367297363277 -1.7766599121093751Q176.7666743164062 -2.249996337890625 176.7666743164062 -2.88Q176.7666743164062 -3.510003662109375 176.57367297363277 -3.977006958007813Q176.38067163085933 -4.44401025390625 175.9950023193359 -4.70401220703125Q175.60933300781247 -4.96401416015625 175.02932910156247 -4.9706806640625Q174.44932519531244 -4.97734716796875 174.06432263183586 -4.71734521484375Q173.67932006835932 -4.4573432617187505 173.48631872558587 -3.983673461914063Q173.29331738281246 -3.510003662109375 173.2919838867187 -2.88Q173.29065039062496 -2.249996337890625 173.4836517333984 -1.7833264160156252Q173.67665307617182 -1.3166564941406251 174.06298913574213 -1.0563211669921877Q174.44932519531244 -0.79598583984375 175.02932910156247 -0.7893193359375ZM180.68799999999996 0.0V-5.76H181.66398437499996L184.3346713867187 -1.69997314453125V-5.76H185.31065576171872V0.0H184.3346713867187L181.66398437499996 -4.0613603515625005V0.0Z" fill="#FFC766"/></svg></a>
+    <nav aria-label="Main"><a href="#services">Christmas lights</a><a href="#services">Permanent lights</a><a href="#work">Our work</a><a href="#faq">FAQ</a><a class="phone-link" href="sms:+17329551026">Text us</a></nav>
+    <a class="btn btn-main" href="#quote">Free quote</a>
+  </div>
+  <div class="bulbs" aria-hidden="true"><i style="--c:#FFC766;--d:0.71s"></i><i style="--c:#F05A4F;--d:0.31s"></i><i style="--c:#3FBF7F;--d:1.19s"></i><i style="--c:#5AA0FF;--d:0.46s"></i><i style="--c:#FFC766;--d:0.20s"></i><i style="--c:#EAF4FF;--d:1.20s"></i><i style="--c:#FFC766;--d:2.75s"></i><i style="--c:#F05A4F;--d:2.40s"></i><i style="--c:#3FBF7F;--d:2.30s"></i><i style="--c:#5AA0FF;--d:0.67s"></i><i style="--c:#FFC766;--d:1.61s"></i><i style="--c:#EAF4FF;--d:0.83s"></i><i style="--c:#FFC766;--d:0.52s"></i><i style="--c:#F05A4F;--d:0.32s"></i><i style="--c:#3FBF7F;--d:0.64s"></i><i style="--c:#5AA0FF;--d:2.78s"></i><i style="--c:#FFC766;--d:2.49s"></i><i style="--c:#EAF4FF;--d:2.42s"></i><i style="--c:#FFC766;--d:2.40s"></i><i style="--c:#F05A4F;--d:0.58s"></i><i style="--c:#3FBF7F;--d:0.93s"></i><i style="--c:#5AA0FF;--d:1.88s"></i><i style="--c:#FFC766;--d:2.20s"></i><i style="--c:#EAF4FF;--d:2.56s"></i><i style="--c:#FFC766;--d:2.64s"></i><i style="--c:#F05A4F;--d:0.26s"></i><i style="--c:#3FBF7F;--d:1.82s"></i><i style="--c:#5AA0FF;--d:2.02s"></i><i style="--c:#FFC766;--d:1.52s"></i><i style="--c:#EAF4FF;--d:0.53s"></i><i style="--c:#FFC766;--d:1.42s"></i><i style="--c:#F05A4F;--d:0.27s"></i><i style="--c:#3FBF7F;--d:2.80s"></i><i style="--c:#5AA0FF;--d:2.60s"></i><i style="--c:#FFC766;--d:1.64s"></i><i style="--c:#EAF4FF;--d:0.90s"></i><i style="--c:#FFC766;--d:2.73s"></i><i style="--c:#F05A4F;--d:1.72s"></i><i style="--c:#3FBF7F;--d:2.65s"></i><i style="--c:#5AA0FF;--d:2.54s"></i><i style="--c:#FFC766;--d:1.53s"></i><i style="--c:#EAF4FF;--d:1.24s"></i><i style="--c:#FFC766;--d:1.80s"></i><i style="--c:#F05A4F;--d:1.29s"></i><i style="--c:#3FBF7F;--d:0.48s"></i><i style="--c:#5AA0FF;--d:0.92s"></i><i style="--c:#FFC766;--d:2.44s"></i><i style="--c:#EAF4FF;--d:0.13s"></i><i style="--c:#FFC766;--d:0.14s"></i><i style="--c:#F05A4F;--d:1.88s"></i><i style="--c:#3FBF7F;--d:0.84s"></i><i style="--c:#5AA0FF;--d:1.60s"></i><i style="--c:#FFC766;--d:1.41s"></i><i style="--c:#EAF4FF;--d:1.03s"></i><i style="--c:#FFC766;--d:2.99s"></i><i style="--c:#F05A4F;--d:0.59s"></i><i style="--c:#3FBF7F;--d:1.24s"></i><i style="--c:#5AA0FF;--d:0.61s"></i><i style="--c:#FFC766;--d:1.90s"></i><i style="--c:#EAF4FF;--d:0.83s"></i></div>
+</header>
+
+<main id="top">
 <section class="hero">
-  <img src="media/christmas-photo-1-front-lg.jpg" alt="Ranch house with a white roofline and red and green windows lit by TR Lights" fetchpriority="high">
-  <div class="wrap hero-in">
+  <div class="wrap hero-grid">
     <div>
-      <h1>Christmas lights, hung for you.</h1>
-      <p class="lede">We install Christmas lights on 1, 2 and 3-story homes across Ocean and Monmouth County, cut to fit your house, and take them down after the season. Fully insured.</p>
-      <div class="deal x-deal"><span class="x-off">$150</span> off your install<small>Book by <span class="x-by">Nov 15</span></small></div>
+      <span class="loc"><i></i>Ocean &amp; Monmouth County, NJ · Fully insured</span>
+      <h1>Your house, lit up <em>without the ladder.</em></h1>
+      <p class="lede">We hang Christmas lights on 1, 2 and 3-story homes, cut to fit your house, and take them down after the season. Or go permanent and never hang lights again.</p>
+      <div class="deals">
+        <a class="deal x-deal" href="#quote" data-svc="Christmas lights"><span class="ico">🎄</span><span><b><span class="x-off">$150</span> off</b>Christmas light installation<br><small>Book by <span class="x-by">Nov 15</span></small></span></a>
+        <a class="deal perm p-deal" href="#quote" data-svc="Permanent lights"><span class="ico">✨</span><span><b><span class="p-off">$200</span> off</b>Permanent lights<br><small>Book by <span class="p-by">Nov 30</span></small></span></a>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-main" href="#quote">Get my free quote</a>
+        <a class="btn btn-ghost text-us d-only" href="sms:+17329551026">Text (732) 955-1026</a>
+      </div>
+      <ul class="trust"><li>Fully insured</li><li>1, 2 &amp; 3-story homes</li><li>Lights included</li><li>Takedown included</li><li>Price by text</li></ul>
     </div>
+    <div class="stack">
+      <div class="glow"></div>
+      <div class="s1"><video src="media/christmas-video.mp4" poster="media/christmas-video.jpg" muted loop playsinline autoplay preload="auto" aria-label="Video of a home TR Lights lit up for Christmas"></video><span class="lbl">🎄 Christmas install</span></div>
+      <div class="s2"><img src="media/permanent-still-2.jpg" alt="Home with permanent lights glowing red and green" fetchpriority="high"><span class="lbl">✨ Permanent lights</span></div>
+      <div class="badge"><span class="sh">✓</span><span><b>Fully insured</b><small>Local Toms River crew</small></span></div>
+    </div>
+  </div>
+</section>
 
-    <div class="q" id="quote">
+<div class="strip"><div class="wrap"><ul>
+  <li><b>Fully insured</b><span>Every job, every roof</span></li>
+  <li><b>1, 2 &amp; 3-story</b><span>Ranches to tall colonials</span></li>
+  <li><b>Cut to fit</b><span>Made for your roofline</span></li>
+  <li><b>Price by text</b><span>Usually the same day</span></li>
+</ul></div></div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head"><h2>Pick your lights</h2><p>Every job is custom. Tell us about your house and we'll text you a price.</p></div>
+    <div class="svcs">
+      <article class="svc">
+        <div class="svc-img"><span class="tag x-deal"><span class="x-off">$150</span> off · book by <span class="x-by">Nov 15</span></span><img src="media/christmas-photo-1-front-lg.jpg" alt="Ranch home with a white roofline and red and green windows, installed by TR Lights" width="1800" height="1350"></div>
+        <div class="svc-body">
+          <h3>Christmas light installation</h3>
+          <p class="lead">Professional lights for the season. We put them up, you enjoy them, we take them down.</p>
+          <ul><li>Commercial-grade LED lights included, nothing to buy</li><li>Custom cut to fit your roofline</li><li>1, 2 and 3-story homes, peaks and steep roofs</li><li>Rooflines, windows, garages, columns, bushes and trees</li><li>Clipped on, no nails, automatic timer</li><li>Takedown after the season included</li></ul>
+          <a class="btn btn-main" href="#quote" data-svc="Christmas lights">Get my Christmas quote</a>
+        </div>
+      </article>
+      <article class="svc perm">
+        <div class="svc-img"><span class="tag p-deal"><span class="p-off">$200</span> off · book by <span class="p-by">Nov 30</span></span><img src="media/permanent-still-1-lg.jpg" alt="Two-story home with permanent lights glowing red and green" width="1358" height="1400" style="object-position:50% 60%"></div>
+        <div class="svc-body">
+          <h3>Permanent lights</h3>
+          <p class="lead">Installed once, used all year. Govee permanent lights sit under the roofline and run from your phone.</p>
+          <ul><li>Christmas, the 4th, Halloween, game day, any color</li><li>Change colors and effects from an app in seconds</li><li>Barely visible in the daytime</li><li>Great for rooflines, patios, pavilions and pergolas</li><li>Never climb a ladder for lights again</li><li>1, 2 and 3-story homes</li></ul>
+          <a class="btn btn-main" href="#quote" data-svc="Permanent lights">Get my permanent lights quote</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="quote-sec">
+  <div class="wrap">
+    <div class="bk" id="quote">
+      <div class="bk-head">
+        <h2>Get your free quote</h2>
+        <p>Takes about 60 seconds. We text you your price. <b class="deal-line">$150 off Christmas installs and $200 off permanent lights right now.</b></p>
+      </div>
+      <ol class="steps" aria-label="Quote steps"><li data-s="1"><i>1</i><span class="sl">Lights</span></li><li data-s="2"><i>2</i><span class="sl">Where</span></li><li data-s="3"><i>3</i><span class="sl">Colors</span></li><li data-s="4"><i>4</i><span class="sl">Your info</span></li></ol>
+      <div class="progress"><span id="bar"></span></div>
       <form id="qf" novalidate onsubmit="return false">
-        <div data-p="1">
-          <h2>Get your free quote</h2>
-          <p class="sub">Takes a minute. We text you your price.</p>
-          <h3>What do you want?</h3>
-          <div class="seg">
-            <label class="pick"><input type="radio" name="svc" value="Christmas lights" checked><span>Christmas lights</span></label>
-            <label class="pick"><input type="radio" name="svc" value="Permanent lights"><span>Permanent lights</span></label>
-            <label class="pick"><input type="radio" name="svc" value="Both"><span>Both</span></label>
+        <div class="pane" data-p="1">
+          <h3>What are you looking for?</h3><p class="sub">Pick one. Not sure? We'll walk you through it.</p>
+          <div class="tiles two">
+            <label class="tile"><input type="radio" name="svc" value="Christmas lights"><span><span class="em">🎄</span>Christmas lights<small>Installed for the season, taken down after</small></span></label>
+            <label class="tile"><input type="radio" name="svc" value="Permanent lights"><span><span class="em">✨</span>Permanent lights<small>Every holiday, from your phone</small></span></label>
+            <label class="tile"><input type="radio" name="svc" value="Both"><span><span class="em">🏠</span>Both<small>Price them side by side</small></span></label>
+            <label class="tile"><input type="radio" name="svc" value="Not sure"><span><span class="em">💬</span>Not sure yet<small>Help me pick</small></span></label>
           </div>
-          <h3>Where?</h3>
-          <div class="chips">
-            <label class="pick"><input type="checkbox" name="where" value="Roofline" checked><span>Roofline</span></label>
-            <label class="pick"><input type="checkbox" name="where" value="Peaks"><span>Peaks</span></label>
-            <label class="pick"><input type="checkbox" name="where" value="Windows"><span>Windows</span></label>
-            <label class="pick"><input type="checkbox" name="where" value="Garage"><span>Garage</span></label>
-            <label class="pick"><input type="checkbox" name="where" value="Columns"><span>Columns</span></label>
-            <label class="pick"><input type="checkbox" name="where" value="Shed"><span>Shed</span></label>
+          <h4>How tall is the house?</h4>
+          <div class="tiles">
+            <label class="tile"><input type="radio" name="story" value="1-story"><span>1-story<small>Ranch</small></span></label>
+            <label class="tile"><input type="radio" name="story" value="2-story"><span>2-story<small>Colonial, split</small></span></label>
+            <label class="tile"><input type="radio" name="story" value="3-story"><span>3-story<small>Or very steep</small></span></label>
           </div>
         </div>
-        <div data-p="2" hidden>
-          <p class="step-n">Step 2 of 3</p>
-          <h3>Colors</h3>
-          <div class="chips">
-            <label class="pick"><input type="checkbox" name="color" value="Warm white"><span><i class="sw" style="background:#FFD98A"></i> Warm white</span></label>
-            <label class="pick"><input type="checkbox" name="color" value="Cool white"><span><i class="sw" style="background:#EAF4FF"></i> Cool white</span></label>
-            <label class="pick"><input type="checkbox" name="color" value="Multicolor"><span><i class="sw" style="background:#F05A4F"></i><i class="sw" style="background:#3FBF7F"></i><i class="sw" style="background:#5AA0FF"></i> Multicolor</span></label>
-            <label class="pick"><input type="checkbox" name="color" value="Red & white"><span><i class="sw" style="background:#F05A4F"></i><i class="sw" style="background:#EAF4FF"></i> Red &amp; white</span></label>
-            <label class="pick"><input type="checkbox" name="color" value="Red & green"><span><i class="sw" style="background:#F05A4F"></i><i class="sw" style="background:#3FBF7F"></i> Red &amp; green</span></label>
-            <label class="pick"><input type="checkbox" name="color" value="Not sure yet"><span>Not sure yet</span></label>
+        <div class="pane" data-p="2" hidden>
+          <h3>Where do you want lights?</h3><p class="sub">Pick everything you'd like lit.</p>
+          <div class="tiles">
+            <label class="tile"><input type="checkbox" name="where" value="Roofline" checked><span>Roofline<small>Gutters and eaves</small></span></label>
+            <label class="tile"><input type="checkbox" name="where" value="Peaks"><span>Peaks<small>Gables and dormers</small></span></label>
+            <label class="tile"><input type="checkbox" name="where" value="Windows"><span>Windows<small>Framed in lights</small></span></label>
+            <label class="tile"><input type="checkbox" name="where" value="Garage"><span>Garage<small>Around the door</small></span></label>
+            <label class="tile"><input type="checkbox" name="where" value="Columns"><span>Columns<small>Porch posts</small></span></label>
+            <label class="tile"><input type="checkbox" name="where" value="Bushes"><span>Bushes<small>Wrapped in lights</small></span></label>
+            <label class="tile"><input type="checkbox" name="where" value="Trees"><span>Trees<small>Any size</small></span></label>
+            <label class="tile"><input type="checkbox" name="where" value="Patio / pavilion"><span>Patio / pavilion<small>Pergolas, porches</small></span></label>
+            <label class="tile"><input type="checkbox" name="where" value="Shed"><span>Shed<small>Or detached garage</small></span></label>
           </div>
-          <h3>Extras</h3>
-          <div class="count"><b>Bushes</b><span class="stepper"><button type="button" data-d="-1" data-t="bush" aria-label="Fewer bushes">−</button><output id="bush">0</output><button type="button" data-d="1" data-t="bush" aria-label="More bushes">+</button></span></div>
-          <div class="count"><b>Trees</b><span class="stepper"><button type="button" data-d="-1" data-t="tree" aria-label="Fewer trees">−</button><output id="tree">0</output><button type="button" data-d="1" data-t="tree" aria-label="More trees">+</button></span></div>
         </div>
-        <div data-p="3" hidden>
-          <p class="step-n">Step 3 of 3</p>
-          <h3>Where should we text your price?</h3>
-          <label class="fld">Name<input id="name" autocomplete="name"></label>
-          <label class="fld">Cell phone<input id="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(732) 555-0123"></label>
-          <label class="fld">Home address<input id="addr" autocomplete="street-address" placeholder="Street, town"></label>
-          <label class="fld">Email <span class="opt">(optional)</span><input id="email" type="email" inputmode="email" autocomplete="email"></label>
+        <div class="pane" data-p="3" hidden>
+          <h3>Which colors?</h3><p class="sub perm-note">Pick one or more. Not sure? We'll help you choose.</p>
+          <div class="tiles">
+            <label class="tile"><input type="checkbox" name="color" value="Warm white"><span><span class="dots"><i style="background:#FFD98A;color:#FFD98A"></i><i style="background:#FFD98A;color:#FFD98A"></i><i style="background:#FFD98A;color:#FFD98A"></i></span>Warm white</span></label>
+            <label class="tile"><input type="checkbox" name="color" value="Cool white"><span><span class="dots"><i style="background:#EAF4FF;color:#EAF4FF"></i><i style="background:#EAF4FF;color:#EAF4FF"></i><i style="background:#EAF4FF;color:#EAF4FF"></i></span>Cool white</span></label>
+            <label class="tile"><input type="checkbox" name="color" value="Multicolor"><span><span class="dots"><i style="background:#F05A4F;color:#F05A4F"></i><i style="background:#3FBF7F;color:#3FBF7F"></i><i style="background:#5AA0FF;color:#5AA0FF"></i><i style="background:#FFC766;color:#FFC766"></i></span>Multicolor</span></label>
+            <label class="tile"><input type="checkbox" name="color" value="Red & white"><span><span class="dots"><i style="background:#F05A4F;color:#F05A4F"></i><i style="background:#EAF4FF;color:#EAF4FF"></i><i style="background:#F05A4F;color:#F05A4F"></i></span>Red &amp; white</span></label>
+            <label class="tile"><input type="checkbox" name="color" value="Red & green"><span><span class="dots"><i style="background:#F05A4F;color:#F05A4F"></i><i style="background:#3FBF7F;color:#3FBF7F"></i><i style="background:#F05A4F;color:#F05A4F"></i></span>Red &amp; green</span></label>
+            <label class="tile"><input type="checkbox" name="color" value="Not sure yet"><span>Not sure yet<small>We'll help you pick</small></span></label>
+          </div>
         </div>
-        <div class="btns"><button type="button" class="btn back" id="back" hidden>Back</button><button type="button" class="btn go" id="next">Next</button><a class="btn go" id="send" href="#" hidden>Get my price</a></div>
-        <p class="err" id="err" role="alert"></p>
-        <p class="fine" id="dealNote">Free, no obligation. Your discount is locked in when you request.</p>
-        <p class="fine" id="after" hidden>Your texting app opens with everything filled in. Just hit send.</p>
-        <div class="copybox" id="copybox"><p class="fine" style="margin:0 0 8px">On a computer? Copy this and text it to (732) 955-1026.</p><textarea id="msg" readonly></textarea><button class="btn back" id="copy" type="button" style="margin-top:8px">Copy message</button></div>
+        <div class="pane" data-p="4" hidden>
+          <h3>Where should we send your price?</h3><p class="sub">We look up your house from the address and text you a price.</p>
+          <div class="fields">
+            <label>Your name<input id="name" autocomplete="name"></label>
+            <label>Cell phone<input id="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(732) 555-0123"></label>
+            <label>Email <span class="opt">(optional)</span><input id="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com"></label>
+            <div><label for="addr">Home address</label>
+              <div class="addr"><input id="addr" autocomplete="off" placeholder="Start typing your address" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="addrSug"><ul id="addrSug" role="listbox" hidden></ul></div>
+              <p class="addr-st" id="addrSt" aria-live="polite"></p></div>
+            <div class="tiles" style="grid-template-columns:1fr"><label class="tile"><input type="checkbox" id="textsOk"><span>Text me install reminders and next year's early-bird deal<small>Optional. Reply STOP anytime.</small></span></label></div>
+          </div>
+          <div class="sum" id="sum"></div>
+        </div>
+        <div class="pane" style="padding-top:0">
+          <div class="nav"><button type="button" class="btn btn-ghost back" id="back" hidden>Back</button><button type="button" class="btn btn-main" id="next">Continue</button><a class="btn btn-main" id="send" href="#" hidden>Send my quote request</a></div>
+          <p class="err" id="err" role="alert"></p>
+          <ul class="reass"><li>Free, no obligation</li><li>Fully insured</li><li>Local, Toms River based</li></ul>
+          <p class="after" id="after" hidden>Your texting app opens with everything filled in. Just hit send.</p>
+          <div class="copybox" id="copybox"><p class="after" style="margin:0 0 8px">On a computer? Copy this and text it to <span class="phone">(732) 955-1026</span>.</p><textarea id="msg" readonly></textarea><button class="btn btn-ghost" id="copy" type="button" style="margin-top:8px">Copy message</button></div>
+        </div>
       </form>
       <div class="done" id="done" hidden>
-        <h2>Got it.</h2>
-        <p>We'll text your price to <b class="done-phone"></b>, usually the same day. Your discount is locked in.</p>
-        <a class="btn back" id="textNow" href="#">Text us now</a>
+        <div class="done-ico" aria-hidden="true">&#10003;</div>
+        <h3>Got it! We'll text you your price, usually the same day.</h3>
+        <p>We look up your house<span class="done-addr"></span> and text the price to <b class="done-phone"></b>. Your deal is locked in.</p>
+        <a class="btn btn-ghost" id="textNow" href="#">Text us now</a>
+        <p class="done-note">Want to talk it through? This opens Messages with your details filled in.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="work">
+<section class="work" id="work">
   <div class="wrap">
-    <h2>Houses we lit up</h2>
-    <div class="grid" id="grid">
-      <video data-src="media/christmas-video.mp4" poster="media/christmas-video.jpg" muted loop playsinline preload="none" aria-label="Christmas install video"></video>
-      <img class="wide" src="g-colonial.jpg" alt="Two-story colonial with Christmas lights" loading="lazy">
-      <img src="media/christmas-photo-2-side.jpg" alt="Ranch with red and green window lights" loading="lazy">
-      <img src="media/permanent-still-2.jpg" alt="Two-story home with red and green permanent lights" loading="lazy">
-      <video data-src="tr-ranch-pan.mp4" poster="tr-ranch-pan.jpg" muted loop playsinline preload="none" aria-label="One-story Christmas install video"></video>
-      <img src="media/front-purple-angle.jpg" alt="Two-story home with permanent lights" loading="lazy">
-      <video data-src="media/front-blue-video.mp4" poster="media/front-blue-video.jpg" muted loop playsinline preload="none" aria-label="Permanent lights video"></video>
-      <img class="wide" src="h-colonial.jpg" alt="Colonial with red and white Christmas lights" loading="lazy">
-      <img src="media/halloween-photo-1.jpg" alt="Home with purple and orange permanent lights" loading="lazy">
-      <video data-src="media/permanent-video.mp4" poster="media/permanent-video.jpg" muted loop playsinline preload="none" aria-label="Permanent lights video"></video>
+    <div class="sec-head"><h2>Our work</h2><p>Real houses we lit up across Ocean and Monmouth County. Tap any photo to see it bigger.</p></div>
+    <div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-g="x">🎄 Christmas installs</button><button role="tab" class="p" aria-selected="false" data-g="p">✨ Permanent lights</button></div>
+    <div class="gal" id="gal"></div>
+    <div class="more"><button class="btn btn-ghost" id="showMore" type="button">Show more</button></div>
+    <div class="inline-cta">
+      <div><h3>Want your house to look like this?</h3><p>Send your address and get your price by text. <span class="deal-line">$150 off Christmas installs and $200 off permanent lights right now.</span></p></div>
+      <a class="btn btn-main" href="#quote">Get my free quote</a>
     </div>
   </div>
 </section>
 
-<section class="perm">
+<section id="how">
   <div class="wrap">
-    <img src="media/permanent-still-1-lg.jpg" alt="Permanent lights glowing red and green on a two-story home" loading="lazy">
-    <div>
-      <h2>Or put them up once.</h2>
-      <p>Permanent Govee lights sit under your roofline all year. Pick any color from your phone for Christmas, the 4th, Halloween or game day. No more ladders.</p>
-      <div class="deal p-deal"><span class="p-off">$200</span> off permanent lights<small>Book by <span class="p-by">Nov 30</span></small></div>
-      <div><a class="btn go" href="#quote" data-svc="Permanent lights">Get my permanent lights quote</a></div>
+    <div class="sec-head"><h2>How it works</h2><p>Three steps. No ladders for you.</p></div>
+    <ol class="how">
+      <li><h3>Send your address</h3><p>Fill out the quick form or text us a photo of your house. Takes a minute.</p></li>
+      <li><h3>Get your price by text</h3><p>Every house is different, so we price yours. Usually the same day.</p></li>
+      <li><h3>We light it up</h3><p>We install on your date. Christmas lights come down after the season. Permanent lights stay up and work all year.</p></li>
+    </ol>
+    <div class="why">
+      <div><b>Fully insured</b><span>Covered on every job, on every roof.</span></div>
+      <div><b>1, 2 &amp; 3-story</b><span>Ranches to tall colonials and steep peaks.</span></div>
+      <div><b>Cut to fit</b><span>Lights made for your roofline, not off a spool.</span></div>
+      <div><b>Local crew</b><span>Based in Toms River, serving the Shore.</span></div>
     </div>
   </div>
 </section>
 
-<div class="facts"><ul>
-  <li><b>Fully insured</b><span>On every roof we work on</span></li>
-  <li><b>1, 2 and 3-story homes</b><span>Steep roofs and high peaks too</span></li>
-  <li><b>Lights included</b><span>Cut to fit your house</span></li>
-  <li><b>Takedown included</b><span>After the season</span></li>
-</ul></div>
-
-<section class="last">
+<section id="faq" style="padding-top:0">
   <div class="wrap">
-    <h2>Install dates go fast in December.</h2>
-    <p class="deal-line">$150 off Christmas installs when you book by Nov 15.</p>
-    <div class="btns"><a class="btn go" href="#quote">Get my free quote</a><a class="btn back" href="sms:+17329551026">Text (732) 955-1026</a></div>
+    <div class="sec-head c"><h2>Questions</h2></div>
+    <div class="faq">
+      <details><summary>How much does it cost?</summary><p>Every house is different. We cut the lights to fit your roofline, so the price depends on your house and what you want lit. Send your address and we'll text you a price, free.</p></details>
+      <details><summary>Do I have to buy the Christmas lights?</summary><p>No. Commercial-grade LED lights are included. We install them, then take them down after the season. Nothing to buy or store.</p></details>
+      <details><summary>Do you do 2 and 3-story houses?</summary><p>Yes. We install on 1, 2 and 3-story homes, including steep roofs and high peaks.</p></details>
+      <details><summary>Are you insured?</summary><p>Yes. TR Lights is fully insured with commercial general liability coverage.</p></details>
+      <details><summary>What are permanent lights?</summary><p>Govee permanent lights mounted under your roofline. They're barely visible in the daytime, and at night you pick any color or effect from your phone: Christmas, the 4th, Halloween, game day or plain white.</p></details>
+      <details><summary>When do the Christmas lights come down?</summary><p>After the holidays, in January. We schedule it with you when you book.</p></details>
+      <details><summary>What areas do you serve?</summary><p>All of Ocean and Monmouth County: Toms River, Brick, Point Pleasant, Lakewood, Jackson, Seaside, Lavallette, Bayville, Forked River, Barnegat, Manasquan, Wall, Belmar, Howell, Freehold, Red Bank, Middletown and more.</p></details>
+      <details><summary>How fast can you install?</summary><p>Install dates go first come, first served, and December fills up fast. Get your quote now to lock in your date and your deal.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Lock in your date and your deal</h2>
+    <p class="deal-line">$150 off Christmas installs and $200 off permanent lights right now.</p>
+    <div class="cta-row"><a class="btn btn-main" href="#quote">Get my free quote</a><a class="btn btn-ghost text-us" href="sms:+17329551026">Text (732) 955-1026</a></div>
   </div>
 </section>
 </main>
 
-<footer>TR Lights, Toms River NJ. Christmas light installation and permanent lights for Ocean and Monmouth County. Fully insured. Text <a href="sms:+17329551026">(732) 955-1026</a>.</footer>
-<div class="bar" id="bar"><a class="btn go" href="#quote">Get my free quote</a><a class="btn back" href="sms:+17329551026">Text</a></div>
+<footer><div class="wrap">TR Lights · Christmas light installation &amp; permanent lights · Fully insured · Ocean &amp; Monmouth County, NJ · Text <a class="phone-link" href="sms:+17329551026">(732) 955-1026</a><br><small>Serving Toms River, Brick, Point Pleasant, Lakewood, Jackson, Seaside, Lavallette, Bayville, Forked River, Barnegat, Manasquan, Wall, Belmar, Howell, Freehold, Red Bank, Middletown and all of Ocean &amp; Monmouth County.</small></div></footer>
+<div class="stick"><a class="btn btn-main" href="#quote">Get my free quote</a><a class="btn btn-ghost text-us" href="sms:+17329551026" aria-label="Text us">Text</a></div>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-x" type="button" aria-label="Close">×</button>
+  <button class="lb-nav lb-prev" type="button" aria-label="Previous">‹</button>
+  <div class="lb-media"></div>
+  <button class="lb-nav lb-next" type="button" aria-label="Next">›</button>
+  <a class="btn btn-main lb-cta" href="#quote">Get this look on my house</a>
+</div>
+
+<div class="pop" id="pop" hidden role="dialog" aria-modal="true" aria-labelledby="popT">
+  <div class="pop-card">
+    <button class="pop-x" type="button" aria-label="Close">×</button>
+    <img src="media/permanent-still-1-lg.jpg" alt="">
+    <div class="pop-body">
+      <h3 id="popT">Don't miss your deal</h3>
+      <p class="pop-text">$150 off Christmas light installation and $200 off permanent lights. Get your price by text in about a minute.</p>
+      <a class="btn btn-main" href="#quote" data-svc="Christmas lights">🎄 Christmas lights quote</a>
+      <a class="btn btn-ghost" href="#quote" data-svc="Permanent lights">✨ Permanent lights quote</a>
+      <button class="pop-no" type="button">No thanks</button>
+    </div>
+  </div>
+</div>
 
 <script>
-var PHONE='7329551026';
-/* Apps Script URL that saves quote requests to the Sheet (apps-script/README.md). Empty = open Messages. */
+var PHONE='7329551026';   // number quote requests are texted to
+/* Google Apps Script web app URL that writes quote requests to the Sheet (see apps-script/README.md).
+   Leave '' and the form opens Messages with the request filled in. */
 var SHEET_URL='';
 var LEAD_ID='L'+Date.now().toString(36)+Math.random().toString(36).slice(2,7);
-var SOURCE=(function(){try{var s=sessionStorage.getItem('trSrc');if(s)return s;var q=new URLSearchParams(location.search),src=q.get('src')||q.get('utm_source'),ad=q.get('ad');
-  s=q.get('gclid')?'Google ad':src?(({fb:'Facebook',ig:'Instagram',google:'Google',nd:'Nextdoor',flyer:'Flyer',qr:'QR code'})[src.toLowerCase()]||src)+(ad?' ad '+ad:''):q.get('fbclid')?'Facebook':
-  document.referrer&&new URL(document.referrer).hostname.replace(/^www\./,'')!==location.hostname.replace(/^www\./,'')?new URL(document.referrer).hostname:'Direct';
-  sessionStorage.setItem('trSrc',s);return s}catch(e){return ''}})();
+var SOURCE=(function(){
+  try{
+    var saved=sessionStorage.getItem('trSrc');if(saved)return saved;
+    var q=new URLSearchParams(location.search),s='',src=q.get('src')||q.get('utm_source'),ad=q.get('ad'),camp=q.get('utm_campaign');
+    if(q.get('gclid'))s='Google ad';
+    else if(src){s=({fb:'Facebook',facebook:'Facebook',ig:'Instagram',instagram:'Instagram',google:'Google',nd:'Nextdoor',nextdoor:'Nextdoor',flyer:'Flyer',qr:'QR code',card:'Business card',sign:'Yard sign',doorhanger:'Door hanger'})[src.toLowerCase()]||src;
+      if(ad)s+=' ad '+ad;if(camp)s+=' ('+camp+')'}
+    else if(q.get('fbclid'))s='Facebook';
+    else if(document.referrer){var h=new URL(document.referrer).hostname.replace(/^www\./,'');
+      if(h!==location.hostname.replace(/^www\./,''))s=/google\./.test(h)?'Google search':/facebook|^fb\.|^m\.facebook/.test(h)?'Facebook':/instagram/.test(h)?'Instagram':/nextdoor/.test(h)?'Nextdoor':/bing\./.test(h)?'Bing search':h}
+    s=s||'Direct';sessionStorage.setItem('trSrc',s);return s;
+  }catch(e){return ''}
+})();
 
-/* Deals. Edit here. Each runs through the end of its "until" day (Eastern). */
-var CHRISTMAS=[{off:150,until:'2026-11-15'},{off:100,until:'2026-12-01'},{off:100,until:'2026-12-15'}];
-var PERMANENT=[{off:200,until:'2026-11-30'},{off:200,until:'2026-12-15'}];
-function end(d){return new Date(d+'T23:59:59-05:00')}
-function now(l){for(var i=0;i<l.length;i++)if(new Date()<=end(l[i].until))return l[i];return null}
-function md(d){var p=d.split('-');return ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+p[1]-1]+' '+(+p[2])}
-var X=now(CHRISTMAS),P=now(PERMANENT);
-function all(sel,f){document.querySelectorAll(sel).forEach(f)}
-if(X){all('.x-off',function(e){e.textContent='$'+X.off});all('.x-by',function(e){e.textContent=md(X.until)})}else all('.x-deal',function(e){e.hidden=true});
-if(P){all('.p-off',function(e){e.textContent='$'+P.off});all('.p-by',function(e){e.textContent=md(P.until)})}else all('.p-deal',function(e){e.hidden=true});
-all('.deal-line',function(e){e.textContent=X?'$'+X.off+' off Christmas installs when you book by '+md(X.until)+'.':P?'$'+P.off+' off permanent lights when you book by '+md(P.until)+'.':'Get your quote now to lock in your date.'});
+/* ===== DEALS: edit dates/amounts here. Dates are the last day of each deal (Eastern time). ===== */
+var CHRISTMAS_DEALS=[{off:150,until:'2026-11-15'},{off:100,until:'2026-12-01'},{off:100,until:'2026-12-15'}];
+var PERMANENT_DEALS=[{off:200,until:'2026-11-30'},{off:200,until:'2026-12-15'}];
+function endOf(d){return new Date(d+'T23:59:59-05:00')}
+function current(list){var now=new Date();for(var i=0;i<list.length;i++)if(now<=endOf(list[i].until))return list[i];return null}
+function shortDate(d){var m=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],p=d.split('-');return m[+p[1]-1]+' '+(+p[2])}
+var X=current(CHRISTMAS_DEALS),P=current(PERMANENT_DEALS);
+function setAll(sel,txt){document.querySelectorAll(sel).forEach(function(e){e.textContent=txt})}
+function hideAll(sel){document.querySelectorAll(sel).forEach(function(e){e.hidden=true})}
+if(X){setAll('.x-off','$'+X.off);setAll('.x-by',shortDate(X.until));
+  var left=Math.ceil((endOf(X.until)-new Date())/864e5);setAll('.x-days',left<=1?'Last day!':left<=10?'Only '+left+' days left.':'Spots are filling up.')}
+else hideAll('.x-deal');
+if(P){setAll('.p-off','$'+P.off);setAll('.p-by',shortDate(P.until))}else hideAll('.p-deal');
+var dealTxt=X&&P?'$'+X.off+' off Christmas installs and $'+P.off+' off permanent lights right now.':X?'$'+X.off+' off Christmas installs right now.':P?'$'+P.off+' off permanent lights right now.':'Book early, install dates go fast.';
+setAll('.deal-line',dealTxt);
+(function(){var u=document.getElementById('urgent');
+  if(X)return;
+  if(P)u.innerHTML='✨ <b>$'+P.off+' off</b> permanent lights when you book by <b>'+shortDate(P.until)+'</b> · <u>Get my quote →</u>';
+  else u.innerHTML='🎄 Booking now. Install dates go first come, first served · <u>Get my free quote →</u>'})();
+(function(){var pt=document.querySelector('.pop-text');
+  pt.textContent=(X&&P?'$'+X.off+' off Christmas light installation and $'+P.off+' off permanent lights.':X?'$'+X.off+' off Christmas light installation.':P?'$'+P.off+' off permanent lights.':'Install dates go first come, first served.')+' Get your price by text in about a minute.'})();
+function dealFor(svc){var a=[];
+  if(X&&(svc==='Christmas lights'||svc==='Both'||svc==='Not sure'))a.push('$'+X.off+' off Christmas install (book by '+shortDate(X.until)+')');
+  if(P&&(svc==='Permanent lights'||svc==='Both'||svc==='Not sure'))a.push('$'+P.off+' off permanent lights (book by '+shortDate(P.until)+')');
+  return a}
 
-/* play work videos only while on screen */
-(function(){var vs=document.querySelectorAll('#grid video');if(!('IntersectionObserver' in window)){vs.forEach(function(v){v.src=v.dataset.src;v.controls=true});return}
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){if(!v.src)v.src=v.dataset.src;var p=v.play();if(p&&p.catch)p.catch(function(){})}else v.pause()})},{threshold:.3});
-  vs.forEach(function(v){io.observe(v)})})();
+var nice='('+PHONE.slice(0,3)+') '+PHONE.slice(3,6)+'-'+PHONE.slice(6);
+setAll('.phone',nice);
+document.querySelectorAll('.phone-link').forEach(function(a){a.href='sms:+1'+PHONE});
+document.querySelectorAll('.text-us').forEach(function(a){a.href='sms:+1'+PHONE+'?&body='+encodeURIComponent("Hi! I'd like a quote for lights. My address is ")});
 
-/* quote form: the text it sends keeps the original TR Lights format */
+/* gallery */
 (function(){
-  var step=1,MAX=3,cnt={bush:0,tree:0};
-  var panes=document.querySelectorAll('[data-p]'),next=document.getElementById('next'),back=document.getElementById('back'),send=document.getElementById('send'),err=document.getElementById('err');
+  var G={
+    x:[['christmas-video','v','Christmas install','big'],['../g-colonial','i','Two-story Christmas install','wide'],['christmas-photo-2-side','i','Christmas install','tall'],
+       ['../tr-ranch-pan','v','Christmas install','tall'],['christmas-photo-1-front','i','Christmas install',''],['../h-colonial','i','Christmas install','wide'],
+       ['christmas-photo-3-street','i','Christmas install',''],['permanent-still-1','i','Christmas colors on permanent lights','']],
+    p:[['permanent-video','v','Permanent lights','big'],['permanent-still-2','i','Christmas colors',''],['front-blue-video','v','Any color, any night','tall'],
+       ['halloween-photo-1','i','Halloween',''],['front-purple-angle','i','Two-story roofline','tall'],['patio-color-change-video','v','Patio color change','tall'],
+       ['garage-purple','i','Garage',''],['front-blue-orange','i','Blue &amp; orange',''],['patio-warm-white-video','v','Warm white patio','big'],
+       ['pavilion-video-1','v','Pavilion','tall'],['permanent-still-3','i','Red &amp; green',''],['patio-purple','i','Patio, purple',''],
+       ['halloween-video-2','v','Halloween','tall'],['patio-white-1','i','Patio, white',''],['backyard-moon','i','Backyard',''],['patio-orange','i','Patio, orange','']]
+  };
+  var gal=document.getElementById('gal'),more=document.getElementById('showMore'),cur='x',shown=12,io=null;
+  if('IntersectionObserver' in window)io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;
+    if(e.isIntersecting){if(!v.src)v.src=v.dataset.src;var p=v.play();if(p&&p.catch)p.catch(function(){})}else v.pause()})},{threshold:.35});
+  function src(n,ext){return n.indexOf('../')===0?n.slice(3)+ext:'media/'+n+ext}
+  function draw(){gal.innerHTML='';var list=G[cur];
+    list.slice(0,shown).forEach(function(it,idx){var f=document.createElement('figure'),el;if(it[3])f.className=it[3];f.onclick=function(){openLb(idx)};
+      if(it[1]==='v'){el=document.createElement('video');el.muted=true;el.loop=true;el.playsInline=true;el.setAttribute('playsinline','');el.setAttribute('muted','');
+        el.preload='none';el.poster=src(it[0],'.jpg');el.dataset.src=src(it[0],'.mp4');el.setAttribute('aria-label',it[2].replace('&amp;','&')+' video');
+        if(io)io.observe(el);else{el.src=el.dataset.src;el.controls=true}
+        f.appendChild(el);var b=document.createElement('span');b.className='play';b.textContent='▶';f.appendChild(b)}
+      else{el=document.createElement('img');el.src=src(it[0],'.jpg');el.loading='lazy';el.alt=it[2].replace('&amp;','&')+', lit by TR Lights';f.appendChild(el)}
+      gal.appendChild(f)});
+    more.hidden=shown>=list.length}
+  document.querySelectorAll('.tabs button').forEach(function(b){b.onclick=function(){
+    document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false')});cur=b.dataset.g;shown=12;draw()}});
+  var lb=document.getElementById('lb'),lbm=lb.querySelector('.lb-media'),li=0;
+  window.openLb=function(i){li=i;var it=G[cur][i];lbm.innerHTML='';var el;
+    if(it[1]==='v'){el=document.createElement('video');el.src=src(it[0],'.mp4');el.controls=true;el.autoplay=true;el.loop=true;el.muted=true;el.playsInline=true;el.setAttribute('playsinline','')}
+    else{el=document.createElement('img');el.src=src(it[0],'.jpg');el.alt=it[2].replace('&amp;','&')}
+    lbm.appendChild(el);lb.hidden=false;document.body.style.overflow='hidden'};
+  function closeLb(){lb.hidden=true;lbm.innerHTML='';document.body.style.overflow=''}
+  lb.querySelector('.lb-x').onclick=closeLb;lb.querySelector('.lb-cta').addEventListener('click',closeLb);
+  lb.addEventListener('click',function(e){if(e.target===lb)closeLb()});
+  lb.querySelector('.lb-prev').onclick=function(){openLb((li-1+G[cur].length)%G[cur].length)};
+  lb.querySelector('.lb-next').onclick=function(){openLb((li+1)%G[cur].length)};
+  document.addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')closeLb();if(e.key==='ArrowRight')lb.querySelector('.lb-next').click();if(e.key==='ArrowLeft')lb.querySelector('.lb-prev').click()});
+  more.onclick=function(){shown+=12;draw()};
+  draw();
+})();
+
+/* quote steps */
+(function(){
+  var step=1,MAX=4;
+  var panes=document.querySelectorAll('.pane[data-p]'),lis=document.querySelectorAll('.steps li'),bar=document.getElementById('bar');
+  var next=document.getElementById('next'),back=document.getElementById('back'),send=document.getElementById('send'),err=document.getElementById('err');
   function picked(n){return [].slice.call(document.querySelectorAll('input[name="'+n+'"]:checked')).map(function(i){return i.value})}
   function v(id){return document.getElementById(id).value.trim()}
-  function svc(){return picked('svc')[0]||'Christmas lights'}
-  function extras(){var e=[];if(cnt.bush)e.push(cnt.bush+' bush'+(cnt.bush>1?'es':''));if(cnt.tree)e.push(cnt.tree+' tree'+(cnt.tree>1?'s':''));return e.join(', ')||'None'}
-  function deal(){var s=svc(),a=[];
-    if(X&&s!=='Permanent lights')a.push('$'+X.off+' off Christmas install (book by '+md(X.until)+')');
-    if(P&&s!=='Christmas lights')a.push('$'+P.off+' off permanent lights (book by '+md(P.until)+')');return a.join(' + ')}
-  function message(){var d=deal();
+  function svc(){return picked('svc')[0]||'Not sure'}
+  function message(){var d=dealFor(svc());
     return '🎄 TR Lights quote request\n\n'+
       '👤 '+v('name')+'\n'+
       '📱 '+v('phone')+'\n'+
       (v('email')?'✉️ '+v('email')+'\n':'')+
       '📍 '+v('addr')+'\n\n'+
-      'Lights on: '+(picked('where').join(', ')||'Not sure')+(svc()!=='Christmas lights'?' ('+svc()+')':'')+'\n'+
-      'Colors: '+(picked('color').join(', ')||'Not sure')+'\n'+
-      'Extras: '+extras()+
-      (d?'\n\n🎁 '+d:'')}
+      'Looking for: '+svc()+'\n'+
+      'House: '+(picked('story')[0]||'Not sure')+'\n'+
+      'Lights on: '+(picked('where').join(', ')||'Not sure')+'\n'+
+      'Colors: '+(picked('color').join(', ')||'Not sure')+
+      (d.length?'\n\n🎁 '+d.join(' + '):'')}
+  function summary(){var d=dealFor(svc());
+    document.getElementById('sum').innerHTML='<div><span>Looking for</span><span>'+svc()+'</span></div><div><span>House</span><span>'+(picked('story')[0]||'Not sure')+'</span></div><div><span>Where</span><span>'+(picked('where').join(', ')||'Not sure')+'</span></div><div><span>Colors</span><span>'+(picked('color').join(', ')||'Not sure')+'</span></div>'+
+      d.map(function(x){return '<div><span>Your deal</span><span class="g">'+x+'</span></div>'}).join('')}
+  function show(n){step=n;panes.forEach(function(p){p.hidden=+p.dataset.p!==n});
+    lis.forEach(function(li){var s=+li.dataset.s;li.className=s<n?'done':s===n?'cur':''});
+    bar.style.width=((n-1)/(MAX-1)*100)+'%';back.hidden=n===1;next.hidden=n===MAX;send.hidden=n!==MAX;err.textContent='';
+    if(n===3)document.querySelector('.perm-note').textContent=svc()==='Permanent lights'?'Permanent lights do any color from your phone. Pick your favorites.':'Pick one or more. Not sure? We\'ll help you choose.';
+    if(n===MAX){summary();refresh()}}
   function refresh(){send.href='sms:+1'+PHONE+'?&body='+encodeURIComponent(message())}
-  function show(n){step=n;panes.forEach(function(p){p.hidden=+p.dataset.p!==n});back.hidden=n===1;next.hidden=n===MAX;send.hidden=n!==MAX;err.textContent='';if(n===MAX)refresh()}
-  next.onclick=function(){if(step===1&&!picked('where').length){err.textContent='Pick at least one spot.';return}show(step+1)};
+  window.trPickSvc=function(val){var r=document.querySelector('input[name="svc"][value="'+val+'"]');if(r){r.checked=true;if(step!==1)show(1)}};
+  next.onclick=function(){
+    if(step===1&&!picked('svc').length){err.textContent='Pick Christmas lights, permanent lights, or both.';return}
+    if(step===2&&!picked('where').length){err.textContent='Pick at least one spot, or choose Roofline.';return}
+    show(step+1);window.trStarted=true;document.getElementById('quote').scrollIntoView({block:'start'})};
   back.onclick=function(){show(step-1)};
-  all('.stepper button',function(b){b.onclick=function(){var t=b.dataset.t;cnt[t]=Math.max(0,Math.min(40,cnt[t]+(+b.dataset.d)));document.getElementById(t).textContent=cnt[t]}});
-  ['name','phone','email','addr'].forEach(function(id){document.getElementById(id).addEventListener('input',refresh)});
-  all('[data-svc]',function(a){a.addEventListener('click',function(){var r=document.querySelector('input[name="svc"][value="'+a.dataset.svc+'"]');if(r){r.checked=true;show(1)}})});
-  function toMessages(){document.getElementById('after').hidden=false;document.getElementById('dealNote').hidden=true;document.getElementById('msg').value=message();document.getElementById('copybox').style.display='block';try{location.href=send.href}catch(x){}}
-  function thanks(){document.getElementById('qf').hidden=true;var d=document.getElementById('done');d.querySelector('.done-phone').textContent=v('phone');document.getElementById('textNow').href=send.href;d.hidden=false}
-  send.addEventListener('click',function(e){e.preventDefault();
-    var miss=[];if(!v('name'))miss.push('name');if(!v('phone'))miss.push('cell number');if(!v('addr'))miss.push('address');
-    if(miss.length){err.textContent='Add your '+miss.join(', ')+' so we can text your price.';return}
-    if(v('phone').replace(/\D/g,'').length<10){err.textContent='Include your area code in the phone number.';return}
-    err.textContent='';refresh();
-    if(window.gtag)gtag('event','generate_lead');if(window.fbq)fbq('track','Lead');
+  ['name','phone','email','addr'].forEach(function(id){document.getElementById(id).addEventListener('input',function(){window.trStarted=true;refresh()})});
+  function payload(){return{
+    name:v('name'),phone:v('phone'),email:v('email'),address:v('addr'),
+    service:svc(),stories:picked('story')[0]||'Not sure',
+    where:picked('where').join(', ')||'Not sure',
+    colors:picked('color').join(', ')||'Not sure',
+    bushes:0,trees:0,extrasEstimate:0,
+    discount:dealFor(svc()).join(' + '),
+    message:message(),source:location.hostname||'local',
+    business:'lights',leadId:LEAD_ID,campaign:SOURCE,
+    textsOk:document.getElementById('textsOk').checked}}
+  function toMessages(){
+    document.getElementById('after').hidden=false;
+    document.getElementById('msg').value=message();
+    document.getElementById('copybox').style.display='block';
+    try{location.href=send.href}catch(x){}}
+  function thanks(){
+    var d=document.getElementById('done');
+    ['qf'].forEach(function(id){document.getElementById(id).hidden=true});
+    document.querySelector('.steps').hidden=true;document.querySelector('.progress').hidden=true;document.querySelector('.bk-head').hidden=true;
+    d.querySelector('.done-phone').textContent=v('phone');
+    var a=v('addr');d.querySelectorAll('.done-addr').forEach(function(n){n.textContent=a?' ('+a+')':''});
+    document.getElementById('textNow').href=send.href;d.hidden=false;
+    document.getElementById('quote').scrollIntoView({block:'start'})}
+  send.addEventListener('click',function(e){
+    e.preventDefault();
+    var miss=[];if(!v('name'))miss.push('name');if(!v('phone'))miss.push('phone');if(!v('addr'))miss.push('addr');
+    if(miss.length){var label={name:'name',phone:'cell number',addr:'address'};
+      err.textContent='Add your '+miss.map(function(m){return label[m]}).join(', ')+' so we know who to text and which house to price.';
+      document.getElementById(miss[0]).focus();return}
+    if(v('phone').replace(/\D/g,'').length<10){err.textContent='That phone number looks short. Please include the area code.';document.getElementById('phone').focus();return}
+    err.textContent='';refresh();window.trSent=true;
+    try{sessionStorage.setItem('trSent','1')}catch(x){}
+    if(window.gtag)gtag('event','generate_lead');
+    if(window.fbq)fbq('track','Lead');
     if(!SHEET_URL){toMessages();return}
-    var done=false;function fin(ok){if(done)return;done=true;ok?thanks():toMessages()}setTimeout(function(){fin(false)},10000);
-    fetch(SHEET_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({name:v('name'),phone:v('phone'),email:v('email'),address:v('addr'),
-      where:picked('where').join(', ')||'Not sure',colors:picked('color').join(', ')||'Not sure',bushes:cnt.bush,trees:cnt.tree,service:svc(),discount:deal(),message:message(),
-      source:location.hostname,business:'lights',leadId:LEAD_ID,campaign:SOURCE}),redirect:'follow'})
-      .then(function(r){return r.ok?r.text():Promise.reject()}).then(function(t){var j={};try{j=JSON.parse(t)}catch(x){}fin(j.ok!==false)}).catch(function(){fin(false)})});
+    send.textContent='Sending…';send.classList.add('sending');
+    var done=false,ctl=('AbortController' in window)?new AbortController():null;
+    var giveUp=setTimeout(function(){if(ctl)try{ctl.abort()}catch(x){}},10000);
+    function finish(ok){if(done)return;done=true;clearTimeout(giveUp);send.textContent='Send my quote request';send.classList.remove('sending');ok?thanks():toMessages()}
+    fetch(SHEET_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload()),redirect:'follow',signal:ctl?ctl.signal:undefined})
+      .then(function(r){return r.ok?r.text():Promise.reject(r.status)})
+      .then(function(t){var j={};try{j=JSON.parse(t)}catch(x){}finish(j.ok!==false)})
+      .catch(function(){finish(false)})});
   document.getElementById('copy').onclick=function(){var t=document.getElementById('msg');t.select();try{navigator.clipboard.writeText(t.value)}catch(x){document.execCommand('copy')}this.textContent='Copied'};
   show(1);
 })();
 
-/* hide the bottom bar while the form is on screen */
-(function(){var b=document.getElementById('bar'),q=document.getElementById('quote');if(!('IntersectionObserver' in window))return;
-  new IntersectionObserver(function(e){b.classList.toggle('away',e[0].isIntersecting)},{threshold:.15}).observe(q)})();
+/* any "data-svc" button preselects the service in the form */
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-svc]');if(a&&window.trPickSvc){trPickSvc(a.dataset.svc);closePop()}});
+
+/* deal popup: once per visit, after 20s or when a desktop visitor heads for the tab bar. Skipped if they're already filling the form. */
+var pop=document.getElementById('pop');
+function closePop(){if(!pop.hidden){pop.hidden=true}}
+(function(){
+  function seen(){try{return sessionStorage.getItem('trPop')||sessionStorage.getItem('trSent')}catch(x){return false}}
+  function open(){if(!document.getElementById('lb').hidden)return;if(seen()||window.trStarted||window.trSent||!pop.hidden)return;
+    var q=document.getElementById('quote').getBoundingClientRect();if(q.top<innerHeight&&q.bottom>0)return;
+    try{sessionStorage.setItem('trPop','1')}catch(x){}pop.hidden=false}
+  setTimeout(open,20000);
+  document.addEventListener('mouseout',function(e){if(!e.relatedTarget&&e.clientY<8)open()});
+  pop.addEventListener('click',function(e){if(e.target===pop)closePop()});
+  pop.querySelector('.pop-x').onclick=closePop;pop.querySelector('.pop-no').onclick=closePop;
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closePop()});
+})();
+
+/* address suggestions: ArcGIS, then Photon (free, no key). Limited to the Jersey Shore area */
+(function(){
+  var addr=document.getElementById('addr'),sug=document.getElementById('addrSug'),st=document.getElementById('addrSt'),timer=null,items=[],hi=-1,reqId=0,place=null;
+  function status(x){st.textContent=x||''}
+  function close(){sug.hidden=true;addr.setAttribute('aria-expanded','false');hi=-1}
+  function draw(){sug.innerHTML='';
+    items.forEach(function(it,i){var li=document.createElement('li');li.setAttribute('role','option');li.setAttribute('aria-selected',i===hi?'true':'false');
+      li.appendChild(document.createTextNode(it.line||it.town));var sm=document.createElement('small');sm.textContent=it.line?it.town:'';li.appendChild(sm);
+      li.addEventListener('mousedown',function(e){e.preventDefault()});li.addEventListener('click',function(){pick(i)});sug.appendChild(li)});
+    sug.hidden=!items.length;addr.setAttribute('aria-expanded',items.length?'true':'false')}
+  function pick(i){place=items[i];addr.value=place.label;close();status('✓ Got it');addr.dispatchEvent(new Event('input'))}
+  function town(p){return p.city||p.town||p.village||p.locality||p.district||p.county||''}
+  function fromArcGIS(q){
+    return fetch('https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/suggest?f=json&countryCode=USA&maxSuggestions=6&location=-74.15,40.05&searchExtent=-74.9,39.4,-73.85,40.55&text='+encodeURIComponent(q))
+      .then(function(r){if(!r.ok)throw 0;return r.json()})
+      .then(function(j){if(j.error)throw 0;return (j.suggestions||[]).map(function(x){
+        var p=x.text.split(', ').filter(function(v){return v!=='USA'});
+        if(p.length<2||p.indexOf('NJ')<0)return null;
+        var line=p[0],rest=p.slice(1),zip=/^\d{5}$/.test(rest[rest.length-1])?rest.pop():'',stt=rest.pop();
+        var tw=rest.join(', ')+(rest.length?', ':'')+stt+(zip?' '+zip:'');
+        return {line:line,town:tw,label:line+', '+tw}}).filter(Boolean)})}
+  function fromPhoton(q){
+    return fetch('https://photon.komoot.io/api/?limit=8&lang=en&lat=40.05&lon=-74.15&bbox=-74.9,39.4,-73.85,40.55&q='+encodeURIComponent(q))
+      .then(function(r){if(!r.ok)throw 0;return r.json()})
+      .then(function(j){return (j.features||[]).filter(function(f){var p=f.properties||{};return !p.state||/new jersey/i.test(p.state)}).map(function(f){
+        var p=f.properties||{},line=[p.housenumber,p.street].filter(Boolean).join(' ')||p.name||'',tw=[town(p),'NJ',p.postcode].filter(Boolean).join(' ').replace(' NJ',', NJ');
+        return {line:line,town:tw,label:(line?line+', ':'')+tw}})})}
+  function lookup(q){var order=[fromArcGIS,fromPhoton],ok=false;
+    return order.reduce(function(prev,fn){return prev.then(function(l){if(l&&l.length)return l;return fn(q).then(function(x){ok=true;return x}).catch(function(){return null})})},Promise.resolve(null))
+      .then(function(l){if(l&&l.length)return l;if(ok)return [];throw 0})}
+  addr.addEventListener('input',function(){
+    if(place&&addr.value===place.label)return;place=null;clearTimeout(timer);var q=addr.value.trim();
+    if(q.length<3){items=[];draw();status('');return}
+    status('Searching…');
+    timer=setTimeout(function(){var id=++reqId,done=false,guard=setTimeout(function(){if(!done&&id===reqId)status('Suggestions are slow right now. Just type your full address, that works too.')},5000);
+      lookup(q).then(function(list){done=true;clearTimeout(guard);if(id!==reqId)return;var seen={};
+        items=list.filter(function(it){if(!it.label||seen[it.label])return false;return seen[it.label]=true}).slice(0,5);hi=-1;draw();
+        status(items.length?'':'No matches yet. Keep typing, or just type your full address.')})
+      .catch(function(){done=true;clearTimeout(guard);if(id!==reqId)return;items=[];draw();status("Couldn't load suggestions. Just type your full address, that works too.")})},250)});
+  addr.addEventListener('keydown',function(e){if(sug.hidden)return;
+    if(e.key==='ArrowDown'){hi=Math.min(items.length-1,hi+1);draw();e.preventDefault()}
+    else if(e.key==='ArrowUp'){hi=Math.max(0,hi-1);draw();e.preventDefault()}
+    else if(e.key==='Enter'&&hi>-1){pick(hi);e.preventDefault()}
+    else if(e.key==='Escape')close()});
+  addr.addEventListener('blur',function(){setTimeout(close,250)});
+})();
+
+/* hide the sticky button while the quote is on screen */
+(function(){var st=document.querySelector('.stick'),bk=document.getElementById('quote-sec');if(!st||!('IntersectionObserver' in window))return;
+  new IntersectionObserver(function(e){st.classList.toggle('away',e[0].isIntersecting)},{threshold:.08}).observe(bk)})();
 </script>
 </body>
 </html>
