@@ -344,6 +344,22 @@ footer a{color:var(--muted)}
   .tabs{display:flex;width:100%}
   .tabs button{flex:1;padding:.6rem .5rem;font-size:.88rem}
 }
+
+/* centered, full-screen hero with the deals up front */
+.hero{min-height:calc(100svh - 70px);display:flex;align-items:center}
+.hero .wrap{width:100%}
+.hero-grid{justify-items:center;text-align:center}
+.hero-grid>div{max-width:820px}
+.hero .lede{margin-left:auto;margin-right:auto}
+.hero .deals{max-width:680px;margin:0 auto 1.5rem;gap:14px}
+.hero .deal{padding:1.1rem 1.2rem;text-align:left;align-items:center;transition:transform .15s}
+.hero .deal:hover{transform:translateY(-2px)}
+.hero .deal .ico{font-size:1.8rem}
+.hero .deal b{font-size:clamp(1.6rem,1.2rem + 1.2vw,2.1rem);line-height:1.05;margin-bottom:.15rem}
+.hero .cta-row{justify-content:center}
+.hero .cta-row .btn{padding:1.1rem 1.9rem;font-size:1.08rem}
+.hero::before{inset:auto auto 0 50%;transform:translateX(-50%)}
+@media (max-width:899px){.hero{min-height:0}.hero .deal b{font-size:1.5rem}}
 </style>
 </head>
 <body>
