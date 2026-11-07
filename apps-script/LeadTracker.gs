@@ -442,7 +442,7 @@ function setupFunnel() {
   const sh = ss.getSheetByName('Funnel') || ss.insertSheet('Funnel');
   sh.clear();
   const E = "Events!", U = (ev, v) =>
-    `=IFERROR(COUNTUNIQUE(FILTER(${E}B2:B, ${E}C2:C="${ev}", ${E}E2:E="${v}", ${E}B2:B<>"setup")),0)`;
+    `=IFERROR(ROWS(UNIQUE(FILTER(${E}B2:B, ${E}C2:C="${ev}", ${E}E2:E="${v}", ${E}B2:B<>"setup"))),0)`;
   const L = (status, v) => `=COUNTIFS(Leads!B2:B,"TR Lights",Leads!N2:N,"*Form ${v}*"${status ? ',Leads!I2:I,"' + status + '"' : ''})`;
   const rows = [
     ['TR Lights quote funnel', 'Form A (4 steps)', 'Form B (2 steps)', 'What it means'],
@@ -473,8 +473,8 @@ function setupFunnel() {
   sh.getRange(start, 1).setFormula(`=IFERROR(SORT(UNIQUE(FILTER(${E}F2:F, ${E}C2:C="view", ${E}F2:F<>""))),"")`);
   for (let i = 0; i < 15; i++) {
     const r = start + i;
-    sh.getRange(r, 2).setFormula(`=IF(A${r}="","",IFERROR(COUNTUNIQUE(FILTER(${E}B2:B,${E}C2:C="view",${E}F2:F=A${r})),0))`);
-    sh.getRange(r, 3).setFormula(`=IF(A${r}="","",IFERROR(COUNTUNIQUE(FILTER(${E}B2:B,${E}C2:C="submit",${E}F2:F=A${r})),0))`);
+    sh.getRange(r, 2).setFormula(`=IF(A${r}="","",IFERROR(ROWS(UNIQUE(FILTER(${E}B2:B,${E}C2:C="view",${E}F2:F=A${r}))),0))`);
+    sh.getRange(r, 3).setFormula(`=IF(A${r}="","",IFERROR(ROWS(UNIQUE(FILTER(${E}B2:B,${E}C2:C="submit",${E}F2:F=A${r}))),0))`);
     sh.getRange(r, 4).setFormula(`=IF(A${r}="","",COUNTIFS(Leads!O2:O,A${r},Leads!I2:I,"Booked")+COUNTIFS(Leads!O2:O,A${r},Leads!I2:I,"Done"))`);
   }
   sh.getRange('B10:C15').setNumberFormat('0.0%');

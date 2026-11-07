@@ -774,7 +774,7 @@ document.querySelectorAll('.text-us').forEach(function(a){a.href='sms:+1'+PHONE+
     e.preventDefault();
     var miss=[];if(!v('name'))miss.push('name');if(!v('phone'))miss.push('phone');if(!v('addr'))miss.push('addr');
     if(miss.length){var label={name:'name',phone:'cell number',addr:'address'};
-      trk('submit','missing '+miss.join('+'));err.textContent='Add your '+miss.map(function(m){return label[m]}).join(', ')+' so we know who to text and which house to price.';
+      trk('step','missing '+miss.join('+'));err.textContent='Add your '+miss.map(function(m){return label[m]}).join(', ')+' so we know who to text and which house to price.';
       document.getElementById(miss[0]).focus();return}
     if(v('phone').replace(/\D/g,'').length<10){err.textContent='That phone number looks short. Please include the area code.';document.getElementById('phone').focus();return}
     err.textContent='';refresh();window.trSent=true;
