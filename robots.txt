@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /apps-script/
+
+Sitemap: https://www.trlightsnj.com/sitemap.xml
