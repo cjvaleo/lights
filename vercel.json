@@ -1,27 +1,74 @@
 {
   "rewrites": [
-    { "source": "/permanent-lights", "destination": "/permanent-lights.html" },
-    { "source": "/service-areas", "destination": "/service-areas.html" },
-    { "source": "/guides", "destination": "/guides.html" },
-    { "source": "/guides/:slug", "destination": "/guides/:slug.html" }
+    {
+      "source": "/permanent-lights",
+      "destination": "/permanent-lights.html"
+    },
+    {
+      "source": "/service-areas",
+      "destination": "/service-areas.html"
+    },
+    {
+      "source": "/guides",
+      "destination": "/guides.html"
+    },
+    {
+      "source": "/guides/when-to-book-christmas-light-installation",
+      "destination": "/guides/when-to-book-christmas-light-installation.html"
+    },
+    {
+      "source": "/guides/permanent-lights-vs-christmas-lights",
+      "destination": "/guides/permanent-lights-vs-christmas-lights.html"
+    },
+    {
+      "source": "/guides/hiring-a-christmas-light-installer",
+      "destination": "/guides/hiring-a-christmas-light-installer.html"
+    }
   ],
   "redirects": [
-    { "source": "/permanent-lights.html", "destination": "/permanent-lights", "permanent": true },
-    { "source": "/service-areas.html", "destination": "/service-areas", "permanent": true },
-    { "source": "/guides.html", "destination": "/guides", "permanent": true }
+    {
+      "source": "/permanent-lights.html",
+      "destination": "/permanent-lights",
+      "permanent": true
+    },
+    {
+      "source": "/service-areas.html",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/guides.html",
+      "destination": "/guides",
+      "permanent": true
+    }
   ],
   "headers": [
     {
       "source": "/:file(.*\\.md)",
-      "headers": [{ "key": "Content-Type", "value": "text/markdown; charset=utf-8" }]
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        }
+      ]
     },
     {
       "source": "/:file(l\\d+\\.html)",
-      "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
     },
     {
       "source": "/apps-script/:path*",
-      "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
     }
   ]
 }
