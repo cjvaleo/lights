@@ -55,6 +55,7 @@ function doPost(e) {
     return json_({ ok: false, error: 'Bad data' });
   }
   if (d.website) return json_({ ok: true });                 // spam-trap field filled in: a bot
+  if (d.type === 'event') { try { logEvent_(d); } catch (err) { console.error(err); } return json_({ ok: true }); }
   if (!d.phone && !d.email) return json_({ ok: false, error: 'No contact info' });
 
   const row = buildRow_(d);
@@ -93,12 +94,16 @@ function buildRow_(d) {
     if (+d.bushes) extras.push(d.bushes + ' bush' + (+d.bushes > 1 ? 'es' : ''));
     if (+d.trees) extras.push(d.trees + ' tree' + (+d.trees > 1 ? 's' : ''));
     details = [
+      d.service ? 'Wants: ' + d.service : '',
+      d.stories ? 'House: ' + d.stories : '',
       'Lights on: ' + (d.where || 'Not sure'),
       'Colors: ' + (d.colors || 'Not sure'),
       extras.length ? 'Extras: ' + extras.join(', ') + (d.extrasEstimate ? ' (from $' + d.extrasEstimate + ')' : '') : ''
     ].filter(Boolean).join(' · ');
     quote = '';                                   // roofline is priced after you measure
     if (+d.discount) notes.push('$' + d.discount + ' off promised');
+    else if (d.discount) notes.push('Deal: ' + d.discount);
+    if (d.variant) notes.push('Form ' + d.variant);
   } else {
     details = [d.vehicle, d.car, d.package, d.addons, d.when].filter(Boolean).join(' · ');
     quote = Number(d.price) || Number(d.quote) || '';
@@ -401,3 +406,80 @@ function time_(d) { return d ? new Date(d).getTime() || 0 : 0; }
 function days_(from, to) { return from ? Math.floor((dayStart_(to) - dayStart_(from)) / 86400000) : -1; }
 function ownerEmail_() { return Session.getEffectiveUser().getEmail(); }
 function safeAlert_(msg) { try { SpreadsheetApp.getUi().alert(msg); } catch (e) { console.log(msg); } }
+
+
+/* ------------------------------------------------------------------ */
+/* Funnel tracking (website events) + report                          */
+/* ------------------------------------------------------------------ */
+
+const EVENTS_SHEET = 'Events';
+const EVENT_HEADERS = ['Time', 'Session', 'Event', 'Label', 'Variant', 'Source', 'Landing page', 'Page', 'Device'];
+
+/** One row per website event: view, cta, start, step, submit. Small and append-only. */
+function logEvent_(d) {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  let sh = ss.getSheetByName(EVENTS_SHEET);
+  if (!sh) {
+    sh = ss.insertSheet(EVENTS_SHEET);
+    sh.getRange(1, 1, 1, EVENT_HEADERS.length).setValues([EVENT_HEADERS]).setFontWeight('bold');
+    sh.setFrozenRows(1);
+  }
+  const ev = clean_(d.event).slice(0, 20);
+  if (!/^(view|cta|start|step|submit|text)$/.test(ev)) return;
+  sh.appendRow([new Date(), clean_(d.session).slice(0, 40), ev, clean_(d.label).slice(0, 60),
+    clean_(d.variant).slice(0, 4), clean_(d.campaign).slice(0, 60), clean_(d.landing).slice(0, 80),
+    clean_(d.page).slice(0, 80), clean_(d.device).slice(0, 10)]);
+}
+
+/**
+ * Run once from the editor (pick setupFunnel > Run). Builds a "Funnel" tab that counts unique
+ * visitor sessions at each step, by form version (A = 4-step form, B = 2-step form) and by source,
+ * plus booked jobs from the Leads tab. Formulas update on their own.
+ */
+function setupFunnel() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  if (!ss.getSheetByName(EVENTS_SHEET)) logEvent_({ event: 'view', session: 'setup', label: 'setup row, ignore' });
+  const sh = ss.getSheetByName('Funnel') || ss.insertSheet('Funnel');
+  sh.clear();
+  const E = "Events!", U = (ev, v) =>
+    `=IFERROR(COUNTUNIQUE(FILTER(${E}B2:B, ${E}C2:C="${ev}", ${E}E2:E="${v}", ${E}B2:B<>"setup")),0)`;
+  const L = (status, v) => `=COUNTIFS(Leads!B2:B,"TR Lights",Leads!N2:N,"*Form ${v}*"${status ? ',Leads!I2:I,"' + status + '"' : ''})`;
+  const rows = [
+    ['TR Lights quote funnel', 'Form A (4 steps)', 'Form B (2 steps)', 'What it means'],
+    ['Visitors (sessions)', U('view', 'A'), U('view', 'B'), 'Unique visits to the homepage'],
+    ['Clicked a quote button', U('cta', 'A'), U('cta', 'B'), 'Any "Get my quote" / deal / Text button'],
+    ['Started the form', U('start', 'A'), U('start', 'B'), 'Picked an option or typed in the form'],
+    ['Sent a quote request', U('submit', 'A'), U('submit', 'B'), 'Form sent (to the sheet or Messages)'],
+    ['Leads in Leads tab', L('', 'A'), L('', 'B'), 'Rows tagged with this form version'],
+    ['Quoted', '=' + L('Quoted', 'A').slice(1) + '+' + L('Booked', 'A').slice(1) + '+' + L('Done', 'A').slice(1),
+               '=' + L('Quoted', 'B').slice(1) + '+' + L('Booked', 'B').slice(1) + '+' + L('Done', 'B').slice(1), 'Qualified: you sent them a price'],
+    ['Booked', '=' + L('Booked', 'A').slice(1) + '+' + L('Done', 'A').slice(1),
+               '=' + L('Booked', 'B').slice(1) + '+' + L('Done', 'B').slice(1), 'Status Booked or Done'],
+    ['', '', '', ''],
+    ['Quote-button click rate', '=IFERROR(B3/B2,0)', '=IFERROR(C3/C2,0)', 'Clicked ÷ visitors'],
+    ['Form start rate', '=IFERROR(B4/B2,0)', '=IFERROR(C4/C2,0)', 'Started ÷ visitors'],
+    ['Form completion rate', '=IFERROR(B5/B4,0)', '=IFERROR(C5/C4,0)', 'Sent ÷ started'],
+    ['Visitor → lead rate', '=IFERROR(B5/B2,0)', '=IFERROR(C5/C2,0)', 'Sent ÷ visitors (the main number)'],
+    ['Qualified lead rate', '=IFERROR(B7/B6,0)', '=IFERROR(C7/C6,0)', 'Quoted ÷ leads'],
+    ['Booked-job rate', '=IFERROR(B8/B6,0)', '=IFERROR(C8/C6,0)', 'Booked ÷ leads'],
+    ['', '', '', ''],
+    ['Is B really different? (p-value)', '=IFERROR(LET(n1,B2,n2,C2,x1,B5,x2,C5,p,(x1+x2)/(n1+n2),z,ABS(x1/n1-x2/n2)/SQRT(p*(1-p)*(1/n1+1/n2)),2*(1-NORM.S.DIST(z,TRUE))),"")', '',
+     'Visitor → lead, A vs B. Under 0.05 AND 30+ leads per version = real difference. Otherwise keep running.'],
+    ['', '', '', ''],
+    ['By source (all versions)', 'Visitors', 'Sent a request', 'Booked'],
+  ];
+  sh.getRange(1, 1, rows.length, 4).setValues(rows);
+  const start = rows.length + 1;
+  sh.getRange(start, 1).setFormula(`=IFERROR(SORT(UNIQUE(FILTER(${E}F2:F, ${E}C2:C="view", ${E}F2:F<>""))),"")`);
+  for (let i = 0; i < 15; i++) {
+    const r = start + i;
+    sh.getRange(r, 2).setFormula(`=IF(A${r}="","",IFERROR(COUNTUNIQUE(FILTER(${E}B2:B,${E}C2:C="view",${E}F2:F=A${r})),0))`);
+    sh.getRange(r, 3).setFormula(`=IF(A${r}="","",IFERROR(COUNTUNIQUE(FILTER(${E}B2:B,${E}C2:C="submit",${E}F2:F=A${r})),0))`);
+    sh.getRange(r, 4).setFormula(`=IF(A${r}="","",COUNTIFS(Leads!O2:O,A${r},Leads!I2:I,"Booked")+COUNTIFS(Leads!O2:O,A${r},Leads!I2:I,"Done"))`);
+  }
+  sh.getRange('B10:C15').setNumberFormat('0.0%');
+  sh.getRange('B17').setNumberFormat('0.000');
+  sh.getRange('A1:D1').setFontWeight('bold'); sh.getRange(`A${rows.length}:D${rows.length}`).setFontWeight('bold');
+  sh.setColumnWidth(1, 230); sh.setColumnWidth(4, 380);
+  safeAlert_('Funnel tab is ready.');
+}
